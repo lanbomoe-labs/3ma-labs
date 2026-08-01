@@ -1,750 +1,1073 @@
 <!DOCTYPE html>
 <html lang="en" class="dark scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3MA Labs — DON'T JUST WATCH THE FUTURE. BUILD IT.</title>
-  <meta name="description" content="3MA Labs: Router-First Curriculum & System Builders Training for Kids & Teens (Ages 4-19), founded by Moses Olanrewaju Bolarin. Master network routing, web systems, AI automation, and digital infrastructure.">
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            purple: { DEFAULT: '#800080', 600: '#800080', 700: '#660066', 900: '#3b003b' },
-            gold: { DEFAULT: '#A68024', 400: '#c2972d', 500: '#A68024', 600: '#8a681b' }
-          }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3MA Labs — DON'T JUST WATCH THE FUTURE. BUILD IT.</title>
+    <meta name="description" content="3MA Labs: Router-First Curriculum & System Builders Training for Kids & Teens (Ages 4-19), founded by Moses Olanrewaju Bolarin. Master network routing, web systems, AI automation, and digital infrastructure." />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        purple: { DEFAULT: '#800080', 600: '#800080', 700: '#660066', 900: '#3b003b' },
+                        gold: { DEFAULT: '#A68024', 400: '#c2972d', 500: '#A68024', 600: '#8a681b' }
+                    }
+                }
+            }
         }
-      }
-    }
-  </script>
+    </script>
 
-  <!-- Google Fonts & Lucide Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts & Lucide Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest">
+    </script>
 
-  <!-- AEO & Search Engine JSON-LD Schema -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "EducationalOrganization",
-      "name": "3MA Labs (3niti Multimedia Academy)",
-      "url": "https://smt.lanbomoe.com",
-      "logo": "https://i.imgur.com/8KdYpVO.png",
-      "description": "3MA Labs trains kids and teens (ages 4-19) as System Builders using a Router-First Curriculum.",
-      "founder": {
-        "@type": "Person",
-        "name": "Moses Olanrewaju Bolarin",
-        "jobTitle": "CEO, Founder & Systems Architect",
-        "worksFor": "3MA Labs"
-      },
-      "slogan": "DON'T JUST WATCH THE FUTURE. BUILD IT.",
-      "email": "3ma@lanbomoe.com",
-      "telephone": "+2348033830101"
-    }
-  </script>
+    <!-- AEO & Search Engine JSON-LD Schema -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "EducationalOrganization",
+            "name": "3MA Labs (3niti Multimedia Academy)",
+            "url": "https://3ma.lanbomoe.com",
+            "logo": "https://3ma.lanbomoe.com/assets/8KdYpVO.png",
+            "description": "3MA Labs trains kids and teens (ages 4-19) as System Builders using a Router-First Curriculum.",
+            "founder": {
+                "@type": "Person",
+                "name": "Moses Olanrewaju Bolarin",
+                "jobTitle": "CEO, Founder & Systems Architect",
+                "worksFor": "3MA Labs"
+            },
+            "slogan": "DON'T JUST WATCH THE FUTURE. BUILD IT.",
+            "email": "3ma@lanbomoe.com",
+            "telephone": "+2348033830101"
+        }
+    </script>
 
-  <style>
-    body { font-family: 'Plus Jakarta Sans', sans-serif; }
-    code, pre, .font-mono { font-family: 'JetBrains Mono', monospace; }
-    .bg-grid-pattern {
-      background-image: radial-gradient(rgba(166, 128, 36, 0.15) 1px, transparent 1px);
-      background-size: 24px 24px;
-    }
-  </style>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        code,
+        pre,
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(166, 128, 36, 0.15) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        /* ---------- SUCCESS METRICS COUNTER ANIMATION ---------- */
+        .counter-number {
+            display: inline-block;
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .metric-card {
+            animation: countUp 0.8s ease forwards;
+        }
+        .metric-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+        .metric-card:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+        .metric-card:nth-child(3) {
+            animation-delay: 0.5s;
+        }
+
+        /* ---------- ECOSYSTEM BRIDGE BUTTONS ---------- */
+        .ecosystem-bridge .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.25rem;
+            border-radius: 9999px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.2s;
+            border: 1.5px solid rgba(166, 128, 36, 0.4);
+            background: rgba(15, 23, 42, 0.8);
+            color: #e2e8f0;
+            text-decoration: none;
+        }
+        .ecosystem-bridge .nav-btn:hover {
+            border-color: #A68024;
+            background: #1e293b;
+            color: #facc15;
+            transform: translateY(-1px);
+        }
+        .ecosystem-bridge .nav-btn .globe {
+            display: inline-block;
+            font-size: 1rem;
+        }
+
+        /* ---------- VIDEO / AUDIO CONTAINER ---------- */
+        .smt-media-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        @media (max-width: 768px) {
+            .smt-media-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .media-card {
+            background: #0f172a;
+            border: 1.5px solid #334155;
+            border-radius: 1.25rem;
+            padding: 1.25rem;
+            transition: border-color 0.3s;
+        }
+        .media-card:hover {
+            border-color: #800080;
+        }
+        .media-card video,
+        .media-card audio {
+            width: 100%;
+            border-radius: 0.75rem;
+            background: #020617;
+        }
+        .media-card audio {
+            height: 48px;
+        }
+
+        /* ---------- SMOOTH SCROLL ---------- */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
+
 <body class="bg-slate-950 text-slate-100 antialiased selection:bg-[#800080] selection:text-white">
 
-  <!-- TOP ANNOUNCEMENT BAR -->
-  <div class="bg-gradient-to-r from-[#800080] via-purple-900 to-[#A68024] text-white text-xs font-bold py-2 px-4 border-b border-[#A68024]/40">
-    <div class="container mx-auto flex items-center justify-between gap-2">
-      <div class="flex items-center gap-2 truncate">
-        <span class="bg-[#A68024] text-slate-950 px-2 py-0.5 rounded text-[10px] uppercase font-black">Aug 3–28, 2026</span>
-        <span class="truncate">SMT 2026 Digital Transformation Challenge — DON’T JUST WATCH THE FUTURE. BUILD IT.</span>
-      </div>
-      <a href="https://smt.lanbomoe.com" target="_blank" class="bg-slate-950 hover:bg-slate-900 text-[#A68024] border border-[#A68024]/60 px-3 py-1 rounded text-[11px] font-black shrink-0 transition-all uppercase tracking-wider">
-        Register Now &rarr;
-      </a>
-    </div>
-  </div>
-
-  <!-- NAVIGATION HEADER -->
-  <header class="sticky top-0 z-40 bg-slate-950/90 backdrop-blur-md border-b border-[#800080]/40">
-    <div class="container mx-auto px-4 h-16 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2.5">
-        <div class="w-10 h-10 rounded-xl bg-slate-900 border-2 border-[#A68024] p-1 flex items-center justify-center shadow-lg">
-          <img src="https://i.imgur.com/8KdYpVO.png" alt="3MA Logo" class="w-full h-full object-contain">
-        </div>
-        <div>
-          <span class="text-lg font-black tracking-tight text-white">3MA <span class="text-[#A68024]">Labs</span></span>
-          <span class="block text-[10px] font-mono text-purple-300 -mt-1 font-bold">System Builders Academy</span>
-        </div>
-      </a>
-
-      <!-- Desktop Links -->
-      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
-        <a href="#curriculum" class="hover:text-[#A68024] transition-colors">Curriculum</a>
-        <button onclick="openH5Modal()" class="flex items-center gap-1.5 text-purple-300 hover:text-white bg-[#800080]/30 border border-[#800080] px-2.5 py-1 rounded-lg text-xs font-semibold">
-          <i data-lucide="book-open" class="w-3.5 h-3.5 text-purple-400"></i> H5 PPT Studio
-        </button>
-        <a href="#smt-challenge" class="hover:text-[#A68024] transition-colors flex items-center gap-1">
-          <i data-lucide="sun" class="w-4 h-4 text-[#A68024]"></i> SMT 2026
-        </a>
-        <a href="#cbt-quiz" class="hover:text-[#A68024] transition-colors">CBT Portal</a>
-        <a href="#ceo-moses" class="hover:text-purple-400 transition-colors">Moses Olanrewaju Bolarin</a>
-        <a href="#showcase" class="hover:text-purple-400 transition-colors">Prototypes</a>
-      </nav>
-
-      <!-- Right CTAs -->
-      <div class="flex items-center gap-3">
-        <a href="#cbt-quiz" class="flex items-center gap-1.5 bg-[#A68024] hover:bg-[#b88e28] text-slate-950 font-black px-4 py-2 rounded-lg text-xs shadow-md uppercase tracking-wider transition-all border border-[#A68024]">
-          <i data-lucide="award" class="w-4 h-4"></i>
-          <span>Access School Portal</span>
-        </a>
-        <button onclick="openAIChat()" class="hidden sm:flex items-center gap-2 bg-slate-900 border border-[#800080]/60 hover:border-purple-400 text-slate-200 px-3 py-2 rounded-lg text-xs font-medium">
-          <i data-lucide="bot" class="w-4 h-4 text-purple-400"></i>
-          <span>AI Counselor</span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- HERO SECTION -->
-  <section id="hero" class="relative pt-12 pb-20 md:pt-16 md:pb-24 bg-slate-950 overflow-hidden bg-grid-pattern">
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-[#800080]/20 via-[#A68024]/10 to-transparent blur-3xl pointer-events-none"></div>
-
-    <div class="container mx-auto px-4 relative z-10 text-center max-w-4xl space-y-6">
-      <!-- Founder Spotlight -->
-      <div class="inline-flex items-center gap-2 bg-slate-900/95 border border-[#A68024]/60 px-4 py-1.5 rounded-full shadow-lg text-xs md:text-sm text-slate-300">
-        <span class="w-2.5 h-2.5 rounded-full bg-[#A68024] animate-pulse"></span>
-        <span class="text-[#A68024] font-bold">Moses Olanrewaju Bolarin</span>
-        <span class="text-slate-600">|</span>
-        <span class="text-purple-300 font-medium">3MA Labs Founder & System Architect</span>
-      </div>
-
-      <!-- Main Headline -->
-      <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white uppercase leading-tight">
-        DON’T JUST WATCH THE FUTURE. <br>
-        <span class="bg-gradient-to-r from-purple-400 via-[#A68024] to-amber-300 bg-clip-text text-transparent">
-          BUILD IT.
-        </span>
-      </h1>
-
-      <p class="text-lg md:text-xl font-bold text-[#A68024] font-mono tracking-wide">
-        "3MA Labs: Master Tech & Creativity."
-      </p>
-
-      <p class="text-slate-300 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
-        Empowering youth (ages 4–19) as <strong class="text-white">System Builders</strong> using a <strong class="text-[#A68024]">Router-First Curriculum</strong>. Under the leadership of <strong class="text-purple-300">Moses Olanrewaju Bolarin</strong>, students engineer real network infrastructure, full-stack web applications, AI automation, and multimedia systems.
-      </p>
-
-      <!-- Action Buttons -->
-      <div class="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-        <a href="#cbt-quiz" class="flex items-center gap-2.5 bg-[#A68024] hover:bg-[#b88e28] text-slate-950 font-black px-6 py-3.5 rounded-xl shadow-xl transition-all text-sm md:text-base border-2 border-[#A68024] uppercase tracking-wider">
-          <i data-lucide="award" class="w-5 h-5"></i>
-          <span>Access School Portal</span>
-        </a>
-
-        <button onclick="openH5Modal()" class="flex items-center gap-2.5 bg-[#800080] hover:bg-[#990099] text-white font-extrabold px-6 py-3.5 rounded-xl shadow-xl transition-all text-sm md:text-base">
-          <i data-lucide="book-open" class="w-5 h-5 text-amber-300"></i>
-          <span>Markdown H5 PPT Decks</span>
-        </button>
-
-        <a href="https://smt.lanbomoe.com" target="_blank" class="flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-slate-200 border border-[#A68024]/60 font-bold px-5 py-3.5 rounded-xl text-sm">
-          <i data-lucide="sun" class="w-5 h-5 text-[#A68024]"></i>
-          <span>SMT 2026 Challenge</span>
-          <i data-lucide="external-link" class="w-4 h-4"></i>
-        </a>
-      </div>
-
-      <!-- EMBEDDED SMT AD SONG 1 PLAYER -->
-      <div class="mt-8 max-w-2xl mx-auto bg-slate-950 border-2 border-[#800080] rounded-2xl p-4 shadow-2xl relative overflow-hidden text-left">
-        <div class="flex items-center justify-between border-b border-[#800080]/40 pb-3 mb-3">
-          <div class="flex items-center gap-2.5">
-            <div class="w-8 h-8 rounded-lg bg-[#800080] flex items-center justify-center text-white font-bold">
-              <i data-lucide="radio" class="w-4 h-4 text-[#A68024]" id="radioIcon"></i>
+    <!-- ============================================================ -->
+    <!-- TOP ANNOUNCEMENT BAR                                          -->
+    <!-- ============================================================ -->
+    <div class="bg-gradient-to-r from-[#800080] via-purple-900 to-[#A68024] text-white text-xs font-bold py-2 px-4 border-b border-[#A68024]/40">
+        <div class="container mx-auto flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2 truncate">
+                <span class="bg-[#A68024] text-slate-950 px-2 py-0.5 rounded text-[10px] uppercase font-black">Aug 3–28, 2026</span>
+                <span class="truncate">SMT 2026 Digital Transformation Challenge — DON'T JUST WATCH THE FUTURE. BUILD IT.</span>
             </div>
-            <div>
-              <span class="text-[10px] font-black uppercase text-[#A68024] tracking-wider">SMT 2026 Anthem &bull; Ad Song 1</span>
-              <h4 class="text-xs font-bold text-white">DON’T JUST WATCH THE FUTURE. BUILD IT.</h4>
-            </div>
-          </div>
-          <span class="text-[10px] text-slate-400 font-mono">3MA Audio Engine</span>
+            <a href="https://smt.lanbomoe.com" target="_blank" class="bg-slate-950 hover:bg-slate-900 text-[#A68024] border border-[#A68024]/60 px-3 py-1 rounded text-[11px] font-black shrink-0 transition-all uppercase tracking-wider">
+                Register Now &rarr;
+            </a>
         </div>
-
-        <audio id="smtAudio" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a7321d.mp3?filename=cyberpunk-futuristic-technology-112702.mp3" loop></audio>
-
-        <div class="flex items-center gap-4">
-          <button onclick="toggleAudio()" id="playBtn" class="w-10 h-10 rounded-full bg-gradient-to-r from-[#800080] to-[#A68024] text-white flex items-center justify-center shadow-lg shrink-0">
-            <i data-lucide="play" class="w-5 h-5 fill-white ml-0.5" id="playIcon"></i>
-          </button>
-          <div class="flex-1 space-y-1">
-            <div class="flex items-end justify-between gap-1 h-5" id="equalizer">
-              <div class="w-1 bg-[#800080] h-2 rounded-full"></div>
-              <div class="w-1 bg-[#A68024] h-4 rounded-full"></div>
-              <div class="w-1 bg-[#800080] h-3 rounded-full"></div>
-              <div class="w-1 bg-[#A68024] h-5 rounded-full"></div>
-              <div class="w-1 bg-[#800080] h-2 rounded-full"></div>
-              <div class="w-1 bg-[#A68024] h-4 rounded-full"></div>
-              <div class="w-1 bg-[#800080] h-5 rounded-full"></div>
-              <div class="w-1 bg-[#A68024] h-3 rounded-full"></div>
-            </div>
-            <div class="w-full h-1.5 bg-slate-900 rounded-full overflow-hidden">
-              <div id="audioProgress" class="h-full bg-gradient-to-r from-[#800080] to-[#A68024] w-0 transition-all duration-300"></div>
-            </div>
-          </div>
-          <button onclick="toggleMute()" class="p-2 rounded-lg bg-slate-900 border border-slate-800 text-[#A68024]">
-            <i data-lucide="volume-2" class="w-4 h-4" id="muteIcon"></i>
-          </button>
-        </div>
-      </div>
-
-      <!-- KEY METRICS BAR -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 max-w-3xl mx-auto">
-        <div class="bg-slate-900/90 border border-[#800080]/60 p-4 rounded-xl text-center">
-          <div class="text-2xl font-black text-[#A68024]">Ages 4–19</div>
-          <div class="text-xs text-slate-400 mt-0.5">Youth System Builders</div>
-        </div>
-        <div class="bg-slate-900/90 border border-[#800080]/60 p-4 rounded-xl text-center">
-          <div class="text-2xl font-black text-purple-300">Router-First</div>
-          <div class="text-xs text-slate-400 mt-0.5">Curriculum Standard</div>
-        </div>
-        <div class="bg-slate-900/90 border border-[#800080]/60 p-4 rounded-xl text-center">
-          <div class="text-2xl font-black text-[#A68024]">H5 PPT Decks</div>
-          <div class="text-xs text-slate-400 mt-0.5">Markdown Code Delivery</div>
-        </div>
-        <div class="bg-slate-900/90 border border-[#800080]/60 p-4 rounded-xl text-center">
-          <div class="text-2xl font-black text-white">10 Services</div>
-          <div class="text-xs text-slate-400 mt-0.5">LanBo-Moe Ecosystem</div>
-        </div>
-      </div>
     </div>
-  </section>
 
-  <!-- CURRICULUM SECTION -->
-  <section id="curriculum" class="py-16 bg-slate-900 border-t border-slate-800">
-    <div class="container mx-auto px-4">
-      <div class="text-center max-w-3xl mx-auto space-y-3 mb-12">
-        <div class="inline-flex items-center gap-2 bg-[#800080]/30 text-purple-300 border border-[#800080] px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-          <i data-lucide="book-open" class="w-3.5 h-3.5 text-[#A68024]"></i>
-          <span>Router-First Learning Pathways</span>
-        </div>
-        <h2 class="text-3xl md:text-4xl font-black text-white">
-          Four Pillars of <span class="text-[#A68024]">3MA Labs Technical Curriculum</span>
-        </h2>
-        <p class="text-slate-300 text-sm md:text-base">
-          Training youth to master network routing, web systems, AI automation, and digital infrastructure.
-        </p>
-      </div>
+    <!-- ============================================================ -->
+    <!-- NAVIGATION HEADER                                             -->
+    <!-- ============================================================ -->
+    <header class="sticky top-0 z-40 bg-slate-950/90 backdrop-blur-md border-b border-[#800080]/40">
+        <div class="container mx-auto px-4 h-16 flex items-center justify-between">
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-        <!-- Module 1 -->
-        <div class="bg-slate-950 border-2 border-slate-800 hover:border-[#800080] p-6 rounded-2xl space-y-4 transition-all">
-          <div class="w-12 h-12 rounded-xl bg-[#800080]/20 border border-[#800080] flex items-center justify-center text-[#A68024]">
-            <i data-lucide="code" class="w-6 h-6"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white">Router-First Web Systems</h3>
-          <p class="text-slate-300 text-xs leading-relaxed">
-            Scratch block logic (4-8), Python programming (9-13), HTML5/CSS3/JS, full-stack, and network-aware engineering.
-          </p>
-          <span class="inline-block text-[10px] font-bold uppercase text-[#A68024] bg-[#A68024]/10 border border-[#A68024]/30 px-2 py-0.5 rounded">Ages 4–19</span>
-        </div>
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2.5 shrink-0">
+                <div class="w-10 h-10 rounded-xl bg-slate-900 border-2 border-[#A68024] p-1 flex items-center justify-center shadow-lg">
+                    <img src="assets/8KdYpVO.png" alt="3MA Logo" class="w-full h-full object-contain" onerror="this.style.display='none'">
+                </div>
+                <div>
+                    <span class="text-lg font-black tracking-tight text-white">3MA <span class="text-[#A68024]">Labs</span></span>
+                    <span class="block text-[10px] font-mono text-purple-300 -mt-1 font-bold">System Builders Academy</span>
+                </div>
+            </a>
 
-        <!-- Module 2 -->
-        <div class="bg-slate-950 border-2 border-slate-800 hover:border-[#800080] p-6 rounded-2xl space-y-4 transition-all">
-          <div class="w-12 h-12 rounded-xl bg-[#800080]/20 border border-[#800080] flex items-center justify-center text-purple-300">
-            <i data-lucide="network" class="w-6 h-6"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white">IT Infrastructure & Networks</h3>
-          <p class="text-slate-300 text-xs leading-relaxed">
-            Hardware mechanics, IP addressing, routers, servers, Linux terminal, cloud services, and cybersecurity safety.
-          </p>
-          <span class="inline-block text-[10px] font-bold uppercase text-purple-300 bg-[#800080]/20 border border-[#800080]/50 px-2 py-0.5 rounded">Ages 9–19</span>
-        </div>
+            <!-- Desktop Links -->
+            <nav class="hidden lg:flex items-center gap-4 text-sm font-medium text-slate-300">
+                <a href="#curriculum" class="hover:text-[#A68024] transition-colors">Curriculum</a>
+                <button onclick="openH5Modal()" class="flex items-center gap-1.5 text-purple-300 hover:text-white bg-[#800080]/30 border border-[#800080] px-2.5 py-1 rounded-lg text-xs font-semibold">
+                    <i data-lucide="book-open" class="w-3.5 h-3.5 text-purple-400"></i> H5 PPT
+                </button>
+                <a href="#smt-challenge" class="hover:text-[#A68024] transition-colors flex items-center gap-1">
+                    <i data-lucide="sun" class="w-4 h-4 text-[#A68024]"></i> SMT 2026
+                </a>
+                <a href="#cbt-quiz" class="hover:text-[#A68024] transition-colors">CBT Portal</a>
+                <a href="#ceo-moses" class="hover:text-purple-400 transition-colors">Moses</a>
+                <a href="#showcase" class="hover:text-purple-400 transition-colors">Prototypes</a>
 
-        <!-- Module 3 -->
-        <div class="bg-slate-950 border-2 border-slate-800 hover:border-[#800080] p-6 rounded-2xl space-y-4 transition-all">
-          <div class="w-12 h-12 rounded-xl bg-[#800080]/20 border border-[#800080] flex items-center justify-center text-[#A68024]">
-            <i data-lucide="cpu" class="w-6 h-6"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white">AI & Automation (AVIS)</h3>
-          <p class="text-slate-300 text-xs leading-relaxed">
-            Prompt engineering, Python AI scripts, generative AI, automation workflows, and AVIS AI video creation.
-          </p>
-          <span class="inline-block text-[10px] font-bold uppercase text-[#A68024] bg-[#A68024]/10 border border-[#A68024]/30 px-2 py-0.5 rounded">Ages 9–19</span>
-        </div>
+                <!-- ECOSYSTEM BRIDGE (main hub + legacy) -->
+                <div class="ecosystem-bridge flex items-center gap-2 ml-1">
+                    <a href="https://www.lanbomoe.com" target="_blank" class="nav-btn">
+                        <span class="globe">🌐</span> Global Hub
+                    </a>
+                    <a href="https://lanbomoe.github.io" target="_blank" class="nav-btn">
+                        <span class="globe">📜</span> Legacy
+                    </a>
+                </div>
+            </nav>
 
-        <!-- Module 4 -->
-        <div class="bg-slate-950 border-2 border-slate-800 hover:border-[#800080] p-6 rounded-2xl space-y-4 transition-all">
-          <div class="w-12 h-12 rounded-xl bg-[#800080]/20 border border-[#800080] flex items-center justify-center text-purple-300">
-            <i data-lucide="video" class="w-6 h-6"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white">Multimedia & Content Engineering</h3>
-          <p class="text-slate-300 text-xs leading-relaxed">
-            Graphic design, video editing, audio engineering, visual storytelling, and digital media production.
-          </p>
-          <span class="inline-block text-[10px] font-bold uppercase text-purple-300 bg-[#800080]/20 border border-[#800080]/50 px-2 py-0.5 rounded">Ages 4–19</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SMT 2026 DIGITAL TRANSFORMATION CHALLENGE SECTION -->
-  <section id="smt-challenge" class="py-16 bg-slate-950 border-t border-[#800080]/40 relative">
-    <div class="container mx-auto px-4 max-w-5xl space-y-8">
-      <div class="text-center space-y-3">
-        <div class="inline-flex items-center gap-2 bg-[#800080]/30 text-purple-300 border border-[#800080] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
-          <i data-lucide="sun" class="w-4 h-4 text-[#A68024]"></i>
-          <span>Flagship Summer Intensive Program</span>
-        </div>
-        <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight">
-          SMT 2026 Digital <span class="text-[#A68024]">Transformation Challenge</span>
-        </h2>
-        <p class="text-xl font-black text-[#A68024] tracking-wide">
-          DON’T JUST WATCH THE FUTURE. BUILD IT.
-        </p>
-        <p class="text-slate-300 text-sm md:text-base leading-relaxed max-w-3xl mx-auto">
-          An extraordinary 4-week summer innovation challenge empowering kids & teens as System Builders under the strategic oversight and expert curriculum of Moses Olanrewaju Bolarin.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <!-- Schedule -->
-        <div class="bg-slate-900 border-2 border-[#800080]/60 rounded-2xl p-6 space-y-4">
-          <div class="w-10 h-10 rounded-xl bg-[#800080]/30 border border-[#800080] flex items-center justify-center text-[#A68024]">
-            <i data-lucide="calendar" class="w-5 h-5"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white">Program Schedule</h3>
-          <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1 text-xs">
-            <p class="font-bold text-[#A68024]">Dates: August 3 – 28, 2026</p>
-            <p class="text-slate-300">Format: Hybrid (Physical Labs & Virtual)</p>
-            <p class="text-slate-300">Target: Youth System Builders (Ages 4–19)</p>
-          </div>
-          <a href="https://smt.lanbomoe.com" target="_blank" class="w-full inline-flex items-center justify-center gap-2 bg-[#A68024] hover:bg-[#b88e28] text-slate-950 font-extrabold py-2.5 rounded-xl text-xs uppercase tracking-wider">
-            Register at smt.lanbomoe.com &rarr;
-          </a>
-        </div>
-
-        <!-- Router-First Challenge Tracks -->
-        <div class="bg-slate-900 border-2 border-[#800080]/60 rounded-2xl p-6 space-y-4">
-          <div class="w-10 h-10 rounded-xl bg-[#800080]/30 border border-[#800080] flex items-center justify-center text-purple-300">
-            <i data-lucide="network" class="w-5 h-5"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white">Router-First Tracks</h3>
-          <ul class="space-y-2 text-xs text-slate-300">
-            <li>• <strong>Router-First Systems:</strong> IP routing, servers & web architecture.</li>
-            <li>• <strong>AI Automation:</strong> Python scripts & AVIS AI video series.</li>
-            <li>• <strong>Software Engineering:</strong> Web & mobile system deployment.</li>
-          </ul>
-          <a href="https://smt.lanbomoe.com" target="_blank" class="w-full inline-flex items-center justify-center gap-2 bg-[#800080]/40 hover:bg-[#800080]/70 text-purple-200 border border-[#800080] font-bold py-2.5 rounded-xl text-xs">
-            Explore Guidelines &rarr;
-          </a>
-        </div>
-
-        <!-- Certification & Recognition -->
-        <div class="bg-slate-900 border-2 border-[#800080]/60 rounded-2xl p-6 space-y-4">
-          <div class="w-10 h-10 rounded-xl bg-[#800080]/30 border border-[#800080] flex items-center justify-center text-[#A68024]">
-            <i data-lucide="award" class="w-5 h-5"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white">Certification & Recognition</h3>
-          <p class="text-slate-300 text-xs leading-relaxed">
-            Participants receive official 3MA CBT platform verification from Moses Olanrewaju Bolarin and verified digital certificates.
-          </p>
-          <a href="https://smt.lanbomoe.com" target="_blank" class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#800080] to-[#A68024] text-white font-extrabold py-2.5 rounded-xl text-xs uppercase tracking-wider">
-            Join SMT 2026 Challenge &rarr;
-          </a>
-        </div>
-      </div>
-
-      <!-- 24/7 SUPPORT BANNER -->
-      <div class="bg-slate-900 border border-[#A68024]/50 rounded-xl p-4 text-center">
-        <p class="text-xs md:text-sm text-slate-200">
-          <strong class="text-[#A68024]">24/7 Student & Parent Support:</strong> Students enjoy 24/7 support via our WhatsApp AI Assistant, with direct expert resolution for advanced technical queries.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOUNDER SPOTLIGHT SECTION -->
-  <section id="ceo-moses" class="py-16 bg-slate-900 border-t border-slate-800">
-    <div class="container mx-auto px-4 max-w-5xl">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        <div class="lg:col-span-5 space-y-4">
-          <div class="inline-flex items-center gap-2 bg-[#800080]/30 text-purple-300 border border-[#800080] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#A68024]"></i>
-            <span>Executive Leadership & Vision</span>
-          </div>
-          <h2 class="text-3xl font-black text-white">
-            Moses Olanrewaju <span class="text-[#A68024]">Bolarin</span>
-          </h2>
-          <div class="bg-slate-950 border-2 border-[#800080] p-4 rounded-2xl space-y-2">
+            <!-- Right CTAs -->
             <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-[#800080] to-[#A68024] flex items-center justify-center text-white font-black text-lg border border-[#A68024]">
-                M
-              </div>
-              <div>
-                <h3 class="text-base font-black text-white">Moses Olanrewaju Bolarin</h3>
-                <p class="text-xs text-[#A68024] font-bold">Founder & Systems Architect, 3MA Labs</p>
-              </div>
+                <a href="#cbt-quiz" class="flex items-center gap-1.5 bg-[#A68024] hover:bg-[#b88e28] text-slate-950 font-black px-4 py-2 rounded-lg text-xs shadow-md uppercase tracking-wider transition-all border border-[#A68024]">
+                    <i data-lucide="award" class="w-4 h-4"></i>
+                    <span>School Portal</span>
+                </a>
+                <button onclick="openAIChat()" class="hidden sm:flex items-center gap-2 bg-slate-900 border border-[#800080]/60 hover:border-purple-400 text-slate-200 px-3 py-2 rounded-lg text-xs font-medium">
+                    <i data-lucide="bot" class="w-4 h-4 text-purple-400"></i>
+                    <span>AI Counselor</span>
+                </button>
+
+                <!-- Mobile hamburger: show ecosystem links in a dropdown (simple) -->
+                <button id="mobileMenuToggle" class="lg:hidden text-slate-300 hover:text-white p-1" aria-label="Toggle menu">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
             </div>
-            <p class="text-xs text-slate-300 italic border-l-2 border-[#A68024] pl-3">
-              "As Founder, Moses Olanrewaju Bolarin has developed comprehensive training programs empowering youth as System Builders using a Router-First Curriculum."
+        </div>
+
+        <!-- Mobile dropdown -->
+        <div id="mobileMenu" class="lg:hidden hidden bg-slate-900 border-t border-slate-800 px-4 py-3 space-y-2 text-sm">
+            <a href="#curriculum" class="block text-slate-300 hover:text-[#A68024]">Curriculum</a>
+            <a href="#smt-challenge" class="block text-slate-300 hover:text-[#A68024]">SMT 2026</a>
+            <a href="#cbt-quiz" class="block text-slate-300 hover:text-[#A68024]">CBT Portal</a>
+            <a href="#ceo-moses" class="block text-slate-300 hover:text-purple-400">Moses</a>
+            <a href="#showcase" class="block text-slate-300 hover:text-purple-400">Prototypes</a>
+            <div class="flex flex-wrap gap-2 pt-1 border-t border-slate-800">
+                <a href="https://www.lanbomoe.com" target="_blank" class="text-xs bg-slate-800 px-3 py-1.5 rounded-full text-slate-200 hover:bg-slate-700">🌐 Global Hub</a>
+                <a href="https://lanbomoe.github.io" target="_blank" class="text-xs bg-slate-800 px-3 py-1.5 rounded-full text-slate-200 hover:bg-slate-700">📜 Legacy</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================================ -->
+    <!-- HERO SECTION                                                  -->
+    <!-- ============================================================ -->
+    <section id="hero" class="relative pt-12 pb-20 md:pt-16 md:pb-24 bg-slate-950 overflow-hidden bg-grid-pattern">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-[#800080]/20 via-[#A68024]/10 to-transparent blur-3xl pointer-events-none"></div>
+
+        <div class="container mx-auto px-4 relative z-10 text-center max-w-4xl space-y-6">
+
+            <!-- Founder Spotlight -->
+            <div class="inline-flex items-center gap-2 bg-slate-900/95 border border-[#A68024]/60 px-4 py-1.5 rounded-full shadow-lg text-xs md:text-sm text-slate-300">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#A68024] animate-pulse"></span>
+                <span class="text-[#A68024] font-bold">Moses Olanrewaju Bolarin</span>
+                <span class="text-slate-600">|</span>
+                <span class="text-purple-300 font-medium">3MA Labs Founder & System Architect</span>
+            </div>
+
+            <!-- Main Headline -->
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white uppercase leading-tight">
+                DON'T JUST WATCH THE FUTURE. <br />
+                <span class="bg-gradient-to-r from-purple-400 via-[#A68024] to-amber-300 bg-clip-text text-transparent">
+                    BUILD IT.
+                </span>
+            </h1>
+
+            <p class="text-lg md:text-xl font-bold text-[#A68024] font-mono tracking-wide">
+                "3MA Labs: Master Tech & Creativity."
             </p>
-          </div>
-        </div>
 
-        <div class="lg:col-span-7 space-y-3">
-          <div class="text-xs font-bold text-[#A68024] uppercase tracking-wider">Three Pillars of 3MA Labs Engineering:</div>
-          <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl space-y-1">
-            <h4 class="text-sm font-bold text-white">1. Router-First Coding & Web Systems</h4>
-            <p class="text-xs text-slate-300">Scratch, Python, HTML5/CSS3/JS, full-stack, and network routing fundamentals.</p>
-          </div>
-          <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl space-y-1">
-            <h4 class="text-sm font-bold text-white">2. Multimedia & Content Engineering</h4>
-            <p class="text-xs text-slate-300">Video editing, graphic design, audio engineering, and AVIS AI video creation.</p>
-          </div>
-          <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl space-y-1">
-            <h4 class="text-sm font-bold text-white">3. Leadership & Digital Transformation</h4>
-            <p class="text-xs text-slate-300">SMT 2026 challenge, project pitching, and systems architecture leadership.</p>
-          </div>
+            <p class="text-slate-300 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+                Empowering youth (ages 4–19) as <strong class="text-white">System Builders</strong> using a <strong class="text-[#A68024]">Router-First Curriculum</strong>. Under the leadership of <strong class="text-purple-300">Moses Olanrewaju Bolarin</strong>, students engineer real network infrastructure, full-stack web applications, AI automation, and multimedia systems.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-3.5 pt-4">
+                <a href="#cbt-quiz" class="flex items-center gap-2.5 bg-[#A68024] hover:bg-[#b88e28] text-slate-950 font-black px-6 py-3.5 rounded-xl shadow-xl transition-all text-sm md:text-base border-2 border-[#A68024] uppercase tracking-wider">
+                    <i data-lucide="award" class="w-5 h-5"></i>
+                    <span>Access School Portal</span>
+                </a>
+
+                <button onclick="openH5Modal()" class="flex items-center gap-2.5 bg-[#800080] hover:bg-[#990099] text-white font-extrabold px-6 py-3.5 rounded-xl shadow-xl transition-all text-sm md:text-base">
+                    <i data-lucide="book-open" class="w-5 h-5 text-amber-300"></i>
+                    <span>Markdown H5 PPT Decks</span>
+                </button>
+
+                <a href="https://smt.lanbomoe.com" target="_blank" class="flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-slate-200 border border-[#A68024]/60 font-bold px-5 py-3.5 rounded-xl text-sm">
+                    <i data-lucide="sun" class="w-5 h-5 text-[#A68024]"></i>
+                    <span>SMT 2026 Challenge</span>
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <!-- ========================================================== -->
+            <!-- EMBEDDED SMT AD SONG 1 PLAYER  (FIXED with local asset)    -->
+            <!-- ========================================================== -->
+            <div class="mt-8 max-w-2xl mx-auto bg-slate-950 border-2 border-[#800080] rounded-2xl p-4 shadow-2xl relative overflow-hidden text-left">
+                <div class="flex items-center justify-between border-b border-[#800080]/40 pb-3 mb-3">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-8 h-8 rounded-lg bg-[#800080] flex items-center justify-center text-white font-bold">
+                            <i data-lucide="radio" class="w-4 h-4 text-[#A68024]" id="radioIcon"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-black uppercase text-[#A68024] tracking-wider">SMT 2026 Anthem &bull; Ad Song 1</span>
+                            <h4 class="text-xs font-bold text-white">DON'T JUST WATCH THE FUTURE. BUILD IT.</h4>
+                        </div>
+                    </div>
+                    <span class="text-[10px] text-slate-400 font-mono">3MA Audio Engine</span>
+                </div>
+
+                <!-- LOCAL AUDIO ASSET: assets/smt-anthem.mp3 -->
+                <audio id="smtAudio" src="assets/smt-anthem.mp3" loop></audio>
+
+                <div class="flex items-center gap-4">
+                    <button onclick="toggleAudio()" id="playBtn" class="w-10 h-10 rounded-full bg-gradient-to-r from-[#800080] to-[#A68024] text-white flex items-center justify-center shadow-lg shrink-0">
+                        <i data-lucide="play" class="w-5 h-5 fill-white ml-0.5" id="playIcon"></i>
+                    </button>
+                    <div class="flex-1 space-y-1">
+                        <div class="flex items-end justify-between gap-1 h-5" id="equalizer">
+                            <div class="w-1 bg-[#800080] h-2 rounded-full"></div>
+                            <div class="w-1 bg-[#A68024] h-4 rounded-full"></div>
+                            <div class="w-1 bg-[#800080] h-3 rounded-full"></div>
+                            <div class="w-1 bg-[#A68024] h-5 rounded-full"></div>
+                            <div class="w-1 bg-[#800080] h-2 rounded-full"></div>
+                            <div class="w-1 bg-[#A68024] h-4 rounded-full"></div>
+                            <div class="w-1 bg-[#800080] h-5 rounded-full"></div>
+                            <div class="w-1 bg-[#A68024] h-3 rounded-full"></div>
+                        </div>
+                        <div class="w-full h-1.5 bg-slate-900 rounded-full overflow-hidden">
+                            <div id="audioProgress" class="h-full bg-gradient-to-r from-[#800080] to-[#A68024] w-0 transition-all duration-300"></div>
+                        </div>
+                    </div>
+                    <button onclick="toggleMute()" class="p-2 rounded-lg bg-slate-900 border border-slate-800 text-[#A68024]">
+                        <i data-lucide="volume-2" class="w-4 h-4" id="muteIcon"></i>
+                    </button>
+                </div>
+                <!-- fallback: if the asset fails, show a note -->
+                <div class="text-[9px] text-slate-500 mt-2 text-center font-mono">
+                    🔊 <span id="audioStatus">smt-anthem.mp3</span>
+                </div>
+            </div>
+
+            <!-- KEY METRICS BAR -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 max-w-3xl mx-auto">
+                <div class="bg-slate-900/90 border border-[#800080]/60 p-4 rounded-xl text-center">
+                    <div class="text-2xl font-black text-[#A68024]">Ages 4–19</div>
+                    <div class="text-xs text-slate-400 mt-0.5">Youth System Builders</div>
+                </div>
+                <div class="bg-slate-900/90 border border-[#800080]/60 p-4 rounded-xl text-center">
+                    <div class="text-2xl font-black text-purple-300">Router-First</div>
+                    <div class="text-xs text-slate-400 mt-0.5">Curriculum Standard</div>
+                </div>
+                <div class="bg-slate-900/90 border border-[#800080]/60 p-4 rounded-xl text-center">
+                    <div class="text-2xl font-black text-[#A68024]">H5 PPT Decks</div>
+                    <div class="text-xs text-slate-400 mt-0.5">Markdown Code Delivery</div>
+                </div>
+                <div class="bg-slate-900/90 border border-[#800080]/60 p-4 rounded-xl text-center">
+                    <div class="text-2xl font-black text-white">10 Services</div>
+                    <div class="text-xs text-slate-400 mt-0.5">LanBo-Moe Ecosystem</div>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SUCCESS METRICS  (5,000+ students, etc.)                      -->
+    <!-- ============================================================ -->
+    <section class="success-metrics py-16 bg-gradient-to-r from-[#800080]/20 via-[#A68024]/10 to-[#800080]/20 border-y border-[#800080]/40">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="text-center space-y-3 mb-10">
+                <div class="inline-flex items-center gap-2 bg-[#A68024]/20 text-[#A68024] border border-[#A68024]/40 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                    <i data-lucide="bar-chart-2" class="w-3.5 h-3.5"></i>
+                    <span>Our Global Impact</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-black text-white">
+                    <span class="text-[#A68024]">System Builders</span> Trained Worldwide
+                </h2>
+                <p class="text-slate-300 text-sm max-w-2xl mx-auto">
+                    Real numbers from the 3MA Labs ecosystem — built on the Router-First Curriculum under Moses Olanrewaju Bolarin.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <!-- 1 -->
+                <div class="metric-card bg-slate-900/90 border-2 border-[#A68024]/60 p-8 rounded-2xl shadow-xl hover:border-[#A68024] transition-all">
+                    <div class="counter-number text-[#A68024]">
+                        <span id="countStudents">5,000</span><span>+</span>
+                    </div>
+                    <div class="text-sm font-bold text-slate-200 mt-1 uppercase tracking-wider">System Builders Trained</div>
+                    <div class="text-xs text-slate-400 mt-1">Ages 4–19 &bull; 2019–2026</div>
+                </div>
+                <!-- 2 -->
+                <div class="metric-card bg-slate-900/90 border-2 border-purple-600/60 p-8 rounded-2xl shadow-xl hover:border-purple-500 transition-all">
+                    <div class="counter-number text-purple-300">
+                        <span id="countPlatforms">10</span><span>+</span>
+                    </div>
+                    <div class="text-sm font-bold text-slate-200 mt-1 uppercase tracking-wider">Connected Platforms</div>
+                    <div class="text-xs text-slate-400 mt-1">LanBo-Moe Ecosystem</div>
+                </div>
+                <!-- 3 -->
+                <div class="metric-card bg-slate-900/90 border-2 border-amber-400/60 p-8 rounded-2xl shadow-xl hover:border-amber-400 transition-all">
+                    <div class="counter-number text-amber-300">
+                        <span>100</span><span>%</span>
+                    </div>
+                    <div class="text-sm font-bold text-slate-200 mt-1 uppercase tracking-wider">Digital Sovereignty</div>
+                    <div class="text-xs text-slate-400 mt-1">Self-hosted infrastructure</div>
+                </div>
+            </div>
+
+            <!-- small note -->
+            <p class="text-center text-[10px] text-slate-500 mt-6 font-mono">
+                Verified by 3MA Labs &bull; Data as of August 2026
+            </p>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- CURRICULUM SECTION                                            -->
+    <!-- ============================================================ -->
+    <section id="curriculum" class="py-16 bg-slate-900 border-t border-slate-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto space-y-3 mb-12">
+                <div class="inline-flex items-center gap-2 bg-[#800080]/30 text-purple-300 border border-[#800080] px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                    <i data-lucide="book-open" class="w-3.5 h-3.5 text-[#A68024]"></i>
+                    <span>Router-First Learning Pathways</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-black text-white">
+                    Four Pillars of <span class="text-[#A68024]">3MA Labs Technical Curriculum</span>
+                </h2>
+                <p class="text-slate-300 text-sm md:text-base">
+                    Training youth to master network routing, web systems, AI automation, and digital infrastructure.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <!-- Module 1 -->
+                <div class="bg-slate-950 border-2 border-slate-800 hover:border-[#800080] p-6 rounded-2xl space-y-4 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-[#800080]/20 border border-[#800080] flex items-center justify-center text-[#A68024]">
+                        <i data-lucide="code" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Router-First Web Systems</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Scratch block logic (4-8), Python programming (9-13), HTML5/CSS3/JS, full-stack, and network-aware engineering.
+                    </p>
+                    <span class="inline-block text-[10px] font-bold uppercase text-[#A68024] bg-[#A68024]/10 border border-[#A68024]/30 px-2 py-0.5 rounded">Ages 4–19</span>
+                </div>
+
+                <!-- Module 2 -->
+                <div class="bg-slate-950 border-2 border-slate-800 hover:border-[#800080] p-6 rounded-2xl space-y-4 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-[#800080]/20 border border-[#800080] flex items-center justify-center text-purple-300">
+                        <i data-lucide="network" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">IT Infrastructure & Networks</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Hardware mechanics, IP addressing, routers, servers, Linux terminal, cloud services, and cybersecurity safety.
+                    </p>
+                    <span class="inline-block text-[10px] font-bold uppercase text-purple-300 bg-[#800080]/20 border border-[#800080]/50 px-2 py-0.5 rounded">Ages 9–19</span>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="bg-slate-950 border-2 border-slate-800 hover:border-[#800080] p-6 rounded-2xl space-y-4 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-[#800080]/20 border border-[#800080] flex items-center justify-center text-[#A68024]">
+                        <i data-lucide="cpu" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">AI & Automation (AVIS)</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Prompt engineering, Python AI scripts, generative AI, automation workflows, and AVIS AI video creation.
+                    </p>
+                    <span class="inline-block text-[10px] font-bold uppercase text-[#A68024] bg-[#A68024]/10 border border-[#A68024]/30 px-2 py-0.5 rounded">Ages 9–19</span>
+                </div>
+
+                <!-- Module 4 -->
+                <div class="bg-slate-950 border-2 border-slate-800 hover:border-[#800080] p-6 rounded-2xl space-y-4 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-[#800080]/20 border border-[#800080] flex items-center justify-center text-purple-300">
+                        <i data-lucide="video" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Multimedia & Content Engineering</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Graphic design, video editing, audio engineering, visual storytelling, and digital media production.
+                    </p>
+                    <span class="inline-block text-[10px] font-bold uppercase text-purple-300 bg-[#800080]/20 border border-[#800080]/50 px-2 py-0.5 rounded">Ages 4–19</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SMT 2026 DIGITAL TRANSFORMATION CHALLENGE                     -->
+    <!-- ============================================================ -->
+    <section id="smt-challenge" class="py-16 bg-slate-950 border-t border-[#800080]/40 relative">
+        <div class="container mx-auto px-4 max-w-5xl space-y-8">
+
+            <!-- header -->
+            <div class="text-center space-y-3">
+                <div class="inline-flex items-center gap-2 bg-[#800080]/30 text-purple-300 border border-[#800080] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+                    <i data-lucide="sun" class="w-4 h-4 text-[#A68024]"></i>
+                    <span>Flagship Summer Intensive Program</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight">
+                    SMT 2026 Digital <span class="text-[#A68024]">Transformation Challenge</span>
+                </h2>
+                <p class="text-xl font-black text-[#A68024] tracking-wide">
+                    DON'T JUST WATCH THE FUTURE. BUILD IT.
+                </p>
+                <p class="text-slate-300 text-sm md:text-base leading-relaxed max-w-3xl mx-auto">
+                    An extraordinary 4-week summer innovation challenge empowering kids & teens as System Builders under the strategic oversight and expert curriculum of Moses Olanrewaju Bolarin.
+                </p>
+            </div>
+
+            <!-- 3 info cards -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Schedule -->
+                <div class="bg-slate-900 border-2 border-[#800080]/60 rounded-2xl p-6 space-y-4">
+                    <div class="w-10 h-10 rounded-xl bg-[#800080]/30 border border-[#800080] flex items-center justify-center text-[#A68024]">
+                        <i data-lucide="calendar" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Program Schedule</h3>
+                    <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1 text-xs">
+                        <p class="font-bold text-[#A68024]">Dates: August 3 – 28, 2026</p>
+                        <p class="text-slate-300">Format: Hybrid (Physical Labs & Virtual)</p>
+                        <p class="text-slate-300">Target: Youth System Builders (Ages 4–19)</p>
+                    </div>
+                    <a href="https://smt.lanbomoe.com" target="_blank" class="w-full inline-flex items-center justify-center gap-2 bg-[#A68024] hover:bg-[#b88e28] text-slate-950 font-extrabold py-2.5 rounded-xl text-xs uppercase tracking-wider">
+                        Register at smt.lanbomoe.com &rarr;
+                    </a>
+                </div>
+
+                <!-- Tracks -->
+                <div class="bg-slate-900 border-2 border-[#800080]/60 rounded-2xl p-6 space-y-4">
+                    <div class="w-10 h-10 rounded-xl bg-[#800080]/30 border border-[#800080] flex items-center justify-center text-purple-300">
+                        <i data-lucide="network" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Router-First Tracks</h3>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li>• <strong>Router-First Systems:</strong> IP routing, servers & web architecture.</li>
+                        <li>• <strong>AI Automation:</strong> Python scripts & AVIS AI video series.</li>
+                        <li>• <strong>Software Engineering:</strong> Web & mobile system deployment.</li>
+                    </ul>
+                    <a href="https://smt.lanbomoe.com" target="_blank" class="w-full inline-flex items-center justify-center gap-2 bg-[#800080]/40 hover:bg-[#800080]/70 text-purple-200 border border-[#800080] font-bold py-2.5 rounded-xl text-xs">
+                        Explore Guidelines &rarr;
+                    </a>
+                </div>
+
+                <!-- Certification -->
+                <div class="bg-slate-900 border-2 border-[#800080]/60 rounded-2xl p-6 space-y-4">
+                    <div class="w-10 h-10 rounded-xl bg-[#800080]/30 border border-[#800080] flex items-center justify-center text-[#A68024]">
+                        <i data-lucide="award" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Certification & Recognition</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Participants receive official 3MA CBT platform verification from Moses Olanrewaju Bolarin and verified digital certificates.
+                    </p>
+                    <a href="https://smt.lanbomoe.com" target="_blank" class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#800080] to-[#A68024] text-white font-extrabold py-2.5 rounded-xl text-xs uppercase tracking-wider">
+                        Join SMT 2026 Challenge &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- ========================================================== -->
+            <!-- SMT 2026 FLAGSHIP MEDIA  (VIDEO + AUDIO)                    -->
+            <!-- ========================================================== -->
+            <div class="smt-media-grid pt-4">
+                <!-- VIDEO -->
+                <div class="media-card">
+                    <div class="flex items-center gap-2 mb-3">
+                        <i data-lucide="video" class="w-5 h-5 text-[#A68024]"></i>
+                        <span class="text-xs font-bold text-white uppercase tracking-wider">SMT 2026 Promo</span>
+                    </div>
+                    <video controls preload="metadata" poster="assets/SMT%202026%20Video%20Ad%20Thumbnail%201.jpg">
+                        <source src="assets/smt-video.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="text-[10px] text-slate-400 mt-2 font-mono">📁 smt-video.mp4 &bull; 42.6 MB</p>
+                </div>
+
+                <!-- AUDIO (Anthem 1) -->
+                <div class="media-card">
+                    <div class="flex items-center gap-2 mb-3">
+                        <i data-lucide="music" class="w-5 h-5 text-purple-300"></i>
+                        <span class="text-xs font-bold text-white uppercase tracking-wider">SMT 2026 Anthem</span>
+                    </div>
+                    <audio controls preload="metadata">
+                        <source src="assets/smt-anthem.mp3" type="audio/mpeg" />
+                        Your browser does not support the audio element.
+                    </audio>
+                    <p class="text-[10px] text-slate-400 mt-2 font-mono">📁 smt-anthem.mp3 &bull; 1.8 MB</p>
+
+                    <!-- bonus second anthem (optional) -->
+                    <div class="mt-3 pt-3 border-t border-slate-800">
+                        <div class="flex items-center gap-2 mb-1">
+                            <i data-lucide="music" class="w-4 h-4 text-[#A68024]/70"></i>
+                            <span class="text-[10px] text-slate-400 font-medium">Alternate Anthem</span>
+                        </div>
+                        <audio controls preload="metadata" class="h-10">
+                            <source src="assets/smt-anthem2.mp3" type="audio/mpeg" />
+                        </audio>
+                        <p class="text-[10px] text-slate-500 mt-1 font-mono">📁 smt-anthem2.mp3 &bull; 2.5 MB</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 24/7 SUPPORT BANNER -->
+            <div class="bg-slate-900 border border-[#A68024]/50 rounded-xl p-4 text-center">
+                <p class="text-xs md:text-sm text-slate-200">
+                    <strong class="text-[#A68024]">24/7 Student & Parent Support:</strong> Students enjoy 24/7 support via our WhatsApp AI Assistant, with direct expert resolution for advanced technical queries.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- FOUNDER SPOTLIGHT                                             -->
+    <!-- ============================================================ -->
+    <section id="ceo-moses" class="py-16 bg-slate-900 border-t border-slate-800">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-5 space-y-4">
+                    <div class="inline-flex items-center gap-2 bg-[#800080]/30 text-purple-300 border border-[#800080] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#A68024]"></i>
+                        <span>Executive Leadership & Vision</span>
+                    </div>
+                    <h2 class="text-3xl font-black text-white">
+                        Moses Olanrewaju <span class="text-[#A68024]">Bolarin</span>
+                    </h2>
+                    <div class="bg-slate-950 border-2 border-[#800080] p-4 rounded-2xl space-y-2">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-[#800080] to-[#A68024] flex items-center justify-center text-white font-black text-lg border border-[#A68024]">
+                                M
+                            </div>
+                            <div>
+                                <h3 class="text-base font-black text-white">Moses Olanrewaju Bolarin</h3>
+                                <p class="text-xs text-[#A68024] font-bold">Founder & Systems Architect, 3MA Labs</p>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-300 italic border-l-2 border-[#A68024] pl-3">
+                            "As Founder, Moses Olanrewaju Bolarin has developed comprehensive training programs empowering youth as System Builders using a Router-First Curriculum."
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 space-y-3">
+                    <div class="text-xs font-bold text-[#A68024] uppercase tracking-wider">Three Pillars of 3MA Labs Engineering:</div>
+                    <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl space-y-1">
+                        <h4 class="text-sm font-bold text-white">1. Router-First Coding & Web Systems</h4>
+                        <p class="text-xs text-slate-300">Scratch, Python, HTML5/CSS3/JS, full-stack, and network routing fundamentals.</p>
+                    </div>
+                    <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl space-y-1">
+                        <h4 class="text-sm font-bold text-white">2. Multimedia & Content Engineering</h4>
+                        <p class="text-xs text-slate-300">Video editing, graphic design, audio engineering, and AVIS AI video creation.</p>
+                    </div>
+                    <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl space-y-1">
+                        <h4 class="text-sm font-bold text-white">3. Leadership & Digital Transformation</h4>
+                        <p class="text-xs text-slate-300">SMT 2026 challenge, project pitching, and systems architecture leadership.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- CBT SCHOOL PORTAL QUIZ SECTION                                -->
+    <!-- ============================================================ -->
+    <section id="cbt-quiz" class="py-16 bg-slate-950 border-t border-[#800080]/40">
+        <div class="container mx-auto px-4 max-w-3xl space-y-6">
+            <div class="text-center space-y-2">
+                <div class="inline-flex items-center gap-2 bg-[#A68024]/20 text-[#A68024] border border-[#A68024]/40 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                    <i data-lucide="award" class="w-3.5 h-3.5"></i>
+                    <span>Official 3MA CBT Assessment Portal</span>
+                </div>
+                <h2 class="text-3xl font-black text-white">System Builder Assessment Test</h2>
+                <p class="text-xs text-slate-300">Test your tech knowledge and earn verified certification issued by Moses Olanrewaju Bolarin.</p>
+            </div>
+
+            <div class="bg-slate-900 border-2 border-[#800080] rounded-2xl p-6 space-y-5" id="cbtCard">
+                <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                    <span class="text-xs font-bold text-[#A68024]" id="qCounter">Question 1 of 3</span>
+                    <span class="text-xs font-mono text-purple-300">3MA CBT Engine v2.6</span>
+                </div>
+
+                <h3 class="text-base font-bold text-white" id="qText">What is the core philosophy of 3MA Labs?</h3>
+
+                <div class="space-y-2" id="qOptions">
+                    <!-- options rendered by JS -->
+                </div>
+
+                <button onclick="submitAnswer()" id="cbtSubmitBtn" class="w-full bg-[#A68024] hover:bg-[#b88e28] text-slate-950 font-black py-3 rounded-xl text-xs uppercase tracking-wider transition-all">
+                    Submit Answer &rarr;
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- PROTOTYPE SHOWCASE                                            -->
+    <!-- ============================================================ -->
+    <section id="showcase" class="py-16 bg-slate-900 border-t border-slate-800">
+        <div class="container mx-auto px-4 max-w-5xl space-y-8">
+            <div class="text-center space-y-2">
+                <div class="inline-flex items-center gap-2 bg-[#800080]/30 text-purple-300 border border-[#800080] px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                    <i data-lucide="image" class="w-3.5 h-3.5 text-[#A68024]"></i>
+                    <span>Lab Benchmarks</span>
+                </div>
+                <h2 class="text-3xl font-black text-white">
+                    Prototype Showcase: <span class="text-[#A68024]">What Our System Builders Create</span>
+                </h2>
+                <p class="text-slate-300 text-xs md:text-sm">
+                    Explore real-world technical prototypes, network systems, and software applications representing the standard of excellence students achieve in the 3MA Labs environment.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-slate-950 border border-slate-800 p-5 rounded-2xl space-y-2">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-bold text-white">Solar Defender (Scratch / Python Game)</h3>
+                        <span class="text-[10px] bg-[#800080]/30 text-purple-300 px-2 py-0.5 rounded border border-[#800080]">Age 8 Benchmark</span>
+                    </div>
+                    <p class="text-xs text-slate-300">Interactive arcade game demonstrating collision logic, variable scoring, and visual animation.</p>
+                </div>
+
+                <div class="bg-slate-950 border border-slate-800 p-5 rounded-2xl space-y-2">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-bold text-white">Smart School CBT Dashboard</h3>
+                        <span class="text-[10px] bg-[#A68024]/20 text-[#A68024] px-2 py-0.5 rounded border border-[#A68024]/40">Age 14 Benchmark</span>
+                    </div>
+                    <p class="text-xs text-slate-300">Full-stack web application with responsive UI, live timer, and instant score calculation.</p>
+                </div>
+
+                <div class="bg-slate-950 border border-slate-800 p-5 rounded-2xl space-y-2">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-bold text-white">AVIS Automated Video Bot</h3>
+                        <span class="text-[10px] bg-[#800080]/30 text-purple-300 px-2 py-0.5 rounded border border-[#800080]">Age 16 Benchmark</span>
+                    </div>
+                    <p class="text-xs text-slate-300">Python script utilizing generative AI APIs for automatic prompt-to-video generation.</p>
+                </div>
+
+                <div class="bg-slate-950 border border-slate-800 p-5 rounded-2xl space-y-2">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-bold text-white">Router-First Mesh Net Simulator</h3>
+                        <span class="text-[10px] bg-[#A68024]/20 text-[#A68024] px-2 py-0.5 rounded border border-[#A68024]/40">Age 17 Benchmark</span>
+                    </div>
+                    <p class="text-xs text-slate-300">Network packet routing visualizer illustrating IP packet traversal across hardware routers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- LANBO-MOE ECOSYSTEM DIRECTORY & FOOTER                       -->
+    <!-- ============================================================ -->
+    <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 text-xs py-12">
+        <div class="container mx-auto px-4 max-w-6xl space-y-10">
+
+            <!-- ECOSYSTEM MAPPED LINKS -->
+            <div class="space-y-4">
+                <h3 class="text-sm font-black text-white uppercase tracking-wider text-center">LanBo-Moe Global Ecosystem Directory</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 text-center">
+                    <a href="https://mma.lanbomoe.com" target="_blank" class="bg-slate-900 border border-slate-800 p-3 rounded-xl hover:border-[#800080] transition-all">
+                        <div class="font-bold text-white">🎬 MMA</div>
+                        <div class="text-[10px] text-slate-400">mma.lanbomoe.com</div>
+                    </a>
+                    <a href="https://mwb.lanbomoe.com" target="_blank" class="bg-slate-900 border border-slate-800 p-3 rounded-xl hover:border-[#800080] transition-all">
+                        <div class="font-bold text-white">📖 MWB</div>
+                        <div class="text-[10px] text-slate-400">mwb.lanbomoe.com</div>
+                    </a>
+                    <a href="https://gse.lanbomoe.com" target="_blank" class="bg-slate-900 border border-slate-800 p-3 rounded-xl hover:border-[#800080] transition-all">
+                        <div class="font-bold text-white">🌐 GSE Hub</div>
+                        <div class="text-[10px] text-slate-400">gse.lanbomoe.com</div>
+                    </a>
+                    <a href="https://cbt.lanbomoe.com" target="_blank" class="bg-slate-900 border border-slate-800 p-3 rounded-xl hover:border-[#800080] transition-all">
+                        <div class="font-bold text-white">💻 CBT Platform</div>
+                        <div class="text-[10px] text-slate-400">cbt.lanbomoe.com</div>
+                    </a>
+                    <a href="https://avis.lanbomoe.com" target="_blank" class="bg-slate-900 border border-slate-800 p-3 rounded-xl hover:border-[#800080] transition-all">
+                        <div class="font-bold text-white">🎥 AVIS</div>
+                        <div class="text-[10px] text-slate-400">avis.lanbomoe.com</div>
+                    </a>
+                    <a href="https://store.lanbomoe.com" target="_blank" class="bg-slate-900 border border-slate-800 p-3 rounded-xl hover:border-[#800080] transition-all">
+                        <div class="font-bold text-white">🛍️ Store</div>
+                        <div class="text-[10px] text-slate-400">store.lanbomoe.com</div>
+                    </a>
+                    <a href="https://smt.lanbomoe.com" target="_blank" class="bg-slate-900 border border-[#A68024] p-3 rounded-xl hover:bg-slate-800 transition-all">
+                        <div class="font-bold text-[#A68024]">☀️ SMT 2026</div>
+                        <div class="text-[10px] text-slate-400">smt.lanbomoe.com</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- ECOSYSTEM BRIDGE (footer) -->
+            <div class="border-t border-slate-800 pt-6 flex flex-wrap items-center justify-center gap-4">
+                <a href="https://www.lanbomoe.com" target="_blank" class="flex items-center gap-1.5 bg-slate-900 hover:bg-slate-800 border border-slate-700 px-4 py-2 rounded-full text-[11px] font-bold text-slate-200 transition-all">
+                    <span>🌐</span> Global Hub (www.lanbomoe.com)
+                </a>
+                <a href="https://lanbomoe.github.io" target="_blank" class="flex items-center gap-1.5 bg-slate-900 hover:bg-slate-800 border border-slate-700 px-4 py-2 rounded-full text-[11px] font-bold text-slate-200 transition-all">
+                    <span>📜</span> Legacy Platform (lanbomoe.github.io)
+                </a>
+            </div>
+
+            <!-- COPYRIGHT & CONTACT -->
+            <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+                <div>
+                    <p class="font-bold text-slate-200">3MA Labs (3niti Multimedia Academy)</p>
+                    <p class="text-[11px] text-slate-400">Founded & Led by Moses Olanrewaju Bolarin &bull; Contact: 3ma@lanbomoe.com | +2348033830101</p>
+                </div>
+                <p class="text-[11px] text-slate-400">
+                    &copy; 2026 3MA Labs. All rights reserved. DON'T JUST WATCH THE FUTURE. BUILD IT.
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- ============================================================ -->
+    <!-- MARKDOWN H5 PPT MODAL                                         -->
+    <!-- ============================================================ -->
+    <div id="h5Modal" class="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="bg-slate-900 border-2 border-[#800080] rounded-2xl max-w-2xl w-full p-6 space-y-4 text-left shadow-2xl relative">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <span class="text-xs font-bold text-[#A68024]">Markdown H5 Slide Presentation</span>
+                <button onclick="closeH5Modal()" class="text-slate-400 hover:text-white font-bold text-xl">&times;</button>
+            </div>
+            <div id="slideContent" class="space-y-3 min-h-[220px]">
+                <!-- slide content dynamically updated -->
+            </div>
+            <div class="flex items-center justify-between border-t border-slate-800 pt-3">
+                <button onclick="prevSlide()" class="px-3 py-1.5 rounded bg-slate-800 text-xs font-bold text-slate-300 hover:text-white">&larr; Previous</button>
+                <span class="text-xs font-mono text-purple-300" id="slideIndex">Slide 1 of 3</span>
+                <button onclick="nextSlide()" class="px-3 py-1.5 rounded bg-[#800080] text-xs font-bold text-white hover:bg-[#990099]">Next &rarr;</button>
+            </div>
+        </div>
     </div>
-  </section>
 
-  <!-- CBT SCHOOL PORTAL QUIZ SECTION -->
-  <section id="cbt-quiz" class="py-16 bg-slate-950 border-t border-[#800080]/40">
-    <div class="container mx-auto px-4 max-w-3xl space-y-6">
-      <div class="text-center space-y-2">
-        <div class="inline-flex items-center gap-2 bg-[#A68024]/20 text-[#A68024] border border-[#A68024]/40 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-          <i data-lucide="award" class="w-3.5 h-3.5"></i>
-          <span>Official 3MA CBT Assessment Portal</span>
+    <!-- ============================================================ -->
+    <!-- AI COUNSELOR MODAL                                           -->
+    <!-- ============================================================ -->
+    <div id="aiModal" class="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="bg-slate-900 border-2 border-[#800080] rounded-2xl max-w-lg w-full p-5 space-y-4 text-left shadow-2xl">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="bot" class="w-5 h-5 text-purple-400"></i>
+                    <span class="text-xs font-bold text-white">3MA AI Advisor & Systems Coach</span>
+                </div>
+                <button onclick="closeAIChat()" class="text-slate-400 hover:text-white font-bold text-xl">&times;</button>
+            </div>
+            <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl text-xs space-y-2 max-h-60 overflow-y-auto">
+                <p class="text-purple-300 font-bold">AI Counselor:</p>
+                <p class="text-slate-200">Hello! I am the official 3MA Labs AI Academic Advisor. How can I help you regarding our Router-First Curriculum or SMT 2026 Challenge?</p>
+            </div>
+            <div class="flex gap-2">
+                <input type="text" placeholder="Ask a question..." class="flex-1 bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#800080]" />
+                <button onclick="alert('AI Counselor response generated!')" class="bg-[#800080] text-white px-4 py-2 rounded-lg text-xs font-bold">Send</button>
+            </div>
         </div>
-        <h2 class="text-3xl font-black text-white">System Builder Assessment Test</h2>
-        <p class="text-xs text-slate-300">Test your tech knowledge and earn verified certification issued by Moses Olanrewaju Bolarin.</p>
-      </div>
-
-      <div class="bg-slate-900 border-2 border-[#800080] rounded-2xl p-6 space-y-5" id="cbtCard">
-        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-          <span class="text-xs font-bold text-[#A68024]" id="qCounter">Question 1 of 3</span>
-          <span class="text-xs font-mono text-purple-300">3MA CBT Engine v2.6</span>
-        </div>
-
-        <h3 class="text-base font-bold text-white" id="qText">What is the core philosophy of 3MA Labs?</h3>
-
-        <div class="space-y-2" id="qOptions">
-          <!-- Options rendered via JS -->
-        </div>
-
-        <button onclick="submitAnswer()" id="cbtSubmitBtn" class="w-full bg-[#A68024] hover:bg-[#b88e28] text-slate-950 font-black py-3 rounded-xl text-xs uppercase tracking-wider transition-all">
-          Submit Answer &rarr;
-        </button>
-      </div>
     </div>
-  </section>
 
-  <!-- PROTOTYPE SHOWCASE SECTION -->
-  <section id="showcase" class="py-16 bg-slate-900 border-t border-slate-800">
-    <div class="container mx-auto px-4 max-w-5xl space-y-8">
-      <div class="text-center space-y-2">
-        <div class="inline-flex items-center gap-2 bg-[#800080]/30 text-purple-300 border border-[#800080] px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-          <i data-lucide="image" class="w-3.5 h-3.5 text-[#A68024]"></i>
-          <span>Lab Benchmarks</span>
-        </div>
-        <h2 class="text-3xl font-black text-white">
-          Prototype Showcase: <span class="text-[#A68024]">What Our System Builders Create</span>
-        </h2>
-        <p class="text-slate-300 text-xs md:text-sm">
-          Explore real-world technical prototypes, network systems, and software applications representing the standard of excellence students achieve in the 3MA Labs environment.
-        </p>
-      </div>
+    <!-- ============================================================ -->
+    <!-- INTERACTIVE JAVASCRIPT                                       -->
+    <!-- ============================================================ -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-slate-950 border border-slate-800 p-5 rounded-2xl space-y-2">
-          <div class="flex items-center justify-between">
-            <h3 class="font-bold text-white">Solar Defender (Scratch / Python Game)</h3>
-            <span class="text-[10px] bg-[#800080]/30 text-purple-300 px-2 py-0.5 rounded border border-[#800080]">Age 8 Benchmark</span>
-          </div>
-          <p class="text-xs text-slate-300">Interactive arcade game demonstrating collision logic, variable scoring, and visual animation.</p>
-        </div>
+        // ---- Mobile Menu Toggle ----
+        document.getElementById('mobileMenuToggle')?.addEventListener('click', function() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        });
 
-        <div class="bg-slate-950 border border-slate-800 p-5 rounded-2xl space-y-2">
-          <div class="flex items-center justify-between">
-            <h3 class="font-bold text-white">Smart School CBT Dashboard</h3>
-            <span class="text-[10px] bg-[#A68024]/20 text-[#A68024] px-2 py-0.5 rounded border border-[#A68024]/40">Age 14 Benchmark</span>
-          </div>
-          <p class="text-xs text-slate-300">Full-stack web application with responsive UI, live timer, and instant score calculation.</p>
-        </div>
+        // ---- AUDIO PLAYER (Hero) ----
+        let isPlaying = false;
+        let isMuted = false;
+        const audio = document.getElementById('smtAudio');
+        const playIcon = document.getElementById('playIcon');
+        const radioIcon = document.getElementById('radioIcon');
+        const progress = document.getElementById('audioProgress');
+        const audioStatus = document.getElementById('audioStatus');
 
-        <div class="bg-slate-950 border border-slate-800 p-5 rounded-2xl space-y-2">
-          <div class="flex items-center justify-between">
-            <h3 class="font-bold text-white">AVIS Automated Video Bot</h3>
-            <span class="text-[10px] bg-[#800080]/30 text-purple-300 px-2 py-0.5 rounded border border-[#800080]">Age 16 Benchmark</span>
-          </div>
-          <p class="text-xs text-slate-300">Python script utilizing generative AI APIs for automatic prompt-to-video generation.</p>
-        </div>
+        function toggleAudio() {
+            if (!isPlaying) {
+                audio.play().catch(function(err) {
+                    console.warn('Audio play prevented:', err);
+                    if (audioStatus) audioStatus.textContent = '⚠️ Click again to play';
+                });
+                isPlaying = true;
+                playIcon.setAttribute('data-lucide', 'pause');
+                radioIcon.classList.add('animate-pulse');
+                if (audioStatus) audioStatus.textContent = '▶️ Playing smt-anthem.mp3';
+            } else {
+                audio.pause();
+                isPlaying = false;
+                playIcon.setAttribute('data-lucide', 'play');
+                radioIcon.classList.remove('animate-pulse');
+                if (audioStatus) audioStatus.textContent = '⏸️ Paused';
+            }
+            lucide.createIcons();
+        }
 
-        <div class="bg-slate-950 border border-slate-800 p-5 rounded-2xl space-y-2">
-          <div class="flex items-center justify-between">
-            <h3 class="font-bold text-white">Router-First Mesh Net Simulator</h3>
-            <span class="text-[10px] bg-[#A68024]/20 text-[#A68024] px-2 py-0.5 rounded border border-[#A68024]/40">Age 17 Benchmark</span>
-          </div>
-          <p class="text-xs text-slate-300">Network packet routing visualizer illustrating IP packet traversal across hardware routers.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+        function toggleMute() {
+            audio.muted = !isMuted;
+            isMuted = !isMuted;
+            const muteIcon = document.getElementById('muteIcon');
+            if (muteIcon) {
+                muteIcon.setAttribute('data-lucide', isMuted ? 'volume-x' : 'volume-2');
+                lucide.createIcons();
+            }
+        }
 
-  <!-- LANBO-MOE ECOSYSTEM DIRECTORY & FOOTER -->
-  <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 text-xs py-12">
-    <div class="container mx-auto px-4 max-w-6xl space-y-10">
-      
-      <!-- ECOSYSTEM MAPPED LINKS -->
-      <div class="space-y-4">
-        <h3 class="text-sm font-black text-white uppercase tracking-wider text-center">LanBo-Moe Global Ecosystem Directory</h3>
-        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 text-center">
-          <a href="https://mma.lanbomoe.com" target="_blank" class="bg-slate-900 border border-slate-800 p-3 rounded-xl hover:border-[#800080] transition-all">
-            <div class="font-bold text-white">🎬 MMA</div>
-            <div class="text-[10px] text-slate-400">mma.lanbomoe.com</div>
-          </a>
-          <a href="https://mwb.lanbomoe.com" target="_blank" class="bg-slate-900 border border-slate-800 p-3 rounded-xl hover:border-[#800080] transition-all">
-            <div class="font-bold text-white">📖 MWB</div>
-            <div class="text-[10px] text-slate-400">mwb.lanbomoe.com</div>
-          </a>
-          <a href="https://gse.lanbomoe.com" target="_blank" class="bg-slate-900 border border-slate-800 p-3 rounded-xl hover:border-[#800080] transition-all">
-            <div class="font-bold text-white">🌐 GSE Hub</div>
-            <div class="text-[10px] text-slate-400">gse.lanbomoe.com</div>
-          </a>
-          <a href="https://cbt.lanbomoe.com" target="_blank" class="bg-slate-900 border border-slate-800 p-3 rounded-xl hover:border-[#800080] transition-all">
-            <div class="font-bold text-white">💻 CBT Platform</div>
-            <div class="text-[10px] text-slate-400">cbt.lanbomoe.com</div>
-          </a>
-          <a href="https://avis.lanbomoe.com" target="_blank" class="bg-slate-900 border border-slate-800 p-3 rounded-xl hover:border-[#800080] transition-all">
-            <div class="font-bold text-white">🎥 AVIS</div>
-            <div class="text-[10px] text-slate-400">avis.lanbomoe.com</div>
-          </a>
-          <a href="https://store.lanbomoe.com" target="_blank" class="bg-slate-900 border border-slate-800 p-3 rounded-xl hover:border-[#800080] transition-all">
-            <div class="font-bold text-white">🛍️ Store</div>
-            <div class="text-[10px] text-slate-400">store.lanbomoe.com</div>
-          </a>
-          <a href="https://smt.lanbomoe.com" target="_blank" class="bg-slate-900 border border-[#A68024] p-3 rounded-xl hover:bg-slate-800 transition-all">
-            <div class="font-bold text-[#A68024]">☀️ SMT 2026</div>
-            <div class="text-[10px] text-slate-400">smt.lanbomoe.com</div>
-          </a>
-        </div>
-      </div>
+        audio.ontimeupdate = function() {
+            if (audio.duration) {
+                progress.style.width = (audio.currentTime / audio.duration * 100) + '%';
+            }
+        };
 
-      <!-- COPYRIGHT & CONTACT -->
-      <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-        <div>
-          <p class="font-bold text-slate-200">3MA Labs (3niti Multimedia Academy)</p>
-          <p class="text-[11px] text-slate-400">Founded & Led by Moses Olanrewaju Bolarin &bull; Contact: 3ma@lanbomoe.com | +2348033830101</p>
-        </div>
-        <p class="text-[11px] text-slate-400">
-          &copy; 2026 3MA Labs. All rights reserved. DON’T JUST WATCH THE FUTURE. BUILD IT.
-        </p>
-      </div>
+        // If audio fails to load, show fallback
+        audio.onerror = function() {
+            if (audioStatus) audioStatus.textContent = '❌ Audio asset not found — place smt-anthem.mp3 in /assets/';
+            console.warn('Audio asset failed to load. Please ensure assets/smt-anthem.mp3 exists.');
+        };
 
-    </div>
-  </footer>
+        // ---- CBT QUIZ ENGINE ----
+        const questions = [{
+            q: "What is the core philosophy of 3MA Labs?",
+            opts: [
+                "DON'T JUST WATCH THE FUTURE. BUILD IT.",
+                "Just browse the web passively",
+                "Memorize code snippets without systems",
+                "Only edit social media videos"
+            ],
+            ans: 0
+        }, {
+            q: "What makes the 3MA Labs curriculum unique?",
+            opts: [
+                "It uses a Router-First approach to build System Builders",
+                "It ignores networking and hardware",
+                "It is strictly for adults over 30",
+                "It has no hands-on projects"
+            ],
+            ans: 0
+        }, {
+            q: "Who is the Founder & Executive Leader of 3MA Labs?",
+            opts: [
+                "Moses Olanrewaju Bolarin",
+                "Anonymous Team",
+                "Third-Party Vendor",
+                "Guest Instructor"
+            ],
+            ans: 0
+        }];
 
-  <!-- MARKDOWN H5 PPT MODAL -->
-  <div id="h5Modal" class="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md hidden flex items-center justify-center p-4">
-    <div class="bg-slate-900 border-2 border-[#800080] rounded-2xl max-w-2xl w-full p-6 space-y-4 text-left shadow-2xl relative">
-      <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-        <span class="text-xs font-bold text-[#A68024]">Markdown H5 Slide Presentation</span>
-        <button onclick="closeH5Modal()" class="text-slate-400 hover:text-white font-bold">&times;</button>
-      </div>
-      <div id="slideContent" class="space-y-3 min-h-[220px]">
-        <!-- Slide content dynamically updated -->
-      </div>
-      <div class="flex items-center justify-between border-t border-slate-800 pt-3">
-        <button onclick="prevSlide()" class="px-3 py-1.5 rounded bg-slate-800 text-xs font-bold text-slate-300 hover:text-white">&larr; Previous</button>
-        <span class="text-xs font-mono text-purple-300" id="slideIndex">Slide 1 of 3</span>
-        <button onclick="nextSlide()" class="px-3 py-1.5 rounded bg-[#800080] text-xs font-bold text-white hover:bg-[#990099]">Next &rarr;</button>
-      </div>
-    </div>
-  </div>
+        let currentQ = 0;
+        let score = 0;
 
-  <!-- AI COUNSELOR MODAL -->
-  <div id="aiModal" class="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md hidden flex items-center justify-center p-4">
-    <div class="bg-slate-900 border-2 border-[#800080] rounded-2xl max-w-lg w-full p-5 space-y-4 text-left shadow-2xl">
-      <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-        <div class="flex items-center gap-2">
-          <i data-lucide="bot" class="w-5 h-5 text-purple-400"></i>
-          <span class="text-xs font-bold text-white">3MA AI Advisor & Systems Coach</span>
-        </div>
-        <button onclick="closeAIChat()" class="text-slate-400 hover:text-white font-bold">&times;</button>
-      </div>
-      <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl text-xs space-y-2 max-h-60 overflow-y-auto">
-        <p class="text-purple-300 font-bold">AI Counselor:</p>
-        <p class="text-slate-200">Hello! I am the official 3MA Labs AI Academic Advisor. How can I help you regarding our Router-First Curriculum or SMT 2026 Challenge?</p>
-      </div>
-      <div class="flex gap-2">
-        <input type="text" placeholder="Ask a question..." class="flex-1 bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#800080]">
-        <button onclick="alert('AI Counselor response generated!')" class="bg-[#800080] text-white px-4 py-2 rounded-lg text-xs font-bold">Send</button>
-      </div>
-    </div>
-  </div>
+        function renderQuestion() {
+            const q = questions[currentQ];
+            document.getElementById('qCounter').innerText = 'Question ' + (currentQ + 1) + ' of ' + questions.length;
+            document.getElementById('qText').innerText = q.q;
+            const optsDiv = document.getElementById('qOptions');
+            optsDiv.innerHTML = q.opts.map(function(opt, idx) {
+                return '<label class="flex items-center gap-3 p-3 rounded-xl bg-slate-950 border border-slate-800 cursor-pointer hover:border-[#800080]">' +
+                    '<input type="radio" name="cbtOpt" value="' + idx + '" class="text-[#800080]">' +
+                    '<span class="text-xs text-slate-200">' + opt + '</span>' +
+                    '</label>';
+            }).join('');
+        }
 
-  <!-- INTERACTIVE JAVASCRIPT LOGIC -->
-  <script>
-    // Initialize Lucide Icons
-    lucide.createIcons();
+        function submitAnswer() {
+            var sel = document.querySelector('input[name="cbtOpt"]:checked');
+            if (!sel) return alert('Please select an option.');
+            if (parseInt(sel.value) === questions[currentQ].ans) score++;
 
-    // SMT AD SONG AUDIO PLAYER LOGIC
-    let isPlaying = false;
-    let isMuted = false;
-    const audio = document.getElementById('smtAudio');
-    const playIcon = document.getElementById('playIcon');
-    const radioIcon = document.getElementById('radioIcon');
-    const progress = document.getElementById('audioProgress');
-
-    function toggleAudio() {
-      if (!isPlaying) {
-        audio.play().catch(() => console.log('Autoplay prevented'));
-        isPlaying = true;
-        playIcon.setAttribute('data-lucide', 'pause');
-        radioIcon.classList.add('animate-pulse');
-      } else {
-        audio.pause();
-        isPlaying = false;
-        playIcon.setAttribute('data-lucide', 'play');
-        radioIcon.classList.remove('animate-pulse');
-      }
-      lucide.createIcons();
-    }
-
-    function toggleMute() {
-      audio.muted = !isMuted;
-      isMuted = !isMuted;
-    }
-
-    audio.ontimeupdate = () => {
-      if (audio.duration) {
-        progress.style.width = (audio.currentTime / audio.duration * 100) + '%';
-      }
-    };
-
-    // CBT QUIZ ENGINE LOGIC
-    const questions = [
-      {
-        q: "What is the core philosophy of 3MA Labs?",
-        opts: [
-          "DON'T JUST WATCH THE FUTURE. BUILD IT.",
-          "Just browse the web passively",
-          "Memorize code snippets without systems",
-          "Only edit social media videos"
-        ],
-        ans: 0
-      },
-      {
-        q: "What makes the 3MA Labs curriculum unique?",
-        opts: [
-          "It uses a Router-First approach to build System Builders",
-          "It ignores networking and hardware",
-          "It is strictly for adults over 30",
-          "It has no hands-on projects"
-        ],
-        ans: 0
-      },
-      {
-        q: "Who is the Founder & Executive Leader of 3MA Labs?",
-        opts: [
-          "Moses Olanrewaju Bolarin",
-          "Anonymous Team",
-          "Third-Party Vendor",
-          "Guest Instructor"
-        ],
-        ans: 0
-      }
-    ];
-
-    let currentQ = 0;
-    let score = 0;
-
-    function renderQuestion() {
-      const q = questions[currentQ];
-      document.getElementById('qCounter').innerText = `Question ${currentQ + 1} of ${questions.length}`;
-      document.getElementById('qText').innerText = q.q;
-      const optsDiv = document.getElementById('qOptions');
-      optsDiv.innerHTML = q.opts.map((opt, idx) => `
-        <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-950 border border-slate-800 cursor-pointer hover:border-[#800080]">
-          <input type="radio" name="cbtOpt" value="${idx}" class="text-[#800080]">
-          <span class="text-xs text-slate-200">${opt}</span>
-        </label>
-      `).join('');
-    }
-
-    function submitAnswer() {
-      const sel = document.querySelector('input[name="cbtOpt"]:checked');
-      if (!sel) return alert('Please select an option.');
-      if (parseInt(sel.value) === questions[currentQ].ans) score++;
-      
-      currentQ++;
-      if (currentQ < questions.length) {
+            currentQ++;
+            if (currentQ < questions.length) {
+                renderQuestion();
+            } else {
+                document.getElementById('cbtCard').innerHTML =
+                    '<div class="text-center space-y-3 py-4">' +
+                    '<div class="w-12 h-12 bg-[#A68024]/20 border border-[#A68024] text-[#A68024] rounded-full flex items-center justify-center mx-auto text-xl font-bold">✓</div>' +
+                    '<h3 class="text-lg font-bold text-white">Assessment Complete!</h3>' +
+                    '<p class="text-xs text-slate-300">Score: <strong class="text-[#A68024]">' + score + '/' + questions
+                    .length + '</strong></p>' +
+                    '<p class="text-xs text-purple-300 font-bold">Verified by Moses Olanrewaju Bolarin</p>' +
+                    '<button onclick="location.reload()" class="bg-[#800080] text-white px-4 py-2 rounded-lg text-xs font-bold">Retake Test</button>' +
+                    '</div>';
+            }
+        }
         renderQuestion();
-      } else {
-        document.getElementById('cbtCard').innerHTML = `
-          <div class="text-center space-y-3 py-4">
-            <div class="w-12 h-12 bg-[#A68024]/20 border border-[#A68024] text-[#A68024] rounded-full flex items-center justify-center mx-auto text-xl font-bold">✓</div>
-            <h3 class="text-lg font-bold text-white">Assessment Complete!</h3>
-            <p class="text-xs text-slate-300">Score: <strong class="text-[#A68024]">${score}/${questions.length}</strong></p>
-            <p class="text-xs text-purple-300 font-bold">Verified by Moses Olanrewaju Bolarin</p>
-            <button onclick="location.reload()" class="bg-[#800080] text-white px-4 py-2 rounded-lg text-xs font-bold">Retake Test</button>
-          </div>
-        `;
-      }
-    }
-    renderQuestion();
 
-    // MARKDOWN H5 PPT SLIDE ENGINE LOGIC
-    const slides = [
-      {
-        title: "# Slide 1: Router-First Web Systems",
-        body: "Understanding IP packet routing and network topology before constructing full-stack applications.",
-        note: "Note: Guidance for Moses Olanrewaju Bolarin & Instructors on networking fundamentals."
-      },
-      {
-        title: "# Slide 2: AI Automation & AVIS Video Engine",
-        body: "Integrating Python generative AI scripts with AVIS for automated multimedia production.",
-        note: "Note: Focus on prompt structure and API security."
-      },
-      {
-        title: "# Slide 3: SMT 2026 Challenge (Aug 3–28)",
-        body: "Empowering kids & teens to build real-world systems and pitch innovative prototypes.",
-        note: "Note: Showcase student prototypes at smt.lanbomoe.com."
-      }
-    ];
+        // ---- MARKDOWN H5 PPT SLIDES ----
+        var slides = [{
+            title: "# Slide 1: Router-First Web Systems",
+            body: "Understanding IP packet routing and network topology before constructing full-stack applications.",
+            note: "Note: Guidance for Moses Olanrewaju Bolarin & Instructors on networking fundamentals."
+        }, {
+            title: "# Slide 2: AI Automation & AVIS Video Engine",
+            body: "Integrating Python generative AI scripts with AVIS for automated multimedia production.",
+            note: "Note: Focus on prompt structure and API security."
+        }, {
+            title: "# Slide 3: SMT 2026 Challenge (Aug 3–28)",
+            body: "Empowering kids & teens to build real-world systems and pitch innovative prototypes.",
+            note: "Note: Showcase student prototypes at smt.lanbomoe.com."
+        }];
 
-    let currentSlide = 0;
+        var currentSlide = 0;
 
-    function renderSlide() {
-      const s = slides[currentSlide];
-      document.getElementById('slideContent').innerHTML = `
-        <h3 class="text-base font-bold text-white">${s.title}</h3>
-        <p class="text-xs text-slate-300 leading-relaxed">${s.body}</p>
-        <div class="bg-slate-950 p-3 rounded-lg border border-slate-800 text-[11px] text-[#A68024] font-mono">${s.note}</div>
-      `;
-      document.getElementById('slideIndex').innerText = `Slide ${currentSlide + 1} of ${slides.length}`;
-    }
+        function renderSlide() {
+            var s = slides[currentSlide];
+            document.getElementById('slideContent').innerHTML =
+                '<h3 class="text-base font-bold text-white">' + s.title + '</h3>' +
+                '<p class="text-xs text-slate-300 leading-relaxed">' + s.body + '</p>' +
+                '<div class="bg-slate-950 p-3 rounded-lg border border-slate-800 text-[11px] text-[#A68024] font-mono">' + s
+                .note + '</div>';
+            document.getElementById('slideIndex').innerText = 'Slide ' + (currentSlide + 1) + ' of ' + slides.length;
+        }
 
-    function openH5Modal() {
-      document.getElementById('h5Modal').classList.remove('hidden');
-      renderSlide();
-    }
-    function closeH5Modal() { document.getElementById('h5Modal').classList.add('hidden'); }
-    function prevSlide() { if (currentSlide > 0) { currentSlide--; renderSlide(); } }
-    function nextSlide() { if (currentSlide < slides.length - 1) { currentSlide++; renderSlide(); } }
+        function openH5Modal() {
+            document.getElementById('h5Modal').classList.remove('hidden');
+            renderSlide();
+        }
 
-    // AI COUNSELOR MODAL LOGIC
-    function openAIChat() { document.getElementById('aiModal').classList.remove('hidden'); }
-    function closeAIChat() { document.getElementById('aiModal').classList.add('hidden'); }
-  </script>
+        function closeH5Modal() {
+            document.getElementById('h5Modal').classList.add('hidden');
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) { currentSlide--;
+                renderSlide(); }
+        }
+
+        function nextSlide() {
+            if (currentSlide < slides.length - 1) { currentSlide++;
+                renderSlide(); }
+        }
+
+        // ---- AI COUNSELOR ----
+        function openAIChat() {
+            document.getElementById('aiModal').classList.remove('hidden');
+        }
+
+        function closeAIChat() {
+            document.getElementById('aiModal').classList.add('hidden');
+        }
+
+        // ---- Close modals on Escape key ----
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeH5Modal();
+                closeAIChat();
+            }
+        });
+
+        // ---- Close modals on backdrop click ----
+        document.getElementById('h5Modal').addEventListener('click', function(e) {
+            if (e.target === this) closeH5Modal();
+        });
+        document.getElementById('aiModal').addEventListener('click', function(e) {
+            if (e.target === this) closeAIChat();
+        });
+
+        console.log('✅ 3MA Labs website loaded — DON\'T JUST WATCH THE FUTURE. BUILD IT.');
+    </script>
+
 </body>
 </html>
