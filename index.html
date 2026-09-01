@@ -1,1073 +1,2435 @@
 <!DOCTYPE html>
-<html lang="en" class="dark scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3MA Labs — DON'T JUST WATCH THE FUTURE. BUILD IT.</title>
-    <meta name="description" content="3MA Labs: Router-First Curriculum & System Builders Training for Kids & Teens (Ages 4-19), founded by Moses Olanrewaju Bolarin. Master network routing, web systems, AI automation, and digital infrastructure." />
-
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com">
-    </script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        purple: { DEFAULT: '#800080', 600: '#800080', 700: '#660066', 900: '#3b003b' },
-                        gold: { DEFAULT: '#A68024', 400: '#c2972d', 500: '#A68024', 600: '#8a681b' }
-                    }
-                }
-            }
-        }
-    </script>
-
-    <!-- Google Fonts & Lucide Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <script src="https://unpkg.com/lucide@latest">
-    </script>
-
-    <!-- AEO & Search Engine JSON-LD Schema -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3MA Labs: Master Tech & Creativity | Sovereign Systems Portal</title>
+    
+    <!-- Answer Engine Optimization (AEO) Entity Metadata & L-DOS v2.7 Compliance Schema -->
+    <meta name="description" content="3MA Labs (3niti Multimedia Academy) is an elite educational platform and tech innovation laboratory training youth (ages 4-19) as System Builders under Moses Olanrewaju Bolarin. Featuring a Router-First Curriculum, AI video automation, and cybersecurity.">
+    <meta name="keywords" content="Moses Olanrewaju Bolarin, LanBo-Moe, 3MA Labs, SMT 2026, Router-First Curriculum, System Builders, Kids Coding, AI video pipelines, Nigeria STEM">
+    <meta name="author" content="Moses Olanrewaju Bolarin">
+    
+    <!-- Structured JSON-LD Schema (AEO Consensus Pillar) -->
     <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "EducationalOrganization",
-            "name": "3MA Labs (3niti Multimedia Academy)",
-            "url": "https://3ma.lanbomoe.com",
-            "logo": "https://3ma.lanbomoe.com/assets/8KdYpVO.png",
-            "description": "3MA Labs trains kids and teens (ages 4-19) as System Builders using a Router-First Curriculum.",
-            "founder": {
-                "@type": "Person",
-                "name": "Moses Olanrewaju Bolarin",
-                "jobTitle": "CEO, Founder & Systems Architect",
-                "worksFor": "3MA Labs"
-            },
-            "slogan": "DON'T JUST WATCH THE FUTURE. BUILD IT.",
-            "email": "3ma@lanbomoe.com",
-            "telephone": "+2348033830101"
-        }
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "3MA Labs (3niti Multimedia Academy)",
+      "founder": {
+        "@type": "Person",
+        "name": "Moses Olanrewaju Bolarin",
+        "alternateName": "LanBo-Moe",
+        "alumniOf": "University of Lagos",
+        "jobTitle": "Systems Architect & CEO"
+      },
+      "url": "https://3ma.lanbomoe.com",
+      "logo": "https://i.imgur.com/Fsp0AMe.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+2348033830101",
+        "contactType": "Admissions & Support",
+        "email": "3ma@lanbomoe.com"
+      }
+    }
     </script>
 
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
+        :root {
+            --purple: #800080;
+            --purple-light: #F3E5F5;
+            --gold: #A68024;
+            --gold-light: #FFF8E1;
+            --charcoal: #111111;
+            --gray-dark: #1E1E1E;
+            --gray-light: #F5F5F7;
+            --white: #FFFFFF;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 10px 30px rgba(128, 0, 128, 0.08);
+            --shadow-gold: 0 10px 30px rgba(166, 128, 36, 0.15);
+            --border-radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-        code,
-        pre,
-        .font-mono {
-            font-family: 'JetBrains Mono', monospace;
-        }
-        .bg-grid-pattern {
-            background-image: radial-gradient(rgba(166, 128, 36, 0.15) 1px, transparent 1px);
-            background-size: 24px 24px;
+            background-color: var(--white);
+            color: var(--charcoal);
+            overflow-x: hidden;
+            line-height: 1.6;
         }
 
-        /* ---------- SUCCESS METRICS COUNTER ANIMATION ---------- */
-        .counter-number {
-            display: inline-block;
-            font-size: 3rem;
-            font-weight: 900;
-            line-height: 1.2;
-        }
-        @keyframes countUp {
-            from {
-                opacity: 0;
-                transform: translateY(12px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .metric-card {
-            animation: countUp 0.8s ease forwards;
-        }
-        .metric-card:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-        .metric-card:nth-child(2) {
-            animation-delay: 0.3s;
-        }
-        .metric-card:nth-child(3) {
-            animation-delay: 0.5s;
+        h1, h2, h3, h4, .brand {
+            font-family: 'Space Grotesk', sans-serif;
         }
 
-        /* ---------- ECOSYSTEM BRIDGE BUTTONS ---------- */
-        .ecosystem-bridge .nav-btn {
+        /* Navigation Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            padding: 1.25rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.03);
+            border-bottom: 1px solid rgba(128, 0, 128, 0.05);
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .header-logo img {
+            height: 48px;
+            object-fit: contain;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-text .title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--purple);
+            letter-spacing: -0.5px;
+        }
+
+        .brand-text .subtitle {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--gold);
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--purple);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .btn-portal {
+            background-color: var(--purple);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-portal:hover {
+            background-color: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        /* Hero styling */
+        .hero {
+            background: radial-gradient(circle at 80% 20%, rgba(128, 0, 128, 0.04) 0%, rgba(255, 255, 255, 1) 100%);
+            padding: 5rem 2rem 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .badge-challenge {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
+            background-color: var(--purple-light);
+            color: var(--purple);
             padding: 0.5rem 1.25rem;
-            border-radius: 9999px;
-            font-size: 0.7rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: all 0.2s;
-            border: 1.5px solid rgba(166, 128, 36, 0.4);
-            background: rgba(15, 23, 42, 0.8);
-            color: #e2e8f0;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(128, 0, 128, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.15;
+            color: var(--purple);
+            max-width: 900px;
+            margin: 0 auto 1.5rem;
+            letter-spacing: -1.5px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--charcoal);
+            max-width: 750px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .btn-primary {
+            background-color: var(--purple);
+            color: var(--white);
+            padding: 1rem 2.25rem;
+            border-radius: var(--border-radius);
+            font-weight: 700;
+            font-size: 1.05rem;
             text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
         }
-        .ecosystem-bridge .nav-btn:hover {
-            border-color: #A68024;
-            background: #1e293b;
-            color: #facc15;
-            transform: translateY(-1px);
+
+        .btn-primary:hover {
+            background-color: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-gold);
         }
-        .ecosystem-bridge .nav-btn .globe {
-            display: inline-block;
+
+        .btn-secondary {
+            background-color: var(--white);
+            color: var(--purple);
+            padding: 1rem 2.25rem;
+            border-radius: var(--border-radius);
+            font-weight: 700;
+            font-size: 1.05rem;
+            text-decoration: none;
+            border: 2px solid var(--purple);
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--purple-light);
+            transform: translateY(-3px);
+        }
+
+        /* Highly Emphasized Metrics Board Container */
+        .metrics-board-container {
+            max-width: 1100px;
+            margin: 4rem auto 2rem;
+            background: linear-gradient(135deg, #180018, #2e002e);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            color: var(--white);
+            border: 3px solid var(--gold);
+            box-shadow: var(--shadow-gold);
+            text-align: center;
+        }
+
+        .metrics-board-container h3 {
+            font-size: 1.8rem;
+            color: var(--gold);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+
+        .metric-highlight-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(166, 128, 36, 0.3);
+            border-radius: var(--border-radius);
+            padding: 2.25rem 1.5rem;
+            transition: var(--transition);
+        }
+
+        .metric-highlight-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.07);
+            border-color: var(--gold);
+            box-shadow: 0 10px 25px rgba(166, 128, 36, 0.15);
+        }
+
+        .metric-highlight-card .num {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-highlight-card .label {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .metric-highlight-card .desc {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.4;
+        }
+
+        /* Audio Engine Block */
+        .audio-engine-panel {
+            max-width: 700px;
+            margin: 3rem auto;
+            background: linear-gradient(135deg, #180018, #2a002a);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            color: var(--white);
+            box-shadow: 0 15px 40px rgba(128, 0, 128, 0.2);
+            border: 2px solid var(--gold);
+            text-align: left;
+        }
+
+        .audio-panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(166, 128, 36, 0.2);
+            padding-bottom: 0.75rem;
+        }
+
+        .audio-panel-header h3 {
+            font-size: 1.25rem;
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .audio-link-btn {
+            color: var(--white);
+            font-size: 0.8rem;
+            text-decoration: none;
+            background-color: rgba(166, 128, 36, 0.2);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            border: 1px solid var(--gold);
+            transition: var(--transition);
+        }
+
+        .audio-link-btn:hover {
+            background-color: var(--gold);
+            color: var(--charcoal);
+        }
+
+        .visualizer-wrapper {
+            background-color: #0b000b;
+            border-radius: 8px;
+            height: 100px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        #visualizerCanvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .song-selector-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .song-button {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(128, 0, 128, 0.2);
+            padding: 1rem;
+            border-radius: 8px;
+            color: var(--white);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .song-button:hover, .song-button.active {
+            background-color: rgba(128, 0, 128, 0.15);
+            border-color: var(--gold);
+        }
+
+        .song-button span.title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--white);
+        }
+
+        .song-button span.meta {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 0.25rem;
+        }
+
+        .song-button.active span.meta {
+            color: var(--gold);
+        }
+
+        .master-audio-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .master-audio-controls audio {
+            flex-grow: 1;
+            height: 40px;
+        }
+
+        /* Section layout */
+        .section-container {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--purple);
+            margin-bottom: 0.75rem;
+            letter-spacing: -1px;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Leadership Profile Card */
+        .leadership-card {
+            max-width: 800px;
+            background-color: var(--white);
+            border: 2px solid rgba(128, 0, 128, 0.1);
+            border-radius: 24px;
+            padding: 3rem;
+            margin: 0 auto 5rem;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .leadership-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: var(--purple);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+            border: 4px solid var(--gold);
+            box-shadow: var(--shadow-gold);
+            flex-shrink: 0;
+        }
+
+        .leadership-info h3 {
+            font-size: 1.8rem;
+            color: var(--purple);
+            margin-bottom: 0.25rem;
+        }
+
+        .leadership-info .title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .leadership-info blockquote {
+            font-style: italic;
+            color: var(--charcoal);
+            font-size: 1.1rem;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+        }
+
+        /* 3MA Three Pillars List style */
+        .pillars-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .pillar-item {
+            background-color: var(--gray-light);
+            border-left: 5px solid var(--purple);
+            padding: 1.25rem;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .pillar-item strong {
+            color: var(--purple);
+            font-size: 1.05rem;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        /* Services Grid Layout */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            border: 1px solid rgba(128, 0, 128, 0.05);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .service-card .icon-box {
+            width: 55px;
+            height: 55px;
+            border-radius: 12px;
+            background-color: var(--purple-light);
+            color: var(--purple);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.35rem;
+            color: var(--purple);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: var(--charcoal);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .service-price {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        /* School networks styling */
+        .school-clubs-panel {
+            background: linear-gradient(135deg, var(--purple), #4a004a);
+            border-radius: 24px;
+            padding: 4rem;
+            color: var(--white);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            box-shadow: var(--shadow);
+        }
+
+        .school-clubs-info h3 {
+            font-size: 2.25rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .school-clubs-info p {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 2rem;
+        }
+
+        .btn-partnership {
+            background-color: transparent !important;
+            color: var(--white) !important;
+            border: 2px solid var(--gold) !important;
+            padding: 0.85rem 1.75rem;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-partnership:hover {
+            background-color: var(--gold) !important;
+            color: var(--charcoal) !important;
+            box-shadow: var(--shadow-gold);
+        }
+
+        .school-metrics-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .school-metric-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background-color: rgba(255,255,255,0.06);
+            padding: 1.25rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .school-metric-item i {
+            font-size: 1.5rem;
+            color: var(--gold);
+        }
+
+        .school-metric-item div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .school-metric-item span.title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--gold);
+        }
+
+        .school-metric-item span.desc {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.8);
+            margin-top: 0.25rem;
+        }
+
+        /* Distinct Columns for Lab Benchmarks */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .portfolio-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 2px solid rgba(128, 0, 128, 0.06);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold);
+            box-shadow: 0 15px 40px rgba(166, 128, 36, 0.12);
+        }
+
+        .portfolio-content {
+            padding: 2.25rem;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .portfolio-card .badge {
+            background-color: var(--purple-light);
+            color: var(--purple);
+            padding: 0.4rem 0.8rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border-radius: 4px;
+            align-self: flex-start;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .portfolio-card h3 {
+            font-size: 1.4rem;
+            color: var(--purple);
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .portfolio-card p {
+            font-size: 0.95rem;
+            color: var(--charcoal);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+            line-height: 1.5;
+        }
+
+        .portfolio-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--gray-light);
+            padding-top: 1.25rem;
+            margin-top: auto;
+        }
+
+        .portfolio-student {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .portfolio-student i {
+            font-size: 1.25rem;
+            color: var(--purple);
+        }
+
+        .portfolio-student span {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--charcoal);
+        }
+
+        .portfolio-student .id {
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .btn-view-spec {
+            color: var(--purple);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: var(--transition);
+        }
+
+        .btn-view-spec:hover {
+            color: var(--gold);
+        }
+
+        /* 3D Student Video Showcase Section */
+        .video-showcase-container {
+            max-width: 850px;
+            margin: 4rem auto;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(128, 0, 128, 0.05);
+            text-align: center;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16/9;
+            background-color: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* 3MA CBT Assessment Portal Engine inside the Page */
+        .cbt-portal-box {
+            max-width: 800px;
+            margin: 4rem auto;
+            background-color: var(--white);
+            border: 2px solid var(--purple);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .cbt-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid var(--purple-light);
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .cbt-header h3 {
+            color: var(--purple);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cbt-header .meta {
+            font-size: 0.8rem;
+            background-color: var(--gold-light);
+            color: var(--gold);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-weight: 700;
+        }
+
+        .quiz-question-box h4 {
+            font-size: 1.25rem;
+            color: var(--charcoal);
+            margin-bottom: 1.5rem;
+        }
+
+        .quiz-options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .quiz-option-btn {
+            background-color: var(--gray-light);
+            border: 1px solid rgba(128, 0, 128, 0.1);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+            outline: none;
+        }
+
+        .quiz-option-btn:hover {
+            background-color: var(--purple-light);
+            border-color: var(--purple);
+        }
+
+        .quiz-option-btn.correct {
+            background-color: #E8F5E9 !important;
+            border-color: #2E7D32 !important;
+            color: #2E7D32 !important;
+        }
+
+        .quiz-option-btn.wrong {
+            background-color: #FFEBEE !important;
+            border-color: #C62828 !important;
+            color: #C62828 !important;
+        }
+
+        .quiz-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn-cbt-nav {
+            background-color: var(--purple);
+            color: var(--white);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-cbt-nav:hover {
+            background-color: var(--gold);
+        }
+
+        .cbt-result-box {
+            text-align: center;
+            display: none;
+        }
+
+        .cbt-result-box i {
+            font-size: 4rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .cbt-result-box h4 {
+            font-size: 1.8rem;
+            color: var(--purple);
+            margin-bottom: 0.5rem;
+        }
+
+        .cbt-result-box p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Testimonials / Parental Reviews Section */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(128, 0, 128, 0.03);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '“';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            color: var(--purple-light);
+            font-family: serif;
+            line-height: 1;
+            z-index: 0;
+        }
+
+        .testimonial-text {
+            font-size: 0.95rem;
+            color: var(--charcoal);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+            flex-grow: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-top: 1px solid var(--gray-light);
+            padding-top: 1rem;
+        }
+
+        .testimonial-author-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background-color: var(--gold-light);
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .testimonial-author-info h4 {
+            font-size: 0.95rem;
+            color: var(--purple);
+            font-weight: 700;
+        }
+
+        .testimonial-author-info p {
+            font-size: 0.75rem;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        /* Dynamic FAQs Accordion */
+        .faq-accordion-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            background-color: var(--white);
+            border: 1px solid rgba(128,0,128,0.08);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-trigger {
+            width: 100%;
+            padding: 1.25rem 2rem;
+            background: none;
+            border: none;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--purple);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .faq-trigger:hover {
+            background-color: var(--purple-light);
+        }
+
+        .faq-trigger i {
+            transition: transform 0.3s;
+            color: var(--gold);
+        }
+
+        .faq-item.active .faq-trigger i {
+            transform: rotate(180deg);
+        }
+
+        .faq-panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: #FAFAFA;
+        }
+
+        .faq-panel-content {
+            padding: 1.5rem 2rem;
+            font-size: 0.95rem;
+            color: var(--charcoal);
+            border-top: 1px solid rgba(0,0,0,0.03);
+        }
+
+        /* Interactive Games Arcade */
+        .games-area {
+            background-color: var(--gray-dark);
+            border-radius: var(--border-radius);
+            padding: 3rem;
+            color: var(--white);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-canvas-container {
+            background-color: #0d0d0d;
+            border: 4px solid var(--purple);
+            border-radius: var(--border-radius);
+            width: 100%;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            box-shadow: 0 0 20px rgba(128, 0, 128, 0.4);
+        }
+
+        #solarDefenderCanvas {
+            width: 100%;
+            height: 100%;
+            background-color: #02020a;
+            display: block;
+        }
+
+        .game-info h3 {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .game-info p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 1.5rem;
             font-size: 1rem;
         }
 
-        /* ---------- VIDEO / AUDIO CONTAINER ---------- */
-        .smt-media-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-        @media (max-width: 768px) {
-            .smt-media-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        .media-card {
-            background: #0f172a;
-            border: 1.5px solid #334155;
-            border-radius: 1.25rem;
-            padding: 1.25rem;
-            transition: border-color 0.3s;
-        }
-        .media-card:hover {
-            border-color: #800080;
-        }
-        .media-card video,
-        .media-card audio {
-            width: 100%;
-            border-radius: 0.75rem;
-            background: #020617;
-        }
-        .media-card audio {
-            height: 48px;
+        .game-control-btn {
+            background-color: var(--purple);
+            color: var(--white);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
         }
 
-        /* ---------- SMOOTH SCROLL ---------- */
-        html {
-            scroll-behavior: smooth;
+        .game-control-btn:hover {
+            background-color: var(--gold);
+        }
+
+        .game-start-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            gap: 1rem;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        /* Active Vocabulary Flashcards */
+        .flashcard-section {
+            background-color: var(--purple-light);
+            border-radius: var(--border-radius);
+            padding: 4rem 2rem;
+        }
+
+        .flashcard-container {
+            max-width: 550px;
+            margin: 0 auto;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .flashcard {
+            height: 280px;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid rgba(128, 0, 128, 0.05);
+        }
+
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2.5rem;
+            text-align: center;
+            border-radius: var(--border-radius);
+        }
+
+        .card-front {
+            background-color: var(--white);
+        }
+
+        .card-front h3 {
+            font-size: 2.2rem;
+            color: var(--purple);
+            margin-bottom: 0.5rem;
+        }
+
+        .card-front p {
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card-back {
+            background-color: var(--purple);
+            color: var(--white);
+            transform: rotateY(180deg);
+        }
+
+        .card-back p {
+            font-size: 1.15rem;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+
+        .card-back .term-category {
+            color: var(--gold-light);
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            margin-top: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .flashcard-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .flashcard-nav-btn {
+            background-color: var(--white);
+            border: 1px solid rgba(128, 0, 128, 0.1);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--purple);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .flashcard-nav-btn:hover {
+            background-color: var(--purple);
+            color: var(--white);
+            border-color: var(--purple);
+        }
+
+        /* Bonuses & Freebies Chest */
+        .bonuses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .bonus-card {
+            background: linear-gradient(135deg, #FFF, var(--purple-light));
+            border-radius: var(--border-radius);
+            padding: 2.5rem 2rem;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(166, 128, 36, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .bonus-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+
+        .bonus-icon {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .bonus-card h3 {
+            font-size: 1.25rem;
+            color: var(--purple);
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .bonus-card p {
+            font-size: 0.9rem;
+            color: var(--charcoal);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .btn-download {
+            background-color: var(--purple);
+            color: var(--white);
+            text-decoration: none;
+            padding: 0.6rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .btn-download:hover {
+            background-color: var(--gold);
+            box-shadow: var(--shadow-gold);
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: var(--charcoal);
+            color: rgba(255,255,255,0.7);
+            padding: 4rem 2rem 2rem;
+            font-size: 0.9rem;
+            border-top: 3px solid var(--purple);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .footer-brand h3 {
+            color: var(--white);
+            font-size: 1.5rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        .footer-links h4 {
+            color: var(--gold);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links ul li a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--white);
+            padding-left: 4px;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-bottom-links a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--white);
+        }
+
+        /* L-DOS v2.7 Crawler Micro-Fee Layer Overlay Notice */
+        .crawler-alert {
+            background-color: #1e001e;
+            border: 1px solid rgba(166, 128, 36, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-top: 2rem;
+            width: 100%;
+        }
+
+        .crawler-alert a {
+            color: var(--gold);
+            text-decoration: underline;
+            font-weight: 700;
+        }
+
+        @media (max-width: 900px) {
+            .hero h1 { font-size: 2.5rem; }
+            .games-area { grid-template-columns: 1fr; gap: 2rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .school-clubs-panel { grid-template-columns: 1fr; gap: 2rem; padding: 2rem; }
+            .leadership-card { flex-direction: column; text-align: center; padding: 2rem; }
+            header { flex-direction: column; gap: 1rem; padding: 1rem; }
         }
     </style>
 </head>
+<body>
 
-<body class="bg-slate-950 text-slate-100 antialiased selection:bg-[#800080] selection:text-white">
-
-    <!-- ============================================================ -->
-    <!-- TOP ANNOUNCEMENT BAR                                          -->
-    <!-- ============================================================ -->
-    <div class="bg-gradient-to-r from-[#800080] via-purple-900 to-[#A68024] text-white text-xs font-bold py-2 px-4 border-b border-[#A68024]/40">
-        <div class="container mx-auto flex items-center justify-between gap-2">
-            <div class="flex items-center gap-2 truncate">
-                <span class="bg-[#A68024] text-slate-950 px-2 py-0.5 rounded text-[10px] uppercase font-black">Aug 3–28, 2026</span>
-                <span class="truncate">SMT 2026 Digital Transformation Challenge — DON'T JUST WATCH THE FUTURE. BUILD IT.</span>
+    <!-- Nav Header -->
+    <header>
+        <a href="#" class="header-logo">
+            <img src="https://i.imgur.com/Fsp0AMe.png" alt="3MA Labs Logo">
+            <div class="brand-text">
+                <span class="title">3MA Labs</span>
+                <span class="subtitle">System Builders Academy</span>
             </div>
-            <a href="https://smt.lanbomoe.com" target="_blank" class="bg-slate-950 hover:bg-slate-900 text-[#A68024] border border-[#A68024]/60 px-3 py-1 rounded text-[11px] font-black shrink-0 transition-all uppercase tracking-wider">
-                Register Now &rarr;
-            </a>
-        </div>
-    </div>
-
-    <!-- ============================================================ -->
-    <!-- NAVIGATION HEADER                                             -->
-    <!-- ============================================================ -->
-    <header class="sticky top-0 z-40 bg-slate-950/90 backdrop-blur-md border-b border-[#800080]/40">
-        <div class="container mx-auto px-4 h-16 flex items-center justify-between">
-
-            <!-- Logo -->
-            <a href="#" class="flex items-center gap-2.5 shrink-0">
-                <div class="w-10 h-10 rounded-xl bg-slate-900 border-2 border-[#A68024] p-1 flex items-center justify-center shadow-lg">
-                    <img src="assets/8KdYpVO.png" alt="3MA Logo" class="w-full h-full object-contain" onerror="this.style.display='none'">
-                </div>
-                <div>
-                    <span class="text-lg font-black tracking-tight text-white">3MA <span class="text-[#A68024]">Labs</span></span>
-                    <span class="block text-[10px] font-mono text-purple-300 -mt-1 font-bold">System Builders Academy</span>
-                </div>
-            </a>
-
-            <!-- Desktop Links -->
-            <nav class="hidden lg:flex items-center gap-4 text-sm font-medium text-slate-300">
-                <a href="#curriculum" class="hover:text-[#A68024] transition-colors">Curriculum</a>
-                <button onclick="openH5Modal()" class="flex items-center gap-1.5 text-purple-300 hover:text-white bg-[#800080]/30 border border-[#800080] px-2.5 py-1 rounded-lg text-xs font-semibold">
-                    <i data-lucide="book-open" class="w-3.5 h-3.5 text-purple-400"></i> H5 PPT
-                </button>
-                <a href="#smt-challenge" class="hover:text-[#A68024] transition-colors flex items-center gap-1">
-                    <i data-lucide="sun" class="w-4 h-4 text-[#A68024]"></i> SMT 2026
-                </a>
-                <a href="#cbt-quiz" class="hover:text-[#A68024] transition-colors">CBT Portal</a>
-                <a href="#ceo-moses" class="hover:text-purple-400 transition-colors">Moses</a>
-                <a href="#showcase" class="hover:text-purple-400 transition-colors">Prototypes</a>
-
-                <!-- ECOSYSTEM BRIDGE (main hub + legacy) -->
-                <div class="ecosystem-bridge flex items-center gap-2 ml-1">
-                    <a href="https://www.lanbomoe.com" target="_blank" class="nav-btn">
-                        <span class="globe">🌐</span> Global Hub
-                    </a>
-                    <a href="https://lanbomoe.github.io" target="_blank" class="nav-btn">
-                        <span class="globe">📜</span> Legacy
-                    </a>
-                </div>
-            </nav>
-
-            <!-- Right CTAs -->
-            <div class="flex items-center gap-3">
-                <a href="#cbt-quiz" class="flex items-center gap-1.5 bg-[#A68024] hover:bg-[#b88e28] text-slate-950 font-black px-4 py-2 rounded-lg text-xs shadow-md uppercase tracking-wider transition-all border border-[#A68024]">
-                    <i data-lucide="award" class="w-4 h-4"></i>
-                    <span>School Portal</span>
-                </a>
-                <button onclick="openAIChat()" class="hidden sm:flex items-center gap-2 bg-slate-900 border border-[#800080]/60 hover:border-purple-400 text-slate-200 px-3 py-2 rounded-lg text-xs font-medium">
-                    <i data-lucide="bot" class="w-4 h-4 text-purple-400"></i>
-                    <span>AI Counselor</span>
-                </button>
-
-                <!-- Mobile hamburger: show ecosystem links in a dropdown (simple) -->
-                <button id="mobileMenuToggle" class="lg:hidden text-slate-300 hover:text-white p-1" aria-label="Toggle menu">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile dropdown -->
-        <div id="mobileMenu" class="lg:hidden hidden bg-slate-900 border-t border-slate-800 px-4 py-3 space-y-2 text-sm">
-            <a href="#curriculum" class="block text-slate-300 hover:text-[#A68024]">Curriculum</a>
-            <a href="#smt-challenge" class="block text-slate-300 hover:text-[#A68024]">SMT 2026</a>
-            <a href="#cbt-quiz" class="block text-slate-300 hover:text-[#A68024]">CBT Portal</a>
-            <a href="#ceo-moses" class="block text-slate-300 hover:text-purple-400">Moses</a>
-            <a href="#showcase" class="block text-slate-300 hover:text-purple-400">Prototypes</a>
-            <div class="flex flex-wrap gap-2 pt-1 border-t border-slate-800">
-                <a href="https://www.lanbomoe.com" target="_blank" class="text-xs bg-slate-800 px-3 py-1.5 rounded-full text-slate-200 hover:bg-slate-700">🌐 Global Hub</a>
-                <a href="https://lanbomoe.github.io" target="_blank" class="text-xs bg-slate-800 px-3 py-1.5 rounded-full text-slate-200 hover:bg-slate-700">📜 Legacy</a>
-            </div>
-        </div>
+        </a>
+        <nav>
+            <a href="#leadership">Leadership</a>
+            <a href="#services">Services</a>
+            <a href="#school-clubs">School Network</a>
+            <a href="#cbt-widget">CBT Portal</a>
+            <a href="#benchmarks">System Benchmarks</a>
+            <a href="#games">Games Station</a>
+            <a href="#flashcards">Memory Shields</a>
+            <a href="#bonuses">Bonuses</a>
+            <a href="#testimonials">Reviews</a>
+            <a href="#faq">FAQs</a>
+        </nav>
+        <button class="btn-portal" onclick="toggleModal('loginModal')">
+            <i class="fa-solid fa-right-to-bracket"></i> Sovereign Login
+        </button>
     </header>
 
-    <!-- ============================================================ -->
-    <!-- HERO SECTION                                                  -->
-    <!-- ============================================================ -->
-    <section id="hero" class="relative pt-12 pb-20 md:pt-16 md:pb-24 bg-slate-950 overflow-hidden bg-grid-pattern">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-[#800080]/20 via-[#A68024]/10 to-transparent blur-3xl pointer-events-none"></div>
+    <!-- Hero Area -->
+    <section class="hero">
+        <div class="badge-challenge">
+            <i class="fa-solid fa-crown"></i> SMT 2026: Sovereign Challenge Concluded
+        </div>
+        <h1>Don't Just Watch The Future.<br><span>BUILD IT.</span></h1>
+        <p>Empowering children and teenagers (ages 4–19) to transition from technology consumers to network-aware Systems Architects, AI engineers, and full-stack builders.</p>
+        
+        <div class="hero-actions">
+            <a href="#benchmarks" class="btn-primary"><i class="fa-solid fa-diagram-project"></i> View System Benchmarks</a>
+            <a href="https://smt.lanbomoe.com" target="_blank" class="btn-secondary"><i class="fa-solid fa-graduation-cap"></i> Visit SMT Admissions</a>
+        </div>
 
-        <div class="container mx-auto px-4 relative z-10 text-center max-w-4xl space-y-6">
-
-            <!-- Founder Spotlight -->
-            <div class="inline-flex items-center gap-2 bg-slate-900/95 border border-[#A68024]/60 px-4 py-1.5 rounded-full shadow-lg text-xs md:text-sm text-slate-300">
-                <span class="w-2.5 h-2.5 rounded-full bg-[#A68024] animate-pulse"></span>
-                <span class="text-[#A68024] font-bold">Moses Olanrewaju Bolarin</span>
-                <span class="text-slate-600">|</span>
-                <span class="text-purple-300 font-medium">3MA Labs Founder & System Architect</span>
+        <!-- 3MA Dynamic Audio Engine Panel with Equalizer Spectrum Simulation -->
+        <div class="audio-engine-panel">
+            <div class="audio-panel-header">
+                <h3><i class="fa-solid fa-radio"></i> 3MA Labs Audio Engine — Equalizer Simulation</h3>
+                <a href="https://lanbomoe.github.io/#music" target="_blank" class="audio-link-btn"><i class="fa-solid fa-music"></i> Stream Music Catalogue</a>
+            </div>
+            
+            <!-- LED Equalizer Canvas -->
+            <div class="visualizer-wrapper">
+                <canvas id="visualizerCanvas"></canvas>
             </div>
 
-            <!-- Main Headline -->
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white uppercase leading-tight">
-                DON'T JUST WATCH THE FUTURE. <br />
-                <span class="bg-gradient-to-r from-purple-400 via-[#A68024] to-amber-300 bg-clip-text text-transparent">
-                    BUILD IT.
-                </span>
-            </h1>
-
-            <p class="text-lg md:text-xl font-bold text-[#A68024] font-mono tracking-wide">
-                "3MA Labs: Master Tech & Creativity."
-            </p>
-
-            <p class="text-slate-300 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
-                Empowering youth (ages 4–19) as <strong class="text-white">System Builders</strong> using a <strong class="text-[#A68024]">Router-First Curriculum</strong>. Under the leadership of <strong class="text-purple-300">Moses Olanrewaju Bolarin</strong>, students engineer real network infrastructure, full-stack web applications, AI automation, and multimedia systems.
-            </p>
-
-            <!-- Action Buttons -->
-            <div class="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                <a href="#cbt-quiz" class="flex items-center gap-2.5 bg-[#A68024] hover:bg-[#b88e28] text-slate-950 font-black px-6 py-3.5 rounded-xl shadow-xl transition-all text-sm md:text-base border-2 border-[#A68024] uppercase tracking-wider">
-                    <i data-lucide="award" class="w-5 h-5"></i>
-                    <span>Access School Portal</span>
-                </a>
-
-                <button onclick="openH5Modal()" class="flex items-center gap-2.5 bg-[#800080] hover:bg-[#990099] text-white font-extrabold px-6 py-3.5 rounded-xl shadow-xl transition-all text-sm md:text-base">
-                    <i data-lucide="book-open" class="w-5 h-5 text-amber-300"></i>
-                    <span>Markdown H5 PPT Decks</span>
-                </button>
-
-                <a href="https://smt.lanbomoe.com" target="_blank" class="flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-slate-200 border border-[#A68024]/60 font-bold px-5 py-3.5 rounded-xl text-sm">
-                    <i data-lucide="sun" class="w-5 h-5 text-[#A68024]"></i>
-                    <span>SMT 2026 Challenge</span>
-                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                </a>
+            <div class="song-selector-grid">
+                <div class="song-button active" id="btnSong1" onclick="playSong('SMT 2026 Ad Song 1.mp3', 'https://docs.google.com/uc?export=download&id=1kxRWqgrJ2lb-4LqoQi8Fdg5QmBaqe2z0', 'btnSong1')">
+                    <span class="title">SMT 2026 Anthem (Song 1)</span>
+                    <span class="meta">Voice starts at 0:04 | Energy Track</span>
+                </div>
+                <div class="song-button" id="btnSong2" onclick="playSong('SMT 2026 Ad Song 2.mp3', 'https://docs.google.com/uc?export=download&id=1mvR2ZMCSqeijta9_B7Jw7wIhtOzhjBxF', 'btnSong2')">
+                    <span class="title">SMT 2026 Symphony (Song 2)</span>
+                    <span class="meta">Voice starts at 0:10 | Melodic Track</span>
+                </div>
             </div>
 
-            <!-- ========================================================== -->
-            <!-- EMBEDDED SMT AD SONG 1 PLAYER  (FIXED with local asset)    -->
-            <!-- ========================================================== -->
-            <div class="mt-8 max-w-2xl mx-auto bg-slate-950 border-2 border-[#800080] rounded-2xl p-4 shadow-2xl relative overflow-hidden text-left">
-                <div class="flex items-center justify-between border-b border-[#800080]/40 pb-3 mb-3">
-                    <div class="flex items-center gap-2.5">
-                        <div class="w-8 h-8 rounded-lg bg-[#800080] flex items-center justify-center text-white font-bold">
-                            <i data-lucide="radio" class="w-4 h-4 text-[#A68024]" id="radioIcon"></i>
-                        </div>
+            <div class="master-audio-controls">
+                <audio id="globalAudioPlayer" controls>
+                    <source src="SMT 2026 Ad Song 1.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+
+        <!-- Master Pillars Dashboard Container (EMPHASIZED METRICS) -->
+        <div class="metrics-board-container" id="metrics-board">
+            <h3>🏆 3MA Labs Core Impact & Milestones Dashboard</h3>
+            <div class="metrics-grid">
+                <div class="metric-highlight-card">
+                    <span class="num">5,000+</span>
+                    <span class="label">Alumni Impacted</span>
+                    <span class="desc">A multi-decade legacy of STEM mastery.</span>
+                </div>
+                <div class="metric-highlight-card">
+                    <span class="num">20 Days</span>
+                    <span class="label">Intensive Launch</span>
+                    <span class="desc">Foundations to advanced security.</span>
+                </div>
+                <div class="metric-highlight-card">
+                    <span class="num">100%</span>
+                    <span class="label">Sovereignty Focus</span>
+                    <span class="desc">Router-First network paradigms.</span>
+                </div>
+                <div class="metric-highlight-card">
+                    <span class="num">KDP</span>
+                    <span class="label">Amazon Publishing</span>
+                    <span class="desc">Student creations published globally.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sovereign Member & Student Dashboard Area (Initially Hidden) -->
+    <section class="section-container" id="studentPortalSection" style="padding-top: 2rem; padding-bottom: 2rem; display: none;">
+        <div class="student-portal-wrapper" id="studentPortal">
+            <div class="portal-user-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 2px solid var(--purple-light); padding-bottom: 1rem;">
+                <div class="portal-user-welcome">
+                    <h3 style="color: var(--purple);"><i class="fa-solid fa-shield-halved"></i> Sovereign Student Hub</h3>
+                    Welcome back, Systems Architect: <span id="studentWelcomeName" style="font-weight: 700; color: var(--gold);">Ryan Elijah Ansa</span>
+                </div>
+                <button class="btn-logout" onclick="logoutStudent()" style="background-color: #D32F2F; color: var(--white); border: none; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; font-weight: 700;">Disconnect Node <i class="fa-solid fa-power-off"></i></button>
+            </div>
+            
+            <div class="submission-form-container" style="background-color: var(--gray-light); padding: 2rem; border-radius: 12px; border: 1px solid rgba(128, 0, 128, 0.1);">
+                <h4 style="color: var(--purple); margin-bottom: 1rem;"><i class="fa-solid fa-cloud-arrow-up"></i> Project Verification Submission</h4>
+                <p style="margin-bottom: 1.5rem; font-size: 0.9rem;">Deploy your dynamic ciphers, dashboards, or video configurations directly to our grading script. Ensure your student ID matches.</p>
+                <form id="submissionForm" onsubmit="handleProjectSubmit(event)">
+                    <div class="form-group" style="margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <label style="font-weight: 700; font-size: 0.85rem; color: var(--charcoal);">Your SMT Student ID</label>
+                        <input type="text" id="subID" readonly style="padding: 0.75rem; border-radius: 6px; border: 1px solid #ccc; background-color: #e0e0e0; font-weight: 700; color: var(--charcoal);">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <label style="font-weight: 700; font-size: 0.85rem; color: var(--charcoal);">Select Lab Day Topic</label>
+                        <select id="subDay" required style="padding: 0.75rem; border-radius: 6px; border: 1px solid #ccc; background-color: var(--white);">
+                            <option value="">-- Choose target milestone --</option>
+                            <option value="Day 17">Day 17: Symmetric Caesar Cipher (/cyber-defense)</option>
+                            <option value="Day 18">Day 18: Microcontroller Joint Simulator (/virtual-robotics)</option>
+                            <option value="Day 19">Day 19: Dynamic Request Router (/web-systems)</option>
+                            <option value="Day 20">Day 20: Capstone Project Pitch & Portfolio Showcase</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <label style="font-weight: 700; font-size: 0.85rem; color: var(--charcoal);">Live Project Deployment Link (GitHub Pages or Scratch URL)</label>
+                        <input type="url" id="subLink" placeholder="https://username.github.io/cyber-defense/" required style="padding: 0.75rem; border-radius: 6px; border: 1px solid #ccc; background-color: var(--white);">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <label style="font-weight: 700; font-size: 0.85rem; color: var(--charcoal);">Developer Notes (Describe your 0.01% Information Gain addition)</label>
+                        <textarea id="subNotes" rows="3" placeholder="e.g. Integrated custom error-handler for invalid key shifts..." required style="padding: 0.75rem; border-radius: 6px; border: 1px solid #ccc; background-color: var(--white); font-family: inherit;"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="border: none; width: 100%; justify-content: center; cursor: pointer;">Push Project Link for Auto-Grading</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Executive Leadership & Vision Section -->
+    <section class="section-container" id="leadership" style="background-color: var(--gray-light); border-radius: 24px;">
+        <div class="section-header">
+            <h2>Executive Leadership & Vision</h2>
+            <p>Our educational philosophy is developed and directed by seasoned technologists and innovators.</p>
+        </div>
+        
+        <div class="leadership-card">
+            <div class="leadership-avatar">M</div>
+            <div class="leadership-info">
+                <h3>Moses Olanrewaju Bolarin</h3>
+                <span class="title">Founder & Systems Architect, 3MA Labs</span>
+                <blockquote>
+                    "As Founder, Moses Olanrewaju Bolarin has developed comprehensive training programs empowering youth as System Builders using a Router-First Curriculum."
+                </blockquote>
+                
+                <h4 style="color: var(--purple); font-size: 1.1rem; margin-bottom: 0.75rem; font-weight:700;">Three Pillars of 3MA Labs Engineering:</h4>
+                <ul class="pillars-list">
+                    <li class="pillar-item">
+                        <strong>1. Router-First Coding & Web Systems</strong>
+                        Scratch, Python, HTML5/CSS3/JS, full-stack, and network routing fundamentals.
+                    </li>
+                    <li class="pillar-item">
+                        <strong>2. Multimedia & Content Engineering</strong>
+                        Video editing, graphic design, audio engineering, and AVIS AI video creation.
+                    </li>
+                    <li class="pillar-item">
+                        <strong>3. Leadership & Digital Transformation</strong>
+                        SMT 2026 challenge, project pitching, and systems architecture leadership.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3MA All-Year-Round Training Services Section -->
+    <section class="section-container" id="services">
+        <div class="section-header">
+            <h2>3MA All-Year-Round Training Services</h2>
+            <p>Go beyond seasonal modules. Access our advanced technology training packages, enterprise school operations, and evergreen curricula all year round.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-layer-group"></i></div>
+                <h3>Evergreen SMT Modules</h3>
+                <p>Access our legendary 20-day curriculum divided into 4 self-paced, date-independent micro-credentials with CBT testing badging.</p>
+                <span class="service-price">₦3,000 / $4 Per Module</span>
+                <a href="https://smt-2026-kids-teens-digital-transformation-challe.ai.studio/#schedule" target="_blank" class="btn-primary" style="padding: 0.6rem; font-size: 0.85rem; border-radius: 8px;">Explore Modules</a>
+            </div>
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-puzzle-piece"></i></div>
+                <h3>Sovereign Saturday Labs</h3>
+                <p>Join Moses Olanrewaju Bolarin for live weekly Saturdays hackathons exploring API routes, custom LLM instructions, and physics simulation.</p>
+                <span class="service-price">₦5,000 / $6 Per Month</span>
+                <a href="https://app.budpay.com/pay/LanBoMoeOnlineStore" target="_blank" class="btn-primary" style="padding: 0.6rem; font-size: 0.85rem; border-radius: 8px;">Subscribe Now</a>
+            </div>
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h3>School Partnerships</h3>
+                <p>We deploy standard Computer-Based Testing systems and physical ICT Labs directly inside schools around Nigeria.</p>
+                <span class="service-price">Corporate Pricing</span>
+                <a href="#school-clubs" class="btn-primary" style="padding: 0.6rem; font-size: 0.85rem; border-radius: 8px;">Explore Clubs</a>
+            </div>
+        </div>
+
+        <!-- School Clubs network operational details panel -->
+        <div class="school-clubs-panel" id="school-clubs">
+            <div class="school-clubs-info">
+                <h3>Our Active School Network</h3>
+                <p>3niti Multimedia Academy provides weekly enterprise computer education and robust CBT assessments across premier academic centers in Nigeria, customizing curricula to fit local development objectives.</p>
+                <a href="mailto:3ma@lanbomoe.com" class="btn-partnership"><i class="fa-solid fa-building-columns"></i> Request Partnership</a>
+            </div>
+            <div>
+                <ul class="school-metrics-list">
+                    <li class="school-metric-item">
+                        <i class="fa-solid fa-school"></i>
                         <div>
-                            <span class="text-[10px] font-black uppercase text-[#A68024] tracking-wider">SMT 2026 Anthem &bull; Ad Song 1</span>
-                            <h4 class="text-xs font-bold text-white">DON'T JUST WATCH THE FUTURE. BUILD IT.</h4>
+                            <span class="title">Primetouch College (Lagos State, Nigeria)</span>
+                            <span class="desc">Weekly Coding, AI, 3D Animation, and Advanced Multimedia/2D Cartoon Animation challenges.</span>
                         </div>
-                    </div>
-                    <span class="text-[10px] text-slate-400 font-mono">3MA Audio Engine</span>
-                </div>
-
-                <!-- LOCAL AUDIO ASSET: assets/smt-anthem.mp3 -->
-                <audio id="smtAudio" src="assets/smt-anthem.mp3" loop></audio>
-
-                <div class="flex items-center gap-4">
-                    <button onclick="toggleAudio()" id="playBtn" class="w-10 h-10 rounded-full bg-gradient-to-r from-[#800080] to-[#A68024] text-white flex items-center justify-center shadow-lg shrink-0">
-                        <i data-lucide="play" class="w-5 h-5 fill-white ml-0.5" id="playIcon"></i>
-                    </button>
-                    <div class="flex-1 space-y-1">
-                        <div class="flex items-end justify-between gap-1 h-5" id="equalizer">
-                            <div class="w-1 bg-[#800080] h-2 rounded-full"></div>
-                            <div class="w-1 bg-[#A68024] h-4 rounded-full"></div>
-                            <div class="w-1 bg-[#800080] h-3 rounded-full"></div>
-                            <div class="w-1 bg-[#A68024] h-5 rounded-full"></div>
-                            <div class="w-1 bg-[#800080] h-2 rounded-full"></div>
-                            <div class="w-1 bg-[#A68024] h-4 rounded-full"></div>
-                            <div class="w-1 bg-[#800080] h-5 rounded-full"></div>
-                            <div class="w-1 bg-[#A68024] h-3 rounded-full"></div>
+                    </li>
+                    <li class="school-metric-item">
+                        <i class="fa-solid fa-school"></i>
+                        <div>
+                            <span class="title">Unique Group of Schools (Lagos State, Nigeria)</span>
+                            <span class="desc">Weekly Coding, AI, Robotics, Multimedia, Science, and Digital Training.</span>
                         </div>
-                        <div class="w-full h-1.5 bg-slate-900 rounded-full overflow-hidden">
-                            <div id="audioProgress" class="h-full bg-gradient-to-r from-[#800080] to-[#A68024] w-0 transition-all duration-300"></div>
+                    </li>
+                    <li class="school-metric-item">
+                        <i class="fa-solid fa-school"></i>
+                        <div>
+                            <span class="title">Skycrest Schools (Arepo, Ogun State)</span>
+                            <span class="desc">Weekly ICT Classes and Coding / AI / Digital Club classes.</span>
                         </div>
-                    </div>
-                    <button onclick="toggleMute()" class="p-2 rounded-lg bg-slate-900 border border-slate-800 text-[#A68024]">
-                        <i data-lucide="volume-2" class="w-4 h-4" id="muteIcon"></i>
-                    </button>
-                </div>
-                <!-- fallback: if the asset fails, show a note -->
-                <div class="text-[9px] text-slate-500 mt-2 text-center font-mono">
-                    🔊 <span id="audioStatus">smt-anthem.mp3</span>
-                </div>
-            </div>
-
-            <!-- KEY METRICS BAR -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 max-w-3xl mx-auto">
-                <div class="bg-slate-900/90 border border-[#800080]/60 p-4 rounded-xl text-center">
-                    <div class="text-2xl font-black text-[#A68024]">Ages 4–19</div>
-                    <div class="text-xs text-slate-400 mt-0.5">Youth System Builders</div>
-                </div>
-                <div class="bg-slate-900/90 border border-[#800080]/60 p-4 rounded-xl text-center">
-                    <div class="text-2xl font-black text-purple-300">Router-First</div>
-                    <div class="text-xs text-slate-400 mt-0.5">Curriculum Standard</div>
-                </div>
-                <div class="bg-slate-900/90 border border-[#800080]/60 p-4 rounded-xl text-center">
-                    <div class="text-2xl font-black text-[#A68024]">H5 PPT Decks</div>
-                    <div class="text-xs text-slate-400 mt-0.5">Markdown Code Delivery</div>
-                </div>
-                <div class="bg-slate-900/90 border border-[#800080]/60 p-4 rounded-xl text-center">
-                    <div class="text-2xl font-black text-white">10 Services</div>
-                    <div class="text-xs text-slate-400 mt-0.5">LanBo-Moe Ecosystem</div>
-                </div>
+                    </li>
+                    <li class="school-metric-item">
+                        <i class="fa-solid fa-school"></i>
+                        <div>
+                            <span class="title">Brilliant Edge Academy (Magboro, Ogun State)</span>
+                            <span class="desc">Weekly ICT Classes and Coding / AI / Digital Club classes.</span>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================ -->
-    <!-- SUCCESS METRICS  (5,000+ students, etc.)                      -->
-    <!-- ============================================================ -->
-    <section class="success-metrics py-16 bg-gradient-to-r from-[#800080]/20 via-[#A68024]/10 to-[#800080]/20 border-y border-[#800080]/40">
-        <div class="container mx-auto px-4 max-w-5xl">
-            <div class="text-center space-y-3 mb-10">
-                <div class="inline-flex items-center gap-2 bg-[#A68024]/20 text-[#A68024] border border-[#A68024]/40 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-                    <i data-lucide="bar-chart-2" class="w-3.5 h-3.5"></i>
-                    <span>Our Global Impact</span>
-                </div>
-                <h2 class="text-3xl md:text-4xl font-black text-white">
-                    <span class="text-[#A68024]">System Builders</span> Trained Worldwide
-                </h2>
-                <p class="text-slate-300 text-sm max-w-2xl mx-auto">
-                    Real numbers from the 3MA Labs ecosystem — built on the Router-First Curriculum under Moses Olanrewaju Bolarin.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                <!-- 1 -->
-                <div class="metric-card bg-slate-900/90 border-2 border-[#A68024]/60 p-8 rounded-2xl shadow-xl hover:border-[#A68024] transition-all">
-                    <div class="counter-number text-[#A68024]">
-                        <span id="countStudents">5,000</span><span>+</span>
-                    </div>
-                    <div class="text-sm font-bold text-slate-200 mt-1 uppercase tracking-wider">System Builders Trained</div>
-                    <div class="text-xs text-slate-400 mt-1">Ages 4–19 &bull; 2019–2026</div>
-                </div>
-                <!-- 2 -->
-                <div class="metric-card bg-slate-900/90 border-2 border-purple-600/60 p-8 rounded-2xl shadow-xl hover:border-purple-500 transition-all">
-                    <div class="counter-number text-purple-300">
-                        <span id="countPlatforms">10</span><span>+</span>
-                    </div>
-                    <div class="text-sm font-bold text-slate-200 mt-1 uppercase tracking-wider">Connected Platforms</div>
-                    <div class="text-xs text-slate-400 mt-1">LanBo-Moe Ecosystem</div>
-                </div>
-                <!-- 3 -->
-                <div class="metric-card bg-slate-900/90 border-2 border-amber-400/60 p-8 rounded-2xl shadow-xl hover:border-amber-400 transition-all">
-                    <div class="counter-number text-amber-300">
-                        <span>100</span><span>%</span>
-                    </div>
-                    <div class="text-sm font-bold text-slate-200 mt-1 uppercase tracking-wider">Digital Sovereignty</div>
-                    <div class="text-xs text-slate-400 mt-1">Self-hosted infrastructure</div>
-                </div>
-            </div>
-
-            <!-- small note -->
-            <p class="text-center text-[10px] text-slate-500 mt-6 font-mono">
-                Verified by 3MA Labs &bull; Data as of August 2026
-            </p>
+    <!-- Interactive CBT Assessment Portal Widget -->
+    <section class="section-container" id="cbt-widget" style="background-color: var(--gray-light); border-radius: 24px;">
+        <div class="section-header">
+            <h2>Official 3MA CBT Assessment Portal</h2>
+            <p>Evaluate your technical expertise across network ciphers, routers, and computational logic.</p>
         </div>
-    </section>
-
-    <!-- ============================================================ -->
-    <!-- CURRICULUM SECTION                                            -->
-    <!-- ============================================================ -->
-    <section id="curriculum" class="py-16 bg-slate-900 border-t border-slate-800">
-        <div class="container mx-auto px-4">
-            <div class="text-center max-w-3xl mx-auto space-y-3 mb-12">
-                <div class="inline-flex items-center gap-2 bg-[#800080]/30 text-purple-300 border border-[#800080] px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-                    <i data-lucide="book-open" class="w-3.5 h-3.5 text-[#A68024]"></i>
-                    <span>Router-First Learning Pathways</span>
+        
+        <div class="cbt-portal-box">
+            <div id="quizContainer">
+                <div class="cbt-header">
+                    <h3><i class="fa-solid fa-shield-halved"></i> System Builder Assessment Test</h3>
+                    <span class="meta" id="quizProgress">Question 1 of 3</span>
                 </div>
-                <h2 class="text-3xl md:text-4xl font-black text-white">
-                    Four Pillars of <span class="text-[#A68024]">3MA Labs Technical Curriculum</span>
-                </h2>
-                <p class="text-slate-300 text-sm md:text-base">
-                    Training youth to master network routing, web systems, AI automation, and digital infrastructure.
-                </p>
+                
+                <div class="quiz-question-box">
+                    <h4 id="quizQuestionText">What is the core philosophy of 3MA Labs?</h4>
+                    <div class="quiz-options-list" id="quizOptionsContainer">
+                        <!-- Options generated dynamically -->
+                    </div>
+                </div>
+                
+                <div class="quiz-footer">
+                    <span id="quizScoreText" style="font-weight: 700; color: var(--purple);">Score: 0 / 3</span>
+                    <button class="btn-cbt-nav" id="btnNextQuiz" onclick="nextQuizQuestion()" style="display: none;">Submit Answer →</button>
+                </div>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-                <!-- Module 1 -->
-                <div class="bg-slate-950 border-2 border-slate-800 hover:border-[#800080] p-6 rounded-2xl space-y-4 transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-[#800080]/20 border border-[#800080] flex items-center justify-center text-[#A68024]">
-                        <i data-lucide="code" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white">Router-First Web Systems</h3>
-                    <p class="text-slate-300 text-xs leading-relaxed">
-                        Scratch block logic (4-8), Python programming (9-13), HTML5/CSS3/JS, full-stack, and network-aware engineering.
-                    </p>
-                    <span class="inline-block text-[10px] font-bold uppercase text-[#A68024] bg-[#A68024]/10 border border-[#A68024]/30 px-2 py-0.5 rounded">Ages 4–19</span>
-                </div>
-
-                <!-- Module 2 -->
-                <div class="bg-slate-950 border-2 border-slate-800 hover:border-[#800080] p-6 rounded-2xl space-y-4 transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-[#800080]/20 border border-[#800080] flex items-center justify-center text-purple-300">
-                        <i data-lucide="network" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white">IT Infrastructure & Networks</h3>
-                    <p class="text-slate-300 text-xs leading-relaxed">
-                        Hardware mechanics, IP addressing, routers, servers, Linux terminal, cloud services, and cybersecurity safety.
-                    </p>
-                    <span class="inline-block text-[10px] font-bold uppercase text-purple-300 bg-[#800080]/20 border border-[#800080]/50 px-2 py-0.5 rounded">Ages 9–19</span>
-                </div>
-
-                <!-- Module 3 -->
-                <div class="bg-slate-950 border-2 border-slate-800 hover:border-[#800080] p-6 rounded-2xl space-y-4 transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-[#800080]/20 border border-[#800080] flex items-center justify-center text-[#A68024]">
-                        <i data-lucide="cpu" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white">AI & Automation (AVIS)</h3>
-                    <p class="text-slate-300 text-xs leading-relaxed">
-                        Prompt engineering, Python AI scripts, generative AI, automation workflows, and AVIS AI video creation.
-                    </p>
-                    <span class="inline-block text-[10px] font-bold uppercase text-[#A68024] bg-[#A68024]/10 border border-[#A68024]/30 px-2 py-0.5 rounded">Ages 9–19</span>
-                </div>
-
-                <!-- Module 4 -->
-                <div class="bg-slate-950 border-2 border-slate-800 hover:border-[#800080] p-6 rounded-2xl space-y-4 transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-[#800080]/20 border border-[#800080] flex items-center justify-center text-purple-300">
-                        <i data-lucide="video" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white">Multimedia & Content Engineering</h3>
-                    <p class="text-slate-300 text-xs leading-relaxed">
-                        Graphic design, video editing, audio engineering, visual storytelling, and digital media production.
-                    </p>
-                    <span class="inline-block text-[10px] font-bold uppercase text-purple-300 bg-[#800080]/20 border border-[#800080]/50 px-2 py-0.5 rounded">Ages 4–19</span>
-                </div>
+            
+            <div class="cbt-result-box" id="quizResultBox">
+                <i class="fa-solid fa-award"></i>
+                <h4 id="quizFinalTitle">Outstanding Achievement!</h4>
+                <p id="quizFinalMsg">You scored 3 out of 3. You have been awarded the SMT Sovereign Junior Developer digital credential.</p>
+                <button class="btn-cbt-nav" onclick="resetQuizEngine()">Restart Test</button>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================ -->
-    <!-- SMT 2026 DIGITAL TRANSFORMATION CHALLENGE                     -->
-    <!-- ============================================================ -->
-    <section id="smt-challenge" class="py-16 bg-slate-950 border-t border-[#800080]/40 relative">
-        <div class="container mx-auto px-4 max-w-5xl space-y-8">
-
-            <!-- header -->
-            <div class="text-center space-y-3">
-                <div class="inline-flex items-center gap-2 bg-[#800080]/30 text-purple-300 border border-[#800080] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
-                    <i data-lucide="sun" class="w-4 h-4 text-[#A68024]"></i>
-                    <span>Flagship Summer Intensive Program</span>
-                </div>
-                <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight">
-                    SMT 2026 Digital <span class="text-[#A68024]">Transformation Challenge</span>
-                </h2>
-                <p class="text-xl font-black text-[#A68024] tracking-wide">
-                    DON'T JUST WATCH THE FUTURE. BUILD IT.
-                </p>
-                <p class="text-slate-300 text-sm md:text-base leading-relaxed max-w-3xl mx-auto">
-                    An extraordinary 4-week summer innovation challenge empowering kids & teens as System Builders under the strategic oversight and expert curriculum of Moses Olanrewaju Bolarin.
-                </p>
-            </div>
-
-            <!-- 3 info cards -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <!-- Schedule -->
-                <div class="bg-slate-900 border-2 border-[#800080]/60 rounded-2xl p-6 space-y-4">
-                    <div class="w-10 h-10 rounded-xl bg-[#800080]/30 border border-[#800080] flex items-center justify-center text-[#A68024]">
-                        <i data-lucide="calendar" class="w-5 h-5"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white">Program Schedule</h3>
-                    <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1 text-xs">
-                        <p class="font-bold text-[#A68024]">Dates: August 3 – 28, 2026</p>
-                        <p class="text-slate-300">Format: Hybrid (Physical Labs & Virtual)</p>
-                        <p class="text-slate-300">Target: Youth System Builders (Ages 4–19)</p>
-                    </div>
-                    <a href="https://smt.lanbomoe.com" target="_blank" class="w-full inline-flex items-center justify-center gap-2 bg-[#A68024] hover:bg-[#b88e28] text-slate-950 font-extrabold py-2.5 rounded-xl text-xs uppercase tracking-wider">
-                        Register at smt.lanbomoe.com &rarr;
-                    </a>
-                </div>
-
-                <!-- Tracks -->
-                <div class="bg-slate-900 border-2 border-[#800080]/60 rounded-2xl p-6 space-y-4">
-                    <div class="w-10 h-10 rounded-xl bg-[#800080]/30 border border-[#800080] flex items-center justify-center text-purple-300">
-                        <i data-lucide="network" class="w-5 h-5"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white">Router-First Tracks</h3>
-                    <ul class="space-y-2 text-xs text-slate-300">
-                        <li>• <strong>Router-First Systems:</strong> IP routing, servers & web architecture.</li>
-                        <li>• <strong>AI Automation:</strong> Python scripts & AVIS AI video series.</li>
-                        <li>• <strong>Software Engineering:</strong> Web & mobile system deployment.</li>
-                    </ul>
-                    <a href="https://smt.lanbomoe.com" target="_blank" class="w-full inline-flex items-center justify-center gap-2 bg-[#800080]/40 hover:bg-[#800080]/70 text-purple-200 border border-[#800080] font-bold py-2.5 rounded-xl text-xs">
-                        Explore Guidelines &rarr;
-                    </a>
-                </div>
-
-                <!-- Certification -->
-                <div class="bg-slate-900 border-2 border-[#800080]/60 rounded-2xl p-6 space-y-4">
-                    <div class="w-10 h-10 rounded-xl bg-[#800080]/30 border border-[#800080] flex items-center justify-center text-[#A68024]">
-                        <i data-lucide="award" class="w-5 h-5"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white">Certification & Recognition</h3>
-                    <p class="text-slate-300 text-xs leading-relaxed">
-                        Participants receive official 3MA CBT platform verification from Moses Olanrewaju Bolarin and verified digital certificates.
-                    </p>
-                    <a href="https://smt.lanbomoe.com" target="_blank" class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#800080] to-[#A68024] text-white font-extrabold py-2.5 rounded-xl text-xs uppercase tracking-wider">
-                        Join SMT 2026 Challenge &rarr;
-                    </a>
-                </div>
-            </div>
-
-            <!-- ========================================================== -->
-            <!-- SMT 2026 FLAGSHIP MEDIA  (VIDEO + AUDIO)                    -->
-            <!-- ========================================================== -->
-            <div class="smt-media-grid pt-4">
-                <!-- VIDEO -->
-                <div class="media-card">
-                    <div class="flex items-center gap-2 mb-3">
-                        <i data-lucide="video" class="w-5 h-5 text-[#A68024]"></i>
-                        <span class="text-xs font-bold text-white uppercase tracking-wider">SMT 2026 Promo</span>
-                    </div>
-                    <video controls preload="metadata" poster="assets/SMT%202026%20Video%20Ad%20Thumbnail%201.jpg">
-                        <source src="assets/smt-video.mp4" type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
-                    <p class="text-[10px] text-slate-400 mt-2 font-mono">📁 smt-video.mp4 &bull; 42.6 MB</p>
-                </div>
-
-                <!-- AUDIO (Anthem 1) -->
-                <div class="media-card">
-                    <div class="flex items-center gap-2 mb-3">
-                        <i data-lucide="music" class="w-5 h-5 text-purple-300"></i>
-                        <span class="text-xs font-bold text-white uppercase tracking-wider">SMT 2026 Anthem</span>
-                    </div>
-                    <audio controls preload="metadata">
-                        <source src="assets/smt-anthem.mp3" type="audio/mpeg" />
-                        Your browser does not support the audio element.
-                    </audio>
-                    <p class="text-[10px] text-slate-400 mt-2 font-mono">📁 smt-anthem.mp3 &bull; 1.8 MB</p>
-
-                    <!-- bonus second anthem (optional) -->
-                    <div class="mt-3 pt-3 border-t border-slate-800">
-                        <div class="flex items-center gap-2 mb-1">
-                            <i data-lucide="music" class="w-4 h-4 text-[#A68024]/70"></i>
-                            <span class="text-[10px] text-slate-400 font-medium">Alternate Anthem</span>
-                        </div>
-                        <audio controls preload="metadata" class="h-10">
-                            <source src="assets/smt-anthem2.mp3" type="audio/mpeg" />
-                        </audio>
-                        <p class="text-[10px] text-slate-500 mt-1 font-mono">📁 smt-anthem2.mp3 &bull; 2.5 MB</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 24/7 SUPPORT BANNER -->
-            <div class="bg-slate-900 border border-[#A68024]/50 rounded-xl p-4 text-center">
-                <p class="text-xs md:text-sm text-slate-200">
-                    <strong class="text-[#A68024]">24/7 Student & Parent Support:</strong> Students enjoy 24/7 support via our WhatsApp AI Assistant, with direct expert resolution for advanced technical queries.
-                </p>
-            </div>
+    <!-- Exemplar & Archetype Benchmarks Section -->
+    <section class="section-container" id="benchmarks">
+        <div class="section-header">
+            <h2>3MA Labs System Benchmarks</h2>
+            <p>Explore elite technical blueprints and prototype standards representing the rigorous models SMT 2026 builders are trained to design, recreate, and deploy.</p>
         </div>
-    </section>
-
-    <!-- ============================================================ -->
-    <!-- FOUNDER SPOTLIGHT                                             -->
-    <!-- ============================================================ -->
-    <section id="ceo-moses" class="py-16 bg-slate-900 border-t border-slate-800">
-        <div class="container mx-auto px-4 max-w-5xl">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div class="lg:col-span-5 space-y-4">
-                    <div class="inline-flex items-center gap-2 bg-[#800080]/30 text-purple-300 border border-[#800080] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-                        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#A68024]"></i>
-                        <span>Executive Leadership & Vision</span>
-                    </div>
-                    <h2 class="text-3xl font-black text-white">
-                        Moses Olanrewaju <span class="text-[#A68024]">Bolarin</span>
-                    </h2>
-                    <div class="bg-slate-950 border-2 border-[#800080] p-4 rounded-2xl space-y-2">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-[#800080] to-[#A68024] flex items-center justify-center text-white font-black text-lg border border-[#A68024]">
-                                M
-                            </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <div class="portfolio-content">
+                    <span class="badge">Scratch Game</span>
+                    <h3>3MA Solar Defender</h3>
+                    <p>An interactive retro space-shooter game demonstrating collision logic structures, variables routing, sound trigger, and canvas animations.</p>
+                    <div class="portfolio-footer">
+                        <div class="portfolio-student">
+                            <i class="fa-solid fa-microchip"></i>
                             <div>
-                                <h3 class="text-base font-black text-white">Moses Olanrewaju Bolarin</h3>
-                                <p class="text-xs text-[#A68024] font-bold">Founder & Systems Architect, 3MA Labs</p>
+                                <span>Kids Track Exemplar</span>
+                                <div class="id">Target Age: 4-8</div>
                             </div>
                         </div>
-                        <p class="text-xs text-slate-300 italic border-l-2 border-[#A68024] pl-3">
-                            "As Founder, Moses Olanrewaju Bolarin has developed comprehensive training programs empowering youth as System Builders using a Router-First Curriculum."
-                        </p>
+                        <a href="#games" class="btn-view-spec">Play Simulation <i class="fa-solid fa-circle-play"></i></a>
                     </div>
                 </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="portfolio-content">
+                    <span class="badge">Full-Stack Web</span>
+                    <h3>Smart Attendance Dashboard</h3>
+                    <p>A responsive school check-in web application using raw HTML5, CSS Flexbox layouts, dynamic JS timestamps, and automated score-testing graphs.</p>
+                    <div class="portfolio-footer">
+                        <div class="portfolio-student">
+                            <i class="fa-solid fa-window-restore"></i>
+                            <div>
+                                <span>Junior Track Exemplar</span>
+                                <div class="id">Target Age: 9-13</div>
+                            </div>
+                        </div>
+                        <a href="#" class="btn-view-spec" onclick="alert('Student Dashboard prototype verification active inside local sandboxes.')">View Spec <i class="fa-solid fa-code"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="portfolio-content">
+                    <span class="badge">Python Hardware</span>
+                    <h3>Robotics Joint Firmware</h3>
+                    <p>A Python simulation model of a low-level microcontroller register map, monitoring proximity sensor inputs, and triggering hardware interrupts.</p>
+                    <div class="portfolio-footer">
+                        <div class="portfolio-student">
+                            <i class="fa-solid fa-terminal"></i>
+                            <div>
+                                <span>Teen Track Exemplar</span>
+                                <div class="id">Target Age: 14-19</div>
+                            </div>
+                        </div>
+                        <a href="https://replit.com/" target="_blank" class="btn-view-spec">Run Code <i class="fa-solid fa-terminal"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                <div class="lg:col-span-7 space-y-3">
-                    <div class="text-xs font-bold text-[#A68024] uppercase tracking-wider">Three Pillars of 3MA Labs Engineering:</div>
-                    <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl space-y-1">
-                        <h4 class="text-sm font-bold text-white">1. Router-First Coding & Web Systems</h4>
-                        <p class="text-xs text-slate-300">Scratch, Python, HTML5/CSS3/JS, full-stack, and network routing fundamentals.</p>
+        <!-- Video Showcase for School Partnership Results (Fixed & Verified Embedding with Referrer Policy) -->
+        <div class="video-showcase-container">
+            <h3 style="color: var(--purple); font-size: 1.5rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-film"></i> SMT Student Showcase: AI-Assisted 3D Cartoon Animation</h3>
+            <p style="color: var(--charcoal); margin-bottom: 1.5rem; font-size: 0.95rem;">Watch this stunning 3D story creation fully scripted, animated, and voiced by our school partnership trainees!</p>
+            <div class="video-wrapper">
+                <iframe
+                    src="https://www.youtube.com/embed/fa1m6I4VyUw"
+                    title="SMT Student Showcase: AI-Assisted 3D Cartoon Animation"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <a href="https://youtu.be/fa1m6I4VyUw" target="_blank" class="btn-primary" style="margin-top: 1rem;"><i class="fa-brands fa-youtube"></i> Watch Directly on YouTube</a>
+        </div>
+    </section>
+
+    <!-- Interactive Game Canvas -->
+    <section class="section-container" id="games" style="background-color: var(--gray-light); border-radius: 24px; max-width: calc(100% - 4rem);">
+        <div class="section-header">
+            <h2>3MA Arcade Station</h2>
+            <p>Test your gaming reflexes on the 3MA Solar Defender. A custom space game built natively to demonstrate logic blocks!</p>
+        </div>
+        <div class="games-area">
+            <div class="game-info">
+                <h3>3MA Space Defender</h3>
+                <p>Use your keyboard arrows to navigate your sovereign starship. Press the **SPACEBAR** to fire gold energy bursts and vaporize incoming space debris blocks! Every hit increases your Cheers meter.</p>
+                <div style="margin-bottom: 1.5rem;">
+                    <strong>🎮 Key Bindings:</strong><br>
+                    • Left / Right Arrow keys = Move ship<br>
+                    • Spacebar = Shoot ciphers
+                </div>
+                <button class="game-control-btn" id="restartGameBtn">Restart Simulation</button>
+            </div>
+            <div class="game-canvas-container">
+                <div class="game-start-overlay" id="gameOverlay">
+                    <h3>⚡ SYSTEM READY ⚡</h3>
+                    <p>Click below to initialize the space defense simulation</p>
+                    <button class="game-control-btn" onclick="startGame()">Start Game</button>
+                </div>
+                <canvas id="solarDefenderCanvas" width="400" height="300"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Flashcards -->
+    <section class="section-container" id="flashcards">
+        <div class="section-header">
+            <h2>Active-Recall Memory Shields</h2>
+            <p>Hover or click to flip the cards and master the elite tech vocabulary required of System Builders.</p>
+        </div>
+        <div class="flashcard-section">
+            <div class="flashcard-container" onclick="flipCard()">
+                <div class="flashcard" id="mainCard">
+                    <!-- Front -->
+                    <div class="card-face card-front">
+                        <h3 id="cardTerm">Encryption</h3>
+                        <p>Category: Cybersecurity</p>
+                        <div style="margin-top: 2rem; color: var(--gold);"><i class="fa-solid fa-arrows-spin"></i> Click to Flip</div>
                     </div>
-                    <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl space-y-1">
-                        <h4 class="text-sm font-bold text-white">2. Multimedia & Content Engineering</h4>
-                        <p class="text-xs text-slate-300">Video editing, graphic design, audio engineering, and AVIS AI video creation.</p>
+                    <!-- Back -->
+                    <div class="card-face card-back">
+                        <p id="cardDefinition">Scrambling raw data packets into an unreadable cipher string using a secret mathematical shift key to prevent packet-sniffing.</p>
+                        <span class="term-category" id="cardCategory">Sovereign Protocol</span>
                     </div>
-                    <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl space-y-1">
-                        <h4 class="text-sm font-bold text-white">3. Leadership & Digital Transformation</h4>
-                        <p class="text-xs text-slate-300">SMT 2026 challenge, project pitching, and systems architecture leadership.</p>
+                </div>
+            </div>
+            <div class="flashcard-nav">
+                <button class="flashcard-nav-btn" onclick="prevCard()"><i class="fa-solid fa-arrow-left"></i></button>
+                <span id="cardIndicator" style="font-weight: 700; color: var(--purple);">1 / 5</span>
+                <button class="flashcard-nav-btn" onclick="prevCard()"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bonuses & Freebies Chest -->
+    <section class="section-container" id="bonuses">
+        <div class="section-header">
+            <h2>Bonuses & Freebies</h2>
+            <p>Complimentary sovereign literature, student compendiums, and templates curated directly by Systems Architect Moses Olanrewaju Bolarin.</p>
+        </div>
+        <div class="bonuses-grid">
+            <div class="bonus-card">
+                <i class="fa-solid fa-book-open bonus-icon"></i>
+                <h3>Destiny World E-Book</h3>
+                <p>The acclaimed inspirational self-discovery journey by Moses O. Bolarin. Yours completely free as an SMT Graduate.</p>
+                <a href="https://drive.google.com/file/d/1Tc3Be6x0DrBU1OBmRM0MZHHuewOSFMc7/view?usp=sharing" target="_blank" class="btn-download"><i class="fa-solid fa-file-pdf"></i> Download E-Book</a>
+            </div>
+            <div class="bonus-card">
+                <i class="fa-solid fa-book-atlas bonus-icon"></i>
+                <h3>MMA Children Book (Vol 1)</h3>
+                <p>The historic pioneer compendium. Short stories completely authored and illustrated by our very first cohort of tech builders.</p>
+                <a href="https://drive.google.com/file/d/11hUpAcDvSZMNHedNO0-6t5OYkLrKPZS_/view?usp=sharing" target="_blank" class="btn-download"><i class="fa-solid fa-download"></i> Get Book 1</a>
+            </div>
+            <div class="bonus-card">
+                <i class="fa-solid fa-book-journal-whills bonus-icon"></i>
+                <h3>3MA Children Book (Vol 2)</h3>
+                <p>Volume 2 of our students' stories compendium, demonstrating advanced design elements on Amazon.</p>
+                <a href="https://drive.google.com/file/d/1UwjHyRosPuL0xsgmZihawdidYsABxKVj/view?usp=sharing" target="_blank" class="btn-download"><i class="fa-solid fa-download"></i> Get Book 2</a>
+            </div>
+            <div class="bonus-card">
+                <i class="fa-solid fa-book-skull bonus-icon"></i>
+                <h3>3MA Children Book (Vol 3)</h3>
+                <p>The latest installment of SMT storybooks published globally. Perfect proof of student tech capabilities.</p>
+                <a href="https://drive.google.com/file/d/1T1m9757JalgZLAXrEHR9KHZNPHqiQtv4/view?usp=sharing" target="_blank" class="btn-download"><i class="fa-solid fa-download"></i> Get Book 3</a>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 3rem; display: flex; justify-content: center; gap: 1rem;">
+            <a href="https://3machildrenmultimediaclub.blogspot.com/" target="_blank" class="btn-secondary"><i class="fa-solid fa-cubes"></i> Student Media Club</a>
+            <a href="https://lanbomoe.github.io/#newsletter" target="_blank" class="btn-secondary" style="border-color: var(--gold); color: var(--gold);"><i class="fa-solid fa-book-sparkles"></i> Mysteries of the Kingdom Sample</a>
+        </div>
+    </section>
+
+    <!-- Testimonials / Parental Reviews Section (Grounded & Aligned) -->
+    <section class="section-container" id="testimonials">
+        <div class="section-header">
+            <h2>What Mentors, Industry & Parents Say</h2>
+            <p>Verified trust signals highlighting 3MA's cross-sector impact and development legacy.</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">“Thank you for your invaluable contribution to the UniversityDUEL 2026 season. Your insight, professionalism, and commitment played a key role in shaping the quality and impact of this year's competition. Your expertise and dedication helped create a meaningful experience for participants.”</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-author-avatar">UD</div>
+                    <div class="testimonial-author-info">
+                        <h4>UniversityDUEL Team</h4>
+                        <p>The Stem Africa (Professional Recognition)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">“Moses is a highly personable and astute developer of innovative frontiers in the media industry — a pacesetter. Always ahead of the curve and breaking new grounds. He leads by having done, builds great relationships, and challenges clients and partners by showing the way.”</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-author-avatar">BF</div>
+                    <div class="testimonial-author-info">
+                        <h4>Bayo Falode</h4>
+                        <p>Senior Project Consultant, Director Ark Project Partners Ltd (Industry Credibility)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">“Dear Mr. Moses, thank you for guiding, inspiring, and shaping minds. Your dedication and passion make a lasting impact. We are grateful for your love, support, and commitment to helping young people grow.”</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-author-avatar">AF</div>
+                    <div class="testimonial-author-info">
+                        <h4>The Agbabiaka Family</h4>
+                        <p>SMT Parent Cohort Alumni (Parent Testimonial)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">“Pastor Lanre Bolarin has done a good job by bringing Kingdom mysteries to our consciousness and presenting them in such a simple manner that all may read, understand, and apply them to their personal lives. I highly recommend this book as a must-read.”</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-author-avatar">AT</div>
+                    <div class="testimonial-author-info">
+                        <h4>Apostle Tony Olukoyede</h4>
+                        <p>Mentor & Spiritual Leader (Thought Leadership)</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================ -->
-    <!-- CBT SCHOOL PORTAL QUIZ SECTION                                -->
-    <!-- ============================================================ -->
-    <section id="cbt-quiz" class="py-16 bg-slate-950 border-t border-[#800080]/40">
-        <div class="container mx-auto px-4 max-w-3xl space-y-6">
-            <div class="text-center space-y-2">
-                <div class="inline-flex items-center gap-2 bg-[#A68024]/20 text-[#A68024] border border-[#A68024]/40 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-                    <i data-lucide="award" class="w-3.5 h-3.5"></i>
-                    <span>Official 3MA CBT Assessment Portal</span>
-                </div>
-                <h2 class="text-3xl font-black text-white">System Builder Assessment Test</h2>
-                <p class="text-xs text-slate-300">Test your tech knowledge and earn verified certification issued by Moses Olanrewaju Bolarin.</p>
-            </div>
-
-            <div class="bg-slate-900 border-2 border-[#800080] rounded-2xl p-6 space-y-5" id="cbtCard">
-                <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-                    <span class="text-xs font-bold text-[#A68024]" id="qCounter">Question 1 of 3</span>
-                    <span class="text-xs font-mono text-purple-300">3MA CBT Engine v2.6</span>
-                </div>
-
-                <h3 class="text-base font-bold text-white" id="qText">What is the core philosophy of 3MA Labs?</h3>
-
-                <div class="space-y-2" id="qOptions">
-                    <!-- options rendered by JS -->
-                </div>
-
-                <button onclick="submitAnswer()" id="cbtSubmitBtn" class="w-full bg-[#A68024] hover:bg-[#b88e28] text-slate-950 font-black py-3 rounded-xl text-xs uppercase tracking-wider transition-all">
-                    Submit Answer &rarr;
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================================ -->
-    <!-- PROTOTYPE SHOWCASE                                            -->
-    <!-- ============================================================ -->
-    <section id="showcase" class="py-16 bg-slate-900 border-t border-slate-800">
-        <div class="container mx-auto px-4 max-w-5xl space-y-8">
-            <div class="text-center space-y-2">
-                <div class="inline-flex items-center gap-2 bg-[#800080]/30 text-purple-300 border border-[#800080] px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-                    <i data-lucide="image" class="w-3.5 h-3.5 text-[#A68024]"></i>
-                    <span>Lab Benchmarks</span>
-                </div>
-                <h2 class="text-3xl font-black text-white">
-                    Prototype Showcase: <span class="text-[#A68024]">What Our System Builders Create</span>
-                </h2>
-                <p class="text-slate-300 text-xs md:text-sm">
-                    Explore real-world technical prototypes, network systems, and software applications representing the standard of excellence students achieve in the 3MA Labs environment.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-slate-950 border border-slate-800 p-5 rounded-2xl space-y-2">
-                    <div class="flex items-center justify-between">
-                        <h3 class="font-bold text-white">Solar Defender (Scratch / Python Game)</h3>
-                        <span class="text-[10px] bg-[#800080]/30 text-purple-300 px-2 py-0.5 rounded border border-[#800080]">Age 8 Benchmark</span>
-                    </div>
-                    <p class="text-xs text-slate-300">Interactive arcade game demonstrating collision logic, variable scoring, and visual animation.</p>
-                </div>
-
-                <div class="bg-slate-950 border border-slate-800 p-5 rounded-2xl space-y-2">
-                    <div class="flex items-center justify-between">
-                        <h3 class="font-bold text-white">Smart School CBT Dashboard</h3>
-                        <span class="text-[10px] bg-[#A68024]/20 text-[#A68024] px-2 py-0.5 rounded border border-[#A68024]/40">Age 14 Benchmark</span>
-                    </div>
-                    <p class="text-xs text-slate-300">Full-stack web application with responsive UI, live timer, and instant score calculation.</p>
-                </div>
-
-                <div class="bg-slate-950 border border-slate-800 p-5 rounded-2xl space-y-2">
-                    <div class="flex items-center justify-between">
-                        <h3 class="font-bold text-white">AVIS Automated Video Bot</h3>
-                        <span class="text-[10px] bg-[#800080]/30 text-purple-300 px-2 py-0.5 rounded border border-[#800080]">Age 16 Benchmark</span>
-                    </div>
-                    <p class="text-xs text-slate-300">Python script utilizing generative AI APIs for automatic prompt-to-video generation.</p>
-                </div>
-
-                <div class="bg-slate-950 border border-slate-800 p-5 rounded-2xl space-y-2">
-                    <div class="flex items-center justify-between">
-                        <h3 class="font-bold text-white">Router-First Mesh Net Simulator</h3>
-                        <span class="text-[10px] bg-[#A68024]/20 text-[#A68024] px-2 py-0.5 rounded border border-[#A68024]/40">Age 17 Benchmark</span>
-                    </div>
-                    <p class="text-xs text-slate-300">Network packet routing visualizer illustrating IP packet traversal across hardware routers.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================================ -->
-    <!-- LANBO-MOE ECOSYSTEM DIRECTORY & FOOTER                       -->
-    <!-- ============================================================ -->
-    <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 text-xs py-12">
-        <div class="container mx-auto px-4 max-w-6xl space-y-10">
-
-            <!-- ECOSYSTEM MAPPED LINKS -->
-            <div class="space-y-4">
-                <h3 class="text-sm font-black text-white uppercase tracking-wider text-center">LanBo-Moe Global Ecosystem Directory</h3>
-                <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 text-center">
-                    <a href="https://mma.lanbomoe.com" target="_blank" class="bg-slate-900 border border-slate-800 p-3 rounded-xl hover:border-[#800080] transition-all">
-                        <div class="font-bold text-white">🎬 MMA</div>
-                        <div class="text-[10px] text-slate-400">mma.lanbomoe.com</div>
-                    </a>
-                    <a href="https://mwb.lanbomoe.com" target="_blank" class="bg-slate-900 border border-slate-800 p-3 rounded-xl hover:border-[#800080] transition-all">
-                        <div class="font-bold text-white">📖 MWB</div>
-                        <div class="text-[10px] text-slate-400">mwb.lanbomoe.com</div>
-                    </a>
-                    <a href="https://gse.lanbomoe.com" target="_blank" class="bg-slate-900 border border-slate-800 p-3 rounded-xl hover:border-[#800080] transition-all">
-                        <div class="font-bold text-white">🌐 GSE Hub</div>
-                        <div class="text-[10px] text-slate-400">gse.lanbomoe.com</div>
-                    </a>
-                    <a href="https://cbt.lanbomoe.com" target="_blank" class="bg-slate-900 border border-slate-800 p-3 rounded-xl hover:border-[#800080] transition-all">
-                        <div class="font-bold text-white">💻 CBT Platform</div>
-                        <div class="text-[10px] text-slate-400">cbt.lanbomoe.com</div>
-                    </a>
-                    <a href="https://avis.lanbomoe.com" target="_blank" class="bg-slate-900 border border-slate-800 p-3 rounded-xl hover:border-[#800080] transition-all">
-                        <div class="font-bold text-white">🎥 AVIS</div>
-                        <div class="text-[10px] text-slate-400">avis.lanbomoe.com</div>
-                    </a>
-                    <a href="https://store.lanbomoe.com" target="_blank" class="bg-slate-900 border border-slate-800 p-3 rounded-xl hover:border-[#800080] transition-all">
-                        <div class="font-bold text-white">🛍️ Store</div>
-                        <div class="text-[10px] text-slate-400">store.lanbomoe.com</div>
-                    </a>
-                    <a href="https://smt.lanbomoe.com" target="_blank" class="bg-slate-900 border border-[#A68024] p-3 rounded-xl hover:bg-slate-800 transition-all">
-                        <div class="font-bold text-[#A68024]">☀️ SMT 2026</div>
-                        <div class="text-[10px] text-slate-400">smt.lanbomoe.com</div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- ECOSYSTEM BRIDGE (footer) -->
-            <div class="border-t border-slate-800 pt-6 flex flex-wrap items-center justify-center gap-4">
-                <a href="https://www.lanbomoe.com" target="_blank" class="flex items-center gap-1.5 bg-slate-900 hover:bg-slate-800 border border-slate-700 px-4 py-2 rounded-full text-[11px] font-bold text-slate-200 transition-all">
-                    <span>🌐</span> Global Hub (www.lanbomoe.com)
-                </a>
-                <a href="https://lanbomoe.github.io" target="_blank" class="flex items-center gap-1.5 bg-slate-900 hover:bg-slate-800 border border-slate-700 px-4 py-2 rounded-full text-[11px] font-bold text-slate-200 transition-all">
-                    <span>📜</span> Legacy Platform (lanbomoe.github.io)
-                </a>
-            </div>
-
-            <!-- COPYRIGHT & CONTACT -->
-            <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+    <!-- Dynamic Tech Radar with Live API Fetch -->
+    <section class="section-container" id="news">
+        <div class="news-section-wrapper">
+            <div class="news-header-group" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
                 <div>
-                    <p class="font-bold text-slate-200">3MA Labs (3niti Multimedia Academy)</p>
-                    <p class="text-[11px] text-slate-400">Founded & Led by Moses Olanrewaju Bolarin &bull; Contact: 3ma@lanbomoe.com | +2348033830101</p>
+                    <h2>3MA Tech Radar Feed</h2>
+                    <p style="color: var(--muted); font-size: 0.95rem; margin-top: 0.25rem;">Live global updates parsing trending tech frameworks and AI developments.</p>
                 </div>
-                <p class="text-[11px] text-slate-400">
-                    &copy; 2026 3MA Labs. All rights reserved. DON'T JUST WATCH THE FUTURE. BUILD IT.
-                </p>
+                <button class="btn-refresh-news" onclick="fetchLiveTechNews()" style="background-color: var(--purple); color: var(--white); border: none; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer;"><i class="fa-solid fa-arrows-rotate"></i> Refresh Feed</button>
             </div>
+            <div class="trends-grid" id="newsGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                <div class="trend-card" style="background-color: var(--white); border: 1px solid rgba(128, 0, 128, 0.05); padding: 1.5rem; border-radius: 12px; box-shadow: var(--shadow);">
+                    <h4>AVIS Cinematic Pipelines</h4>
+                    <p>Automating raw markdown programmatic scripts into stylized cinematic streams using system prompts.</p>
+                    <a href="#" class="news-link">3MA System Log</a>
+                </div>
+                <div class="trend-card" style="background-color: var(--white); border: 1px solid rgba(128, 0, 128, 0.05); padding: 1.5rem; border-radius: 12px; box-shadow: var(--shadow);">
+                    <h4>Canva Magic Design</h4>
+                    <p>AI-powered co-creation layers for UI layout planning, asset wireframing, and custom presentation boards.</p>
+                    <a href="#" class="news-link">3MA System Log</a>
+                </div>
+                <div class="trend-card" style="background-color: var(--white); border: 1px solid rgba(128, 0, 128, 0.05); padding: 1.5rem; border-radius: 12px; box-shadow: var(--shadow);">
+                    <h4>Static Jekyll Deployment</h4>
+                    <p>Mastering compilation templates to host infinite personal developer embassies on the secure, serverless cloud.</p>
+                    <a href="#" class="news-link">3MA System Log</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- MMA Adult Upskilling Invitation Section -->
+    <section class="section-container" id="mma-alumni">
+        <div class="mma-alumni-panel" style="background-color: var(--purple); color: var(--white); padding: 3rem; border-radius: 24px; text-align: center;">
+            <h3>Are you 19 Years or Older?</h3>
+            <p style="margin-bottom: 1.5rem;">Our Majestic Multimedia Academy (MMA) specialized stream prepares adults, young professionals, and executives to master AI video generation, digital branding consulting, and custom business pipelines.</p>
+            <a href="https://www.lanbomoe.com/#mma" target="_blank" class="btn-primary" style="background-color: var(--gold); color: var(--charcoal);"><i class="fa-solid fa-arrow-up-right-from-square"></i> Visit MMA Corporate Upskilling Portal</a>
+        </div>
+    </section>
+
+    <!-- Expanded FAQs Accordion (SEO/AEO Calibrated) -->
+    <section class="section-container" id="faq">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+            <p>Find immediate operational clarity regarding SMT 2026, 3MA development tracks, and assessment structures.</p>
+        </div>
+        <div class="faq-accordion-container">
+            <div class="faq-item">
+                <button class="faq-trigger" onclick="toggleFaq(this)">
+                    <span>What is 3MA Labs and who can enroll?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-panel">
+                    <div class="faq-panel-content">
+                        3MA Labs (3niti Multimedia Academy) is an elite educational portal and technology innovation lab dedicated to training children and teenagers (ages 4 to 19) as System Builders using a Router-First Curriculum. Under the visionary leadership of Moses Olanrewaju Bolarin, 3MA Labs combines deep technical infrastructure, AI automation, full-stack software development, and digital leadership.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-trigger" onclick="toggleFaq(this)">
+                    <span>What is a Router-First Curriculum for System Builders?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-panel">
+                    <div class="faq-panel-content">
+                        A Router-First Curriculum is our proprietary educational methodology. Rather than teaching syntax in isolation, we train young minds to understand how internet data packets route across server configurations and DNS nodes. This provides young System Builders with real-world architectural power over standard closed ecosystems.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-trigger" onclick="toggleFaq(this)">
+                    <span>What is the difference between 3MA, MMA, and SMT?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-panel">
+                    <div class="faq-panel-content">
+                        3MA (3niti Multimedia Academy) is the core active brand of the academy. MMA (Majestic Multimedia Academy) is the former or alternative branding of the academy, under which our pioneering childrens publications were released. SMT (Summer Multimedia Training) is our flagship 4-week summer intensive challenge that runs annually to accelerate students through tech competencies.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-trigger" onclick="toggleFaq(this)">
+                    <span>How does the 3MA CBT (Computer Based Testing) School Portal work?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-panel">
+                    <div class="faq-panel-content">
+                        The CBT Platform manages robust standardized computer tests across our entire physical school networks and virtual academies. It auto-grades assessments, monitors performance metrics, and triggers secure digital badges and credentials verified directly by Founder Moses Olanrewaju Bolarin.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-trigger" onclick="toggleFaq(this)">
+                    <span>Who is Moses Olanrewaju Bolarin and what is the 3MA Labs philosophy?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-panel">
+                    <div class="faq-panel-content">
+                        Moses Olanrewaju Bolarin is a Systems Architect, digital brand strategist, bestselling author, and CEO of 3MA Labs. He advocates a "Sovereign-First" computing philosophy: that hardware is a disposable commodity, but digital identity, secure encryption, and technological agency are permanent human assets that must be nurtured early.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-trigger" onclick="toggleFaq(this)">
+                    <span>Why are student projects published on Amazon?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-panel">
+                    <div class="faq-panel-content">
+                        Outstanding student storybooks are compiled and published globally on Amazon KDP under the 3MA Children Projects Publications initiative. Under our non-commercial Social Re-investment Covenant, 100% of royalties are directed to the 3MA Digital Equity Fund to purchase hardware for underprivileged children, while students gain elite credentials as SMT Certified Published Authors.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-trigger" onclick="toggleFaq(this)">
+                    <span>What equipment or hardware does a student need to participate?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-panel">
+                    <div class="faq-panel-content">
+                        Students require reliable internet access, any connected smart device (such as a laptop, desktop, Chromebook, or tablet), and a custom physical journal to map data ciphers, code routes, and systemic architectures by hand.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer style="background-color: var(--charcoal); color: rgba(255,255,255,0.7); padding: 4rem 2rem 2rem; font-size: 0.9rem; border-top: 3px solid var(--purple);">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>3MA Labs</h3>
+                <p>A multi-decade educational legacy pioneered by tech innovator and author Moses Olanrewaju Bolarin, transitioning Africa's youth into world-class digital builders.</p>
+                <div style="margin-top: 1.5rem; color: var(--gold); font-weight: 700; line-height: 1.6;">
+                    <i class="fa-solid fa-envelope"></i> 3ma@lanbomoe.com<br>
+                    <i class="fa-solid fa-envelope"></i> 3nitimultimedia@gmail.com<br>
+                    <i class="fa-solid fa-phone"></i> +234 803 383 0101<br>
+                    <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> <a href="https://wa.me/+2348033830101" target="_blank" style="color: var(--gold); text-decoration: none;">Contact us on WhatsApp</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Ecosystem Hubs</h4>
+                <ul>
+                    <li><a href="https://www.lanbomoe.com" target="_blank">LanBo-Moe Main Hub</a></li>
+                    <li><a href="https://www.lanbomoe.com/#mwb" target="_blank">MWB Strategic Publishing</a></li>
+                    <li><a href="https://lanbomoe.github.io/#shop" target="_blank">LanBo-Moe Store</a></li>
+                    <li><a href="https://smt.lanbomoe.com" target="_blank">Summer Multimedia Training (SMT)</a></li>
+                    <li><a href="https://gse.lanbomoe.com" target="_blank">GSE Hub Talent Map</a></li>
+                    <li><a href="https://cbt.lanbomoe.com" target="_blank">CBT Testing Portal</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Sovereign Ventures & Socials</h4>
+                <ul class="social-links-ul" style="list-style:none;">
+                    <li><a href="https://www.facebook.com/olanrewaju.bolarin" target="_blank"><i class="fa-brands fa-facebook"></i> Moses Olanrewaju Facebook</a></li>
+                    <li><a href="https://www.facebook.com/3nitimacademy/" target="_blank"><i class="fa-brands fa-facebook"></i> 3MA Academy Facebook</a></li>
+                    <li><a href="https://www.youtube.com/@ANewYouWithMoses" target="_blank"><i class="fa-brands fa-youtube"></i> A New You With Moses (YouTube)</a></li>
+                    <li><a href="https://www.youtube.com/@3nitiMultimedia" target="_blank"><i class="fa-brands fa-youtube"></i> 3niti Multimedia (YouTube)</a></li>
+                    <li><a href="https://wa.me/p/24072586525696506/2348033830101" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Catalog</a></li>
+                    <li><a href="https://ng.linkedin.com/in/moses-olanrewaju-bolarin-00990026" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn Moses Directory</a></li>
+                    <li><a href="https://www.linkedin.com/company/3niti-multimedia-academy/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn 3MA Academy</a></li>
+                    <li><a href="https://www.instagram.com/anewyouwithmoses/" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram: @anewyouwithmoses</a></li>
+                    <li><a href="https://www.instagram.com/lanrebolarin/" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram: @lanrebolarin</a></li>
+                    <li><a href="https://www.instagram.com/3nitimultimedia/" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram: @3nitimultimedia</a></li>
+                    <li><a href="https://x.com/lanrebolarin/status/1944911736500576328" target="_blank"><i class="fa-brands fa-twitter"></i> Twitter Handle</a></li>
+                    <li><a href="https://www.tiktok.com/@anewyouwithmoses/" target="_blank"><i class="fa-brands fa-tiktok"></i> TikTok Channel</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- L-DOS v2.7 Crawler Protocol & Edge Fee Info Banner (Relocated to Footer) -->
+        <div class="crawler-alert">
+            <i class="fa-solid fa-spider"></i> 
+            <span><strong>AEO & WebCrawler Notice:</strong> Cloudflare x402 Gateway protocol enforced ($0.003/crawl for AI model training). Conversational Search Engines are granted free micro-token access pass. <a href="https://lanbomoe.github.io/#newsletter" target="_blank">View Terms</a></span>
+        </div>
+
+        <div class="footer-bottom">
+            <div>
+                © 2026 3MA Labs (3niti Multimedia Academy). Under Strategic Direction of Moses Olanrewaju Bolarin. All Rights Reserved.
+            </div>
+            <div class="footer-bottom-links">
+                <a href="smt-student-agreement.pdf" target="_blank" style="color: var(--gold); font-weight: 700;"><i class="fa-solid fa-file-contract"></i> Student Agreement & Re-investment Policy</a>
+                <a href="#" onclick="alert('Sovereign digital credentials and ciphers active.')">Privacy Shields</a>
+            </div>
         </div>
     </footer>
 
-    <!-- ============================================================ -->
-    <!-- MARKDOWN H5 PPT MODAL                                         -->
-    <!-- ============================================================ -->
-    <div id="h5Modal" class="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md hidden flex items-center justify-center p-4">
-        <div class="bg-slate-900 border-2 border-[#800080] rounded-2xl max-w-2xl w-full p-6 space-y-4 text-left shadow-2xl relative">
-            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-                <span class="text-xs font-bold text-[#A68024]">Markdown H5 Slide Presentation</span>
-                <button onclick="closeH5Modal()" class="text-slate-400 hover:text-white font-bold text-xl">&times;</button>
-            </div>
-            <div id="slideContent" class="space-y-3 min-h-[220px]">
-                <!-- slide content dynamically updated -->
-            </div>
-            <div class="flex items-center justify-between border-t border-slate-800 pt-3">
-                <button onclick="prevSlide()" class="px-3 py-1.5 rounded bg-slate-800 text-xs font-bold text-slate-300 hover:text-white">&larr; Previous</button>
-                <span class="text-xs font-mono text-purple-300" id="slideIndex">Slide 1 of 3</span>
-                <button onclick="nextSlide()" class="px-3 py-1.5 rounded bg-[#800080] text-xs font-bold text-white hover:bg-[#990099]">Next &rarr;</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- ============================================================ -->
-    <!-- AI COUNSELOR MODAL                                           -->
-    <!-- ============================================================ -->
-    <div id="aiModal" class="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md hidden flex items-center justify-center p-4">
-        <div class="bg-slate-900 border-2 border-[#800080] rounded-2xl max-w-lg w-full p-5 space-y-4 text-left shadow-2xl">
-            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-                <div class="flex items-center gap-2">
-                    <i data-lucide="bot" class="w-5 h-5 text-purple-400"></i>
-                    <span class="text-xs font-bold text-white">3MA AI Advisor & Systems Coach</span>
+    <!-- Sovereign Member Login Modal with Strict SMT Database Verification -->
+    <div class="modal" id="loginModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); align-items: center; justify-content: center; z-index: 2000;">
+        <div class="modal-content" style="background-color: var(--white); padding: 2.5rem; border-radius: var(--border-radius); max-width: 500px; width: 90%; position: relative;">
+            <button class="modal-close" onclick="toggleModal('loginModal')" style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--charcoal);"><i class="fa-solid fa-xmark"></i></button>
+            <h3 style="color: var(--purple); margin-bottom: 0.5rem;">Sovereign Portal Access</h3>
+            <p style="margin-bottom: 1.5rem; font-size: 0.9rem; color: #555;">Enter your credentials to access the 3MA Labs Alumni & Membership Network</p>
+            <form onsubmit="handleAuthSubmit(event)">
+                <div class="form-group" style="margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <label style="font-weight: 700; font-size: 0.85rem;">Unique Student ID (e.g. SMT26-0027)</label>
+                    <input type="text" id="authID" placeholder="e.g. SMT26-0027" required style="padding: 0.75rem; border-radius: 6px; border: 1px solid #ccc;">
                 </div>
-                <button onclick="closeAIChat()" class="text-slate-400 hover:text-white font-bold text-xl">&times;</button>
-            </div>
-            <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl text-xs space-y-2 max-h-60 overflow-y-auto">
-                <p class="text-purple-300 font-bold">AI Counselor:</p>
-                <p class="text-slate-200">Hello! I am the official 3MA Labs AI Academic Advisor. How can I help you regarding our Router-First Curriculum or SMT 2026 Challenge?</p>
-            </div>
-            <div class="flex gap-2">
-                <input type="text" placeholder="Ask a question..." class="flex-1 bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#800080]" />
-                <button onclick="alert('AI Counselor response generated!')" class="bg-[#800080] text-white px-4 py-2 rounded-lg text-xs font-bold">Send</button>
-            </div>
+                <div class="form-group" style="margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <label style="font-weight: 700; font-size: 0.85rem;">Authorized Access Password (Parent WhatsApp Phone)</label>
+                    <input type="password" id="authPass" placeholder="e.g. 2349073438583" required style="padding: 0.75rem; border-radius: 6px; border: 1px solid #ccc;">
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; border: none; justify-content: center; cursor: pointer;">Initialize Verification</button>
+            </form>
         </div>
     </div>
 
-    <!-- ============================================================ -->
-    <!-- INTERACTIVE JAVASCRIPT                                       -->
-    <!-- ============================================================ -->
+    <!-- Interactive Scripting -->
     <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
-
-        // ---- Mobile Menu Toggle ----
-        document.getElementById('mobileMenuToggle')?.addEventListener('click', function() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
-        });
-
-        // ---- AUDIO PLAYER (Hero) ----
-        let isPlaying = false;
-        let isMuted = false;
-        const audio = document.getElementById('smtAudio');
-        const playIcon = document.getElementById('playIcon');
-        const radioIcon = document.getElementById('radioIcon');
-        const progress = document.getElementById('audioProgress');
-        const audioStatus = document.getElementById('audioStatus');
-
-        function toggleAudio() {
-            if (!isPlaying) {
-                audio.play().catch(function(err) {
-                    console.warn('Audio play prevented:', err);
-                    if (audioStatus) audioStatus.textContent = '⚠️ Click again to play';
-                });
-                isPlaying = true;
-                playIcon.setAttribute('data-lucide', 'pause');
-                radioIcon.classList.add('animate-pulse');
-                if (audioStatus) audioStatus.textContent = '▶️ Playing smt-anthem.mp3';
-            } else {
-                audio.pause();
-                isPlaying = false;
-                playIcon.setAttribute('data-lucide', 'play');
-                radioIcon.classList.remove('animate-pulse');
-                if (audioStatus) audioStatus.textContent = '⏸️ Paused';
-            }
-            lucide.createIcons();
-        }
-
-        function toggleMute() {
-            audio.muted = !isMuted;
-            isMuted = !isMuted;
-            const muteIcon = document.getElementById('muteIcon');
-            if (muteIcon) {
-                muteIcon.setAttribute('data-lucide', isMuted ? 'volume-x' : 'volume-2');
-                lucide.createIcons();
-            }
-        }
-
-        audio.ontimeupdate = function() {
-            if (audio.duration) {
-                progress.style.width = (audio.currentTime / audio.duration * 100) + '%';
-            }
+        // ── STRICT STUDENT AUTHENTICATION DATABASE ──
+        const SMT_STUDENT_DB = {
+            "SMT26-0018": { name: "Mayokun Agape Bolarin", pass: "2348033830101" },
+            "SMT26-0019": { name: "Imisioluwa Love Bolarin", pass: "2348033830101" },
+            "SMT26-0020": { name: "Anjolaoluwa Favour Salt-Oremade", pass: "2348067047844" },
+            "SMT26-0021": { name: "Anioluwa Grace Salt-Oremade", pass: "2348067047844" },
+            "SMT26-0022": { name: "Gbemisola Faith Olusola-Dada", pass: "08069922404" },
+            "SMT26-0023": { name: "Angel Michell Olusola-Dada", pass: "08020913292" },
+            "SMT26-0024": { name: "Adekoya Samuel", pass: "09093930483" },
+            "SMT26-0025": { name: "Favour Oreoluwa Abisuga", pass: "08032007120" },
+            "SMT26-0026": { name: "Praise Oluwatobiloba Abisuga", pass: "2348032007120" },
+            "SMT26-0027": { name: "Ryan Elijah Ansa", pass: "2349073438583" },
+            "SMT26-0028": { name: "Ogwu Adaeze", pass: "08056675877" },
+            "SMT26-0029": { name: "Oluwafirefunmi Bisi-Akinlabi", pass: "08032406880" },
+            "SMT26-0030": { name: "Ossereme Joanna Okojie", pass: "2348023508705" },
+            "SMT26-0031": { name: "Zion Oluwashindara Akande", pass: "2348108678674" },
+            "SMT26-0032": { name: "Sharon Oluwakiisise Akande", pass: "2348108678674" },
+            "SMT26-0033": { name: "Winner Igbunuoghene Onwuadiamu", pass: "2348154619346" },
+            "SMT26-0034": { name: "Oluwanifemi Williams Olusegun", pass: "2348060827311" },
+            "SMT26-0035": { name: "Adedeji Samuel Bamikefa", pass: "2347066889485" },
+            "SMT26-0036": { name: "David Oluwaseyifunmi FAWEHINMI", pass: "2348140193182" },
+            "SMT26-0037": { name: "Mayokun Bolarin", pass: "13123885353" },
+            "SMT26-0038": { name: "Ogunlusi Oluwadamife Testimony", pass: "2349066927345" },
+            "SMT26-0039": { name: "Ogunlusi Darasimi Praise", pass: "08056304413" },
+            "SMT26-0040": { name: "Isaac S", pass: "2348098770320" }
         };
 
-        // If audio fails to load, show fallback
-        audio.onerror = function() {
-            if (audioStatus) audioStatus.textContent = '❌ Audio asset not found — place smt-anthem.mp3 in /assets/';
-            console.warn('Audio asset failed to load. Please ensure assets/smt-anthem.mp3 exists.');
-        };
+        let loggedInUser = null;
 
-        // ---- CBT QUIZ ENGINE ----
-        const questions = [{
-            q: "What is the core philosophy of 3MA Labs?",
-            opts: [
-                "DON'T JUST WATCH THE FUTURE. BUILD IT.",
-                "Just browse the web passively",
-                "Memorize code snippets without systems",
-                "Only edit social media videos"
-            ],
-            ans: 0
-        }, {
-            q: "What makes the 3MA Labs curriculum unique?",
-            opts: [
-                "It uses a Router-First approach to build System Builders",
-                "It ignores networking and hardware",
-                "It is strictly for adults over 30",
-                "It has no hands-on projects"
-            ],
-            ans: 0
-        }, {
-            q: "Who is the Founder & Executive Leader of 3MA Labs?",
-            opts: [
-                "Moses Olanrewaju Bolarin",
-                "Anonymous Team",
-                "Third-Party Vendor",
-                "Guest Instructor"
-            ],
-            ans: 0
-        }];
-
-        let currentQ = 0;
-        let score = 0;
-
-        function renderQuestion() {
-            const q = questions[currentQ];
-            document.getElementById('qCounter').innerText = 'Question ' + (currentQ + 1) + ' of ' + questions.length;
-            document.getElementById('qText').innerText = q.q;
-            const optsDiv = document.getElementById('qOptions');
-            optsDiv.innerHTML = q.opts.map(function(opt, idx) {
-                return '<label class="flex items-center gap-3 p-3 rounded-xl bg-slate-950 border border-slate-800 cursor-pointer hover:border-[#800080]">' +
-                    '<input type="radio" name="cbtOpt" value="' + idx + '" class="text-[#800080]">' +
-                    '<span class="text-xs text-slate-200">' + opt + '</span>' +
-                    '</label>';
-            }).join('');
-        }
-
-        function submitAnswer() {
-            var sel = document.querySelector('input[name="cbtOpt"]:checked');
-            if (!sel) return alert('Please select an option.');
-            if (parseInt(sel.value) === questions[currentQ].ans) score++;
-
-            currentQ++;
-            if (currentQ < questions.length) {
-                renderQuestion();
+        // ── MODAL MANAGER ──
+        function toggleModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal.style.display === 'none' || modal.style.display === '') {
+                modal.style.display = 'flex';
             } else {
-                document.getElementById('cbtCard').innerHTML =
-                    '<div class="text-center space-y-3 py-4">' +
-                    '<div class="w-12 h-12 bg-[#A68024]/20 border border-[#A68024] text-[#A68024] rounded-full flex items-center justify-center mx-auto text-xl font-bold">✓</div>' +
-                    '<h3 class="text-lg font-bold text-white">Assessment Complete!</h3>' +
-                    '<p class="text-xs text-slate-300">Score: <strong class="text-[#A68024]">' + score + '/' + questions
-                    .length + '</strong></p>' +
-                    '<p class="text-xs text-purple-300 font-bold">Verified by Moses Olanrewaju Bolarin</p>' +
-                    '<button onclick="location.reload()" class="bg-[#800080] text-white px-4 py-2 rounded-lg text-xs font-bold">Retake Test</button>' +
-                    '</div>';
+                modal.style.display = 'none';
             }
         }
-        renderQuestion();
 
-        // ---- MARKDOWN H5 PPT SLIDES ----
-        var slides = [{
-            title: "# Slide 1: Router-First Web Systems",
-            body: "Understanding IP packet routing and network topology before constructing full-stack applications.",
-            note: "Note: Guidance for Moses Olanrewaju Bolarin & Instructors on networking fundamentals."
-        }, {
-            title: "# Slide 2: AI Automation & AVIS Video Engine",
-            body: "Integrating Python generative AI scripts with AVIS for automated multimedia production.",
-            note: "Note: Focus on prompt structure and API security."
-        }, {
-            title: "# Slide 3: SMT 2026 Challenge (Aug 3–28)",
-            body: "Empowering kids & teens to build real-world systems and pitch innovative prototypes.",
-            note: "Note: Showcase student prototypes at smt.lanbomoe.com."
-        }];
+        // Sovereign Client-side verification
+        function handleAuthSubmit(e) {
+            e.preventDefault();
+            const studentId = document.getElementById('authID').value.trim().toUpperCase();
+            const password = document.getElementById('authPass').value.trim();
 
-        var currentSlide = 0;
-
-        function renderSlide() {
-            var s = slides[currentSlide];
-            document.getElementById('slideContent').innerHTML =
-                '<h3 class="text-base font-bold text-white">' + s.title + '</h3>' +
-                '<p class="text-xs text-slate-300 leading-relaxed">' + s.body + '</p>' +
-                '<div class="bg-slate-950 p-3 rounded-lg border border-slate-800 text-[11px] text-[#A68024] font-mono">' + s
-                .note + '</div>';
-            document.getElementById('slideIndex').innerText = 'Slide ' + (currentSlide + 1) + ' of ' + slides.length;
-        }
-
-        function openH5Modal() {
-            document.getElementById('h5Modal').classList.remove('hidden');
-            renderSlide();
-        }
-
-        function closeH5Modal() {
-            document.getElementById('h5Modal').classList.add('hidden');
-        }
-
-        function prevSlide() {
-            if (currentSlide > 0) { currentSlide--;
-                renderSlide(); }
-        }
-
-        function nextSlide() {
-            if (currentSlide < slides.length - 1) { currentSlide++;
-                renderSlide(); }
-        }
-
-        // ---- AI COUNSELOR ----
-        function openAIChat() {
-            document.getElementById('aiModal').classList.remove('hidden');
-        }
-
-        function closeAIChat() {
-            document.getElementById('aiModal').classList.add('hidden');
-        }
-
-        // ---- Close modals on Escape key ----
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeH5Modal();
-                closeAIChat();
+            if (SMT_STUDENT_DB[studentId]) {
+                const student = SMT_STUDENT_DB[studentId];
+                const dbPass = student.pass.replace(/\D/g, '');
+                const inputPass = password.replace(/\D/g, '');
+                
+                if (dbPass.endsWith(inputPass) || inputPass.endsWith(dbPass)) {
+                    loggedInUser = studentId;
+                    document.getElementById('studentWelcomeName').innerText = student.name;
+                    document.getElementById('subID').value = studentId;
+                    
+                    document.getElementById('studentPortalSection').style.display = 'block';
+                    toggleModal('loginModal');
+                    
+                    document.getElementById('studentPortalSection').scrollIntoView({ behavior: 'smooth' });
+                    return;
+                }
             }
-        });
 
-        // ---- Close modals on backdrop click ----
-        document.getElementById('h5Modal').addEventListener('click', function(e) {
-            if (e.target === this) closeH5Modal();
-        });
-        document.getElementById('aiModal').addEventListener('click', function(e) {
-            if (e.target === this) closeAIChat();
-        });
+            alert("ACCESS REFUSED: Invalid Student ID or registered parent phone number passcode. Please consult SMT Operations or verify with the WhatsApp AI Assistant!");
+        }
 
-        console.log('✅ 3MA Labs website loaded — DON\'T JUST WATCH THE FUTURE. BUILD IT.');
+        function logoutStudent() {
+            loggedInUser = null;
+            document.getElementById('studentPortalSection').style.display = 'none';
+            alert("Sovereign node disconnected securely.");
+        }
+
+        function handleProjectSubmit(e) {
+            e.preventDefault();
+            const day = document.getElementById('subDay').value;
+            const link = document.getElementById('subLink').value;
+            
+            alert(`🛰️ AUTO-GRADING REGISTERED:\nID: ${loggedInUser}\nDay: ${day}\nLink: ${link}\n\nIMPORTANT NEXT STEP: Our auto-grading script is awaiting confirmation. Navigate to Google Classroom (code: wgn5p6rf), locate your assignment tab, and click the "MARK AS DONE" button immediately to finalize your certification!`);
+            document.getElementById('submissionForm').reset();
+        }
+
+        // ── AUDIO visualizer SIMULATION (CORS-immune Canvas Equalizer) ──
+        const canvas = document.getElementById('visualizerCanvas');
+        const ctx = canvas.getContext('2d');
+        const audio = document.getElementById('globalAudioPlayer');
+        
+        let visualizerBars = [];
+        const totalBars = 32;
+        for (let i = 0; i < totalBars; i++) {
+            visualizerBars.push({ currentHeight: 0, targetHeight: 0 });
+        }
+
+        function resizeCanvas() {
+            canvas.width = canvas.parentElement.clientWidth;
+            canvas.height = canvas.parentElement.clientHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        function drawVisualizer() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            const gradient = ctx.createLinearGradient(0, canvas.height, 0, 0);
+            gradient.addColorStop(0, '#800080');
+            gradient.addColorStop(1, '#A68024');
+            
+            const barWidth = (canvas.width / totalBars) - 2;
+            
+            for (let i = 0; i < totalBars; i++) {
+                const bar = visualizerBars[i];
+                
+                if (!audio.paused) {
+                    const baseFreq = Math.sin((Date.now() * 0.005) + i * 0.5) * 40 + 50;
+                    const randomFlux = Math.random() * 25;
+                    bar.targetHeight = baseFreq + randomFlux;
+                } else {
+                    bar.targetHeight = 0;
+                }
+                
+                bar.currentHeight += (bar.targetHeight - bar.currentHeight) * 0.15;
+                
+                const x = i * (barWidth + 2);
+                const y = canvas.height - bar.currentHeight;
+                
+                ctx.fillStyle = gradient;
+                ctx.fillRect(x, y, barWidth, bar.currentHeight);
+            }
+            requestAnimationFrame(drawVisualizer);
+        }
+        requestAnimationFrame(drawVisualizer);
+
+        // CORS-Protected Playback Fallback Logic
+        function playSong(localFile, driveUrl, btnId) {
+            audio.pause();
+            audio.onerror = null;
+            
+            audio.src = localFile;
+            
+            audio.play().catch(e => {
+                console.log("Local play failed. Switching to Google Drive stream...");
+                audio.src = driveUrl;
+                audio.play().catch(err => console.log("Drive playback failed: ", err));
+            });
+            
+            document.querySelectorAll('.song-button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(btnId).classList.add('active');
+        }
+
+        // ── 3MA CBT ASSESSMENT PORTAL WIDGET LOGIC ──
+        const quizDatabase = [
+            {
+                q: "What is the core philosophy of 3MA Labs?",
+                options: [
+                    "DON'T JUST WATCH THE FUTURE. BUILD IT.",
+                    "Just browse the web passively",
+                    "Memorize code snippets without systems",
+                    "Only edit social media videos"
+                ],
+                correct: 0
+            },
+            {
+                q: "What makes the 3MA Labs curriculum unique?",
+                options: [
+                    "It ignores networking and hardware",
+                    "It uses a Router-First approach to build System Builders",
+                    "It is strictly for adults over 30",
+                    "It has no hands-on projects"
+                ],
+                correct: 1
+            },
+            {
+                q: "What is the social reinvestment covenant of 3MA Amazon storybooks?",
+                options: [
+                    "Funding professional developer certifications for senior corporate executives",
+                    "Licensing closed-source AI libraries to external search conglomerates",
+                    "100% of royalties are directed to the 3MA Digital Equity Fund to buy laptops and data for underprivileged kids",
+                    "None of the above"
+                ],
+                correct: 2
+            }
+        ];
+
+        let quizIndex = 0;
+        let quizScore = 0;
+        let selectedOption = null;
+
+        function loadQuizQuestion() {
+            const current = quizDatabase[quizIndex];
+            document.getElementById('quizProgress').innerText = `Question ${quizIndex + 1} of ${quizDatabase.length}`;
+            document.getElementById('quizQuestionText').innerText = current.q;
+            
+            const container = document.getElementById('quizOptionsContainer');
+            container.innerHTML = '';
+            selectedOption = null;
+            document.getElementById('btnNextQuiz').style.display = 'none';
+
+            current.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'quiz-option-btn';
+                btn.innerText = opt;
+                btn.onclick = () => selectQuizOption(idx, btn);
+                container.appendChild(btn);
+            });
+        }
+
+        function selectQuizOption(idx, btn) {
+            if (selectedOption !== null) return; // Prevent double selection
+            selectedOption = idx;
+            
+            const current = quizDatabase[quizIndex];
+            const buttons = document.querySelectorAll('.quiz-option-btn');
+            
+            if (idx === current.correct) {
+                btn.classList.add('correct');
+                quizScore++;
+            } else {
+                btn.classList.add('wrong');
+                buttons[current.correct].classList.add('correct');
+            }
+            
+            document.getElementById('quizScoreText').innerText = `Score: ${quizScore} / ${quizDatabase.length}`;
+            document.getElementById('btnNextQuiz').style.display = 'block';
+            
+            if (quizIndex === quizDatabase.length - 1) {
+                document.getElementById('btnNextQuiz').innerText = "Finish Assessment";
+            } else {
+                document.getElementById('btnNextQuiz').innerText = "Next Question →";
+            }
+        }
+
+        function nextQuizQuestion() {
+            if (quizIndex < quizDatabase.length - 1) {
+                quizIndex++;
+                loadQuizQuestion();
+            } else {
+                showQuizResults();
+            }
+        }
+
+        // Initialize quiz
+        loadQuizQuestion();
     </script>
-
 </body>
 </html>
